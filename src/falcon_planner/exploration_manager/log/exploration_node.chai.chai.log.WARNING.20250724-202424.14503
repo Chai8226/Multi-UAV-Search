@@ -1,0 +1,15 @@
+Log file created at: 2025/07/24 20:24:24
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+W0724 20:24:24.952198 14503 exploration_fsm.cpp:120] [FSM] Receive odom from topic /uav_simulator/odometry_2
+W0724 20:24:24.952301 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359864.952301864 Transit state from INIT to WAIT_TRIGGER by FSM
+W0724 20:24:28.449963 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359868.449969697 Transit state from WAIT_TRIGGER to PLAN_TRAJ by optMsgCallback
+W0724 20:24:32.478489 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359872.478491084 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 20:24:33.961443 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359873.961445278 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:24:35.487002 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359875.487004706 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 20:24:36.965929 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359876.965930355 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:24:38.064512 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359878.064514507 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 20:24:39.969352 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359879.969355273 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:24:41.067546 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359881.067547963 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 20:24:43.009253 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359883.009254314 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:24:44.062963 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359884.062964484 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback

@@ -1,0 +1,37 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/exploration_manager/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/exploration_preprocessing/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/exploration_utils/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/fast_planner/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/camera_sensing/mesh_render/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/utils/multi_map_server/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/pathfinding/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/camera_sensing/pointcloud_render/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/utils/pose_utils/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/utils/quadrotor_msgs/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/so3_control/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/so3_disturbance_generator/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/so3_quadrotor_simulator/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/trajectory/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/uav_simulator/utils/uav_utils/include/**",
+        "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/voxel_mapping/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

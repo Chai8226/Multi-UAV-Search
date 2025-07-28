@@ -1,0 +1,16 @@
+Log file created at: 2025/07/24 20:04:02
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+W0724 20:04:02.934847  1464 exploration_fsm.cpp:120] [FSM] Receive odom from topic /uav_simulator/odometry_2
+W0724 20:04:02.934955  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358642.934957057 Transit state from INIT to WAIT_TRIGGER by FSM
+W0724 20:04:13.775615  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358653.775616977 Transit state from WAIT_TRIGGER to PLAN_TRAJ by optResMsgCallback
+W0724 20:04:14.165037  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358654.165039466 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:04:16.454325  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358656.454329365 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 20:04:16.933946  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358656.933950951 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:04:19.437129  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358659.437131958 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 20:04:19.935972  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358659.935976151 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:04:22.945261  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358662.945265006 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:04:26.445319  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358666.445322565 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 20:04:26.939435  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358666.939438802 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+W0724 20:04:30.456840  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358670.456842497 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 20:04:30.952016  1464 exploration_fsm.cpp:729] [FSM] ROS Time: 1753358670.952019776 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback

@@ -1,0 +1,15 @@
+<launch>
+
+  <!--sim person-->
+  <include file="$(find pedsim_simulator)/launch/simulator.launch">
+    <arg name="scene_file" value="$(find pedsim_simulator)scenarios/complex_office.xml"/>
+    <arg name="simulation_factor" value="1.0"/>
+    <arg name="update_rate" value="20.0"/>
+    <arg name="default_queue_size" value="10"/>
+    <arg name="max_robot_speed" value="1.0"/>
+    <arg name="robot_mode" value="1"/>
+    <arg name="enable_groups" value="true"/>
+  </include>
+  <include file="$(find pedsim_visualizer)/launch/visualizer.launch"/>
+  
+</launch>

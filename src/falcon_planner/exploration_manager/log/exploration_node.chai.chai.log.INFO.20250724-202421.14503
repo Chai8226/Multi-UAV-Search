@@ -1,0 +1,1706 @@
+Log file created at: 2025/07/24 20:24:21
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0724 20:24:21.342798 14503 exploration_node.cpp:24] Exploration task start at 1753359861.342834665
+I0724 20:24:21.395622 14503 exploration_node.cpp:29] 
+|---------------------------------- System Info ----------------------------------|
+CPU Name: 13th Gen Intel(R) Core(TM) i5-13600K
+CPU Cores: 14
+CPU Threads: 20
+CPU Frequency: 3900.000 MHz
+Memory Total: 31.1365 GB
+Memory Free: 9.75284 GB
+GPU Name: NVIDIA GeForce RTX 2070
+GPU Memory Total: 8 GB
+GPU Memory Free: 6.99023 GB
+|---------------------------------------------------------------------------------|
+I0724 20:24:22.701128 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:22.701145 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 0Hz
+I0724 20:24:22.701205 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:22.701207 14503 exploration_fsm.cpp:568] 
+I0724 20:24:23.076152 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:23.076169 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 2.66649Hz
+I0724 20:24:23.076234 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:23.076236 14503 exploration_fsm.cpp:568] 
+I0724 20:24:23.393584 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:23.393601 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 2.88827Hz
+I0724 20:24:23.393610 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:23.393610 14503 exploration_fsm.cpp:568] 
+I0724 20:24:23.723376 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:23.723399 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 2.93469Hz
+I0724 20:24:23.723413 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:23.723414 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.056417 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.056430 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 3.00285Hz
+I0724 20:24:24.056438 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.056439 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.057277 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.057281 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 5.99039Hz
+I0724 20:24:24.057284 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.057286 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.066566 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.066578 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 8.74214Hz
+I0724 20:24:24.066584 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.066586 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.076610 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.076627 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 11.3246Hz
+I0724 20:24:24.076694 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.076695 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.086535 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.086556 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 13.7687Hz
+I0724 20:24:24.086560 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.086560 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.096519 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.096527 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 16.0809Hz
+I0724 20:24:24.096575 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.096576 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.106523 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.106535 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 18.271Hz
+I0724 20:24:24.106549 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.106554 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.429592 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.429612 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 11.3282Hz
+I0724 20:24:24.429627 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.429628 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.429665 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.429666 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 12.7433Hz
+I0724 20:24:24.429668 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.429669 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.439802 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.439818 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 13.9586Hz
+I0724 20:24:24.439827 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.439828 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.449707 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.449734 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 15.1448Hz
+I0724 20:24:24.449745 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.449746 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.459692 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.459697 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 16.2981Hz
+I0724 20:24:24.459699 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.459700 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.469686 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.469687 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 17.4199Hz
+I0724 20:24:24.469689 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.469689 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.479692 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.479698 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 18.5115Hz
+I0724 20:24:24.479701 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.479702 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.489687 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.489689 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 19.5752Hz
+I0724 20:24:24.489691 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.489691 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.499704 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.499730 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 20.6102Hz
+I0724 20:24:24.499737 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.499738 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.509686 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.509711 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 21.6203Hz
+I0724 20:24:24.509714 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.509714 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.519686 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.519698 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 22.605Hz
+I0724 20:24:24.519704 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.519706 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.529686 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.529691 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 23.5651Hz
+I0724 20:24:24.529695 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.529696 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.539695 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.539705 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 24.5011Hz
+I0724 20:24:24.539714 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.539719 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.549703 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.549718 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 25.4144Hz
+I0724 20:24:24.549731 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.549736 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.559707 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.559727 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 26.306Hz
+I0724 20:24:24.559741 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.559741 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.569702 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.569713 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 27.1771Hz
+I0724 20:24:24.569725 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.569730 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.579697 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.579706 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 28.0278Hz
+I0724 20:24:24.579711 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.579712 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.589740 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.589767 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 28.8566Hz
+I0724 20:24:24.589776 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.589776 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.599699 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.599709 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 29.6703Hz
+I0724 20:24:24.599716 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.599718 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.952137 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.952148 14503 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 21.9738Hz
+W0724 20:24:24.952198 14503 exploration_fsm.cpp:120] [FSM] Receive odom from topic /uav_simulator/odometry_2
+W0724 20:24:24.952301 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359864.952301864 Transit state from INIT to WAIT_TRIGGER by FSM
+I0724 20:24:24.952304 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:24.952307 14503 exploration_fsm.cpp:568] 
+I0724 20:24:24.962471 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:24.962478 14503 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 96.884Hz
+I0724 20:24:25.230365 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 718.55
+I0724 20:24:25.230443 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:25.230444 14503 exploration_fsm.cpp:568] 
+I0724 20:24:25.549368 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:25.549381 14503 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 3.34883Hz
+I0724 20:24:25.812932 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 718.55
+I0724 20:24:25.812996 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:25.812999 14503 exploration_fsm.cpp:568] 
+I0724 20:24:26.128789 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:26.128799 14503 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 2.54963Hz
+I0724 20:24:26.394287 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 718.55
+I0724 20:24:26.394342 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:26.394344 14503 exploration_fsm.cpp:568] 
+I0724 20:24:26.710924 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:26.710935 14503 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 1.71783Hz
+I0724 20:24:26.971964 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 718.55
+I0724 20:24:26.972020 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:26.972023 14503 exploration_fsm.cpp:568] 
+I0724 20:24:27.287293 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:27.287303 14503 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 1.72637Hz
+I0724 20:24:27.552989 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 718.55
+I0724 20:24:27.553052 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:27.553053 14503 exploration_fsm.cpp:568] 
+I0724 20:24:27.868652 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:27.868662 14503 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 1.72013Hz
+I0724 20:24:28.135272 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 718.55
+I0724 20:24:28.135339 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:28.135340 14503 exploration_fsm.cpp:568] 
+W0724 20:24:28.449963 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359868.449969697 Transit state from WAIT_TRIGGER to PLAN_TRAJ by optMsgCallback
+I0724 20:24:28.450412 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:28.450413 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 1.71954Hz
+I0724 20:24:28.515595 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 350.31
+I0724 20:24:28.521875 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:28.522002 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:28.522006 14503 exploration_fsm.cpp:568] 
+I0724 20:24:28.837841 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:28.837857 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 2.58106Hz
+I0724 20:24:28.875236 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:28.880988 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:28.881091 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:28.881093 14503 exploration_fsm.cpp:568] 
+I0724 20:24:29.199357 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:29.199368 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 2.67041Hz
+I0724 20:24:29.234961 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:29.243178 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:29.243297 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:29.243300 14503 exploration_fsm.cpp:568] 
+I0724 20:24:29.656742 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:29.656755 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 2.48687Hz
+I0724 20:24:29.692204 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:29.698051 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:29.698138 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:29.698140 14503 exploration_fsm.cpp:568] 
+I0724 20:24:30.009057 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:30.009064 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 2.83847Hz
+I0724 20:24:30.045185 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:30.050908 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:30.050994 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:30.050995 14503 exploration_fsm.cpp:568] 
+I0724 20:24:30.051966 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:30.051970 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 5.06063Hz
+I0724 20:24:30.088373 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:30.094044 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:30.094127 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:30.094130 14503 exploration_fsm.cpp:568] 
+I0724 20:24:30.094151 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:30.094152 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 6.85888Hz
+I0724 20:24:30.131379 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:30.136994 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:30.137064 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:30.137080 14503 exploration_fsm.cpp:568] 
+I0724 20:24:30.461460 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:30.461474 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 4.97073Hz
+I0724 20:24:30.497354 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:30.503237 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:30.503310 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:30.503311 14503 exploration_fsm.cpp:568] 
+I0724 20:24:30.503440 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:30.503443 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 5.90542Hz
+I0724 20:24:30.541538 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:30.547096 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:30.547166 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:30.547168 14503 exploration_fsm.cpp:568] 
+I0724 20:24:30.547907 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:30.547909 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 6.7329Hz
+I0724 20:24:30.582937 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:30.588531 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:30.588610 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:30.588611 14503 exploration_fsm.cpp:568] 
+I0724 20:24:30.588636 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:30.588639 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 7.51173Hz
+I0724 20:24:30.624765 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:30.630343 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:30.630407 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:30.630409 14503 exploration_fsm.cpp:568] 
+I0724 20:24:30.965920 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:30.965931 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 6.11075Hz
+I0724 20:24:31.003296 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:31.008893 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:31.008967 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:31.008968 14503 exploration_fsm.cpp:568] 
+I0724 20:24:31.013242 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:31.013247 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 21.139Hz
+I0724 20:24:31.048363 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:31.053843 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:31.053918 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:31.053920 14503 exploration_fsm.cpp:568] 
+I0724 20:24:31.054632 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:31.054646 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.5466Hz
+I0724 20:24:31.090739 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:31.096377 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:31.096455 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:31.096457 14503 exploration_fsm.cpp:568] 
+I0724 20:24:31.096479 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:31.096480 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.9815Hz
+I0724 20:24:31.133598 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:31.139300 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:31.139384 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:31.139384 14503 exploration_fsm.cpp:568] 
+I0724 20:24:31.483031 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:31.483040 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 7.73544Hz
+I0724 20:24:31.518266 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:31.523885 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:31.523962 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:31.523964 14503 exploration_fsm.cpp:568] 
+I0724 20:24:31.526521 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:31.526531 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 8.91917Hz
+I0724 20:24:31.562294 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:31.567884 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:31.567961 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:31.567962 14503 exploration_fsm.cpp:568] 
+I0724 20:24:31.567984 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:31.567986 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 9.96603Hz
+I0724 20:24:31.605686 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:31.611336 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:31.611415 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:31.611416 14503 exploration_fsm.cpp:568] 
+I0724 20:24:31.933960 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:31.933974 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 7.23116Hz
+I0724 20:24:31.968464 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:31.974309 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:31.974390 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:31.974391 14503 exploration_fsm.cpp:568] 
+I0724 20:24:31.978706 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:31.978710 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 7.89913Hz
+I0724 20:24:32.014650 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:32.020484 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.020570 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.020571 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.021482 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.021485 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 23.3797Hz
+I0724 20:24:32.059917 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:32.065989 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.066100 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.066102 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.068151 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.068161 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.3593Hz
+I0724 20:24:32.104310 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:32.111313 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.111426 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.111429 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.435238 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.435250 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 6.5712Hz
+I0724 20:24:32.472769 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 175.87
+I0724 20:24:32.478375 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.478457 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.478459 14503 exploration_fsm.cpp:568] 
+W0724 20:24:32.478489 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359872.478491084 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+I0724 20:24:32.479537 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.479540 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 7.98679Hz
+I0724 20:24:32.498296 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 134.95
+I0724 20:24:32.501973 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.502048 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.502050 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.502074 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.502075 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 9.5536Hz
+I0724 20:24:32.521306 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:32.523860 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.523933 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.523934 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.524667 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.524672 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 10.9898Hz
+I0724 20:24:32.546988 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:32.550282 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.550367 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.550369 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.550387 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.550388 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.2447Hz
+I0724 20:24:32.571704 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:32.574038 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.574108 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.574110 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.574148 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.574149 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.4355Hz
+I0724 20:24:32.591003 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:32.593392 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.593477 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.593478 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.594223 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.594224 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.622Hz
+I0724 20:24:32.611096 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:32.613811 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.613879 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.613880 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.934655 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.934676 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 10.4607Hz
+I0724 20:24:32.952869 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:32.955286 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.955353 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.955355 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.957769 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.957774 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 11.2353Hz
+I0724 20:24:32.974622 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:32.977016 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.977087 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.977088 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.977223 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.977226 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.0179Hz
+I0724 20:24:32.994814 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:32.997884 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:32.998013 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:32.998018 14503 exploration_fsm.cpp:568] 
+I0724 20:24:32.999248 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:32.999253 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.7383Hz
+I0724 20:24:33.023633 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.027282 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.027391 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.027395 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.027431 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.027433 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 35.4953Hz
+I0724 20:24:33.050940 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.054832 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.054955 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.054958 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.056393 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.056399 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 35.0026Hz
+I0724 20:24:33.081622 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.085259 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.085366 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.085371 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.085398 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.085402 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 34.8268Hz
+I0724 20:24:33.109055 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.112670 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.112784 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.112787 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.436215 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.436233 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 9.15388Hz
+I0724 20:24:33.454039 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.456519 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.456607 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.456609 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.457463 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.457464 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 10.9122Hz
+I0724 20:24:33.474442 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.476912 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.476995 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.476996 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.477032 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.477033 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.5583Hz
+I0724 20:24:33.493791 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.496145 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.496220 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.496222 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.496235 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.496237 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.0852Hz
+I0724 20:24:33.513000 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.515563 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.515645 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.515646 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.515666 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.515666 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.4917Hz
+I0724 20:24:33.532786 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.535176 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.535252 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.535254 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.535974 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.535977 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.7686Hz
+I0724 20:24:33.552639 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.555092 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.555159 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.555161 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.555173 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.555174 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.9884Hz
+I0724 20:24:33.571620 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.573925 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.573997 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.573998 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.574014 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.574015 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.1386Hz
+I0724 20:24:33.590426 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.592712 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.592793 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.592795 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.593557 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.593559 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 20.1918Hz
+I0724 20:24:33.610210 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.612543 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.612622 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.612624 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.916630 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.916653 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.1706Hz
+I0724 20:24:33.934856 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.937373 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.937464 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.937466 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.941102 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.941111 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.8644Hz
+I0724 20:24:33.958979 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.46
+I0724 20:24:33.961329 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.961405 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.961405 14503 exploration_fsm.cpp:568] 
+W0724 20:24:33.961443 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359873.961445278 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+I0724 20:24:33.961707 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.961709 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.5852Hz
+I0724 20:24:33.976397 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 114.85
+I0724 20:24:33.978415 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.978490 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.978492 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.978649 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.978650 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.3367Hz
+I0724 20:24:33.990551 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:33.992506 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:33.992565 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:33.992568 14503 exploration_fsm.cpp:568] 
+I0724 20:24:33.993369 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:33.993373 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.1007Hz
+I0724 20:24:34.005338 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.007366 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.007428 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.007429 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.007444 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.007445 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.8539Hz
+I0724 20:24:34.019373 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.021813 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.021921 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.021925 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.021940 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.021943 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 69.0312Hz
+I0724 20:24:34.038682 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.041464 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.041568 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.041571 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.041594 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.041597 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 58.5806Hz
+I0724 20:24:34.058826 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.061607 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.061723 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.061726 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.062923 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.062929 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 54.0804Hz
+I0724 20:24:34.080958 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.083995 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.084115 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.084118 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.084153 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.084156 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 52.1512Hz
+I0724 20:24:34.101495 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.104307 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.104414 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.104418 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.104437 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.104439 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 51.5552Hz
+I0724 20:24:34.121712 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.124518 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.124627 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.124631 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.466449 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.466459 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.0718Hz
+I0724 20:24:34.479180 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.481171 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.481251 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.481252 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.481288 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.481290 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.7731Hz
+I0724 20:24:34.539261 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.541296 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.541383 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.541384 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.542225 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.542227 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.9597Hz
+I0724 20:24:34.554503 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.556555 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.556627 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.556627 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.556643 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.556643 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.3878Hz
+I0724 20:24:34.568544 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.571378 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.571450 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.571451 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.571463 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.571465 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.7302Hz
+I0724 20:24:34.585949 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.588088 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.588168 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.588169 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.590947 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.590958 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.8517Hz
+I0724 20:24:34.608078 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.610911 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.610999 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.611001 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.950341 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.950368 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.7265Hz
+I0724 20:24:34.962848 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.964968 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.965032 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.965044 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.968324 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.968327 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.5294Hz
+I0724 20:24:34.980242 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.982302 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.982376 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.982378 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.982515 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.982517 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.3581Hz
+I0724 20:24:34.995779 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:34.997906 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:34.997983 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:34.997984 14503 exploration_fsm.cpp:568] 
+I0724 20:24:34.999207 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:34.999210 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.1247Hz
+I0724 20:24:35.011751 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.013669 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.013725 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.013726 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.013737 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.013738 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.9001Hz
+I0724 20:24:35.025686 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.027714 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.027789 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.027791 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.027812 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.027813 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 71.0534Hz
+I0724 20:24:35.040015 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.042047 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.042119 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.042120 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.042135 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.042136 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 70.4294Hz
+I0724 20:24:35.054081 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.057070 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.057152 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.057153 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.057912 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.057927 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 67.8928Hz
+I0724 20:24:35.069990 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.072028 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.072100 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.072103 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.072124 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.072125 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 68.5099Hz
+I0724 20:24:35.084080 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.086236 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.086305 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.086306 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.086318 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.086319 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 68.8895Hz
+I0724 20:24:35.098625 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.101045 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.101153 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.101157 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.101202 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.101205 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 68.5985Hz
+I0724 20:24:35.118414 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.121426 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.121532 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.121536 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.472574 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.472584 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.2557Hz
+I0724 20:24:35.484694 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.84
+I0724 20:24:35.486805 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.486876 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.486877 14503 exploration_fsm.cpp:568] 
+W0724 20:24:35.487002 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359875.487004706 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+I0724 20:24:35.487167 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.487169 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.898Hz
+I0724 20:24:35.499495 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 102.31
+I0724 20:24:35.501411 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.501494 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.501495 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.501513 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.501526 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.4507Hz
+I0724 20:24:35.515231 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.517167 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.517234 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.517235 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.517249 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.517251 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.8606Hz
+I0724 20:24:35.531108 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.532982 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.533063 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.533064 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.533813 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.533816 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 21.1507Hz
+I0724 20:24:35.546051 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.547933 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.548012 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.548012 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.548027 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.548027 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.4598Hz
+I0724 20:24:35.559801 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.561728 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.561798 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.561800 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.561812 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.561813 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 23.7194Hz
+I0724 20:24:35.573555 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.576285 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.576351 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.576352 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.576388 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.576390 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 24.8822Hz
+I0724 20:24:35.588102 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.589989 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.590054 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.590054 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.590749 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.590752 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 25.996Hz
+I0724 20:24:35.604367 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.606192 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.606263 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.606264 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.606290 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.606292 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 27.0019Hz
+I0724 20:24:35.618160 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.620016 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.620088 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.620090 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.950788 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.950795 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.1419Hz
+I0724 20:24:35.963006 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:35.965024 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:35.965090 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:35.965092 14503 exploration_fsm.cpp:568] 
+I0724 20:24:35.967525 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:35.967527 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.8721Hz
+I0724 20:24:36.042637 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.044567 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.044656 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.044656 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.046193 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.046196 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.4027Hz
+I0724 20:24:36.059649 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.061592 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.061676 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.061677 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.061692 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.061694 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 64.5358Hz
+I0724 20:24:36.075065 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.077006 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.077076 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.077077 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.077096 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.077097 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 64.7283Hz
+I0724 20:24:36.088917 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.090798 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.090883 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.090885 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.090898 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.090900 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 67.1127Hz
+I0724 20:24:36.102656 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.104496 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.104560 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.104562 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.104573 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.104574 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 68.5222Hz
+I0724 20:24:36.116312 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.118191 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.118255 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.118256 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.443015 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.443030 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.5998Hz
+I0724 20:24:36.455371 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.457350 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.457417 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.457418 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.458189 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.458192 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.5633Hz
+I0724 20:24:36.470592 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.472893 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.472976 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.472977 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.473006 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.473006 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.4009Hz
+I0724 20:24:36.488145 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.490319 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.490396 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.490396 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.490411 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.490412 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.0094Hz
+I0724 20:24:36.503576 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.505455 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.505532 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.505541 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.505563 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.505563 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.5923Hz
+I0724 20:24:36.517498 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.519404 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.519480 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.519481 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.519495 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.519496 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 21.1284Hz
+I0724 20:24:36.531594 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.533689 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.533777 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.533779 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.534933 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.534938 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.5069Hz
+I0724 20:24:36.547958 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.549934 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.550014 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.550014 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.550034 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.550035 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 23.8173Hz
+I0724 20:24:36.561944 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.563812 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.563889 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.563889 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.563903 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.563905 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 25.1108Hz
+I0724 20:24:36.575670 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.577467 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.577540 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.577543 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.577554 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.577555 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 26.3477Hz
+I0724 20:24:36.589285 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.591163 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.591238 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.591240 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.591945 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.591958 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 27.4846Hz
+I0724 20:24:36.603778 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.605593 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.605671 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.605672 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.605695 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.605695 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 28.5971Hz
+I0724 20:24:36.617523 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.619359 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.619452 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.619454 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.934540 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.934557 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.1364Hz
+I0724 20:24:36.947436 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.949394 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.949466 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.949467 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.951853 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.951854 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.8751Hz
+I0724 20:24:36.963979 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.965828 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.965894 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.965896 14503 exploration_fsm.cpp:568] 
+W0724 20:24:36.965929 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359876.965930355 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+I0724 20:24:36.966318 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.966325 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 20.6494Hz
+I0724 20:24:36.978430 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.980306 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.980378 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.980379 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.980436 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.980437 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 21.4078Hz
+I0724 20:24:36.992436 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:36.994340 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:36.994413 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:36.994416 14503 exploration_fsm.cpp:568] 
+I0724 20:24:36.995268 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:36.995271 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.1269Hz
+I0724 20:24:37.007380 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.009404 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.009488 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.009490 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.009507 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.009508 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.8379Hz
+I0724 20:24:37.022046 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.024075 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.024151 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.024152 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.024168 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.024169 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 23.5181Hz
+I0724 20:24:37.036445 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.038376 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.038439 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.038439 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.038462 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.038463 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 24.1871Hz
+I0724 20:24:37.050297 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.052163 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.052235 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.052237 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.052359 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.052361 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 24.8469Hz
+I0724 20:24:37.064146 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.066007 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.066068 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.066069 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.066926 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.066928 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 68.6502Hz
+I0724 20:24:37.079007 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.080852 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.080920 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.080922 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.080935 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.080936 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 69.9942Hz
+I0724 20:24:37.092684 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.094570 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.094635 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.094636 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.094647 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.094648 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 70.9443Hz
+I0724 20:24:37.106274 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.108861 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.108971 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.108975 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.466037 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.466051 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 9.66911Hz
+I0724 20:24:37.478372 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.480320 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.480386 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.480388 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.481231 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.481235 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 11.6585Hz
+I0724 20:24:37.493331 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.495206 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.495275 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.495276 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.495297 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.495298 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.546Hz
+I0724 20:24:37.509313 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.511219 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.511291 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.511292 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.511305 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.511307 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.2524Hz
+I0724 20:24:37.525359 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.527324 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.527405 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.527406 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.528220 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.528223 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.8116Hz
+I0724 20:24:37.542300 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.544345 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.544437 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.544438 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.544464 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.544466 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.2888Hz
+I0724 20:24:37.556713 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.558686 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.558753 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.558753 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.558764 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.558765 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.7471Hz
+I0724 20:24:37.570555 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.572443 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.572512 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.572515 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.572527 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.572528 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 21.1471Hz
+I0724 20:24:37.585304 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.587189 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.587277 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.587280 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.587302 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.587303 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.4324Hz
+I0724 20:24:37.604950 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.607841 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.607949 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.607951 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.609103 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.609109 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 23.3499Hz
+I0724 20:24:37.626144 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.628424 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.628496 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.628499 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.967293 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.967301 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.3016Hz
+I0724 20:24:37.980217 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:37.982151 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:37.982213 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:37.982213 14503 exploration_fsm.cpp:568] 
+I0724 20:24:37.985841 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:37.985846 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.0688Hz
+I0724 20:24:37.999687 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:38.001616 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:38.001696 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.001698 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.002643 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.002646 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.8371Hz
+I0724 20:24:38.015053 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:38.017117 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:38.017191 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.017194 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.017208 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.017210 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.6194Hz
+I0724 20:24:38.029589 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:38.032169 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:38.032243 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.032243 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.032254 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.032256 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.3693Hz
+I0724 20:24:38.045985 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:38.047868 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:38.047935 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.047936 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.048734 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.048736 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.0691Hz
+I0724 20:24:38.062477 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 101.31
+I0724 20:24:38.064322 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.20149, -6.96261, 1.07265, yaw: -0.895898
+I0724 20:24:38.064390 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.064391 14503 exploration_fsm.cpp:568] 
+W0724 20:24:38.064512 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359878.064514507 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+I0724 20:24:38.064625 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.064626 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.7577Hz
+I0724 20:24:38.083982 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 104.35
+I0724 20:24:38.085695 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.085768 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.085770 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.085790 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.085800 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 47.2334Hz
+I0724 20:24:38.098228 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.099937 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.100000 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.100003 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.100025 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.100026 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 56.5005Hz
+I0724 20:24:38.113296 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.115200 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.115263 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.115264 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.439766 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.439779 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 7.99679Hz
+I0724 20:24:38.452855 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.455971 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.456050 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.456051 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.456987 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.456990 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 10.1947Hz
+I0724 20:24:38.471220 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.475966 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.476090 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.476094 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.476153 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.476156 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.1499Hz
+I0724 20:24:38.496882 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.499442 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.499557 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.499560 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.499577 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.499580 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.7946Hz
+I0724 20:24:38.518514 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.521291 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.521411 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.521415 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.521457 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.521461 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.3229Hz
+I0724 20:24:38.539615 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.542317 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.542426 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.542430 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.543431 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.543437 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.7082Hz
+I0724 20:24:38.561200 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.563711 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.563812 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.563817 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.563846 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.563849 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.0281Hz
+I0724 20:24:38.581329 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.583858 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.583969 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.583973 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.583988 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.583990 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.2544Hz
+I0724 20:24:38.601284 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.603498 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.603578 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.603579 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.604301 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.604303 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 20.3826Hz
+I0724 20:24:38.617022 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.618729 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.618796 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.618798 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.974965 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.974975 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.1818Hz
+I0724 20:24:38.988669 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:38.990715 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:38.990778 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:38.990779 14503 exploration_fsm.cpp:568] 
+I0724 20:24:38.993103 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:38.993108 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.0014Hz
+I0724 20:24:39.007866 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.009868 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.009953 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.009954 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.009984 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.009985 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.8092Hz
+I0724 20:24:39.024049 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.025913 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.025983 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.025985 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.026000 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.026001 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.6027Hz
+I0724 20:24:39.038656 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.040587 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.040678 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.040679 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.040700 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.040702 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.3922Hz
+I0724 20:24:39.053529 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.055300 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.055366 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.055367 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.056110 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.056113 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.146Hz
+I0724 20:24:39.069006 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.070771 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.070859 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.070860 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.070876 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.070878 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.8882Hz
+I0724 20:24:39.084172 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.086266 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.086376 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.086377 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.086395 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.086395 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 64.4455Hz
+I0724 20:24:39.099174 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.100899 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.100975 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.100986 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.101004 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.101006 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 66.3852Hz
+I0724 20:24:39.113523 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.116091 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.116199 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.116202 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.502786 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.502794 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 6.9458Hz
+I0724 20:24:39.516891 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.518867 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.518939 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.518939 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.520136 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.520140 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 8.9035Hz
+I0724 20:24:39.535494 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.537264 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.537341 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.537343 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.538193 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.538198 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 10.6993Hz
+I0724 20:24:39.550961 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.552752 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.552822 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.552824 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.552834 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.552835 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.4492Hz
+I0724 20:24:39.565269 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.566963 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.567027 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.567028 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.567039 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.567039 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.1083Hz
+I0724 20:24:39.580304 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.582043 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.582124 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.582126 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.582145 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.582156 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.6471Hz
+I0724 20:24:39.597070 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.598944 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.599009 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.599009 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.599726 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.599728 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.0181Hz
+I0724 20:24:39.612517 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.614257 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.614324 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.614326 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.951668 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.951676 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 11.3534Hz
+I0724 20:24:39.965164 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.966956 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.967015 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.967015 14503 exploration_fsm.cpp:568] 
+W0724 20:24:39.969352 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359879.969355273 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+I0724 20:24:39.969710 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.969712 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.2381Hz
+I0724 20:24:39.983253 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:39.985025 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:39.985098 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:39.985100 14503 exploration_fsm.cpp:568] 
+I0724 20:24:39.985183 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:39.985185 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.1247Hz
+I0724 20:24:39.999585 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.001399 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.001478 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.001479 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.002413 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.002416 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.9554Hz
+I0724 20:24:40.015354 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.017109 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.017187 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.017189 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.017206 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.017216 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.7939Hz
+I0724 20:24:40.029739 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.031544 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.031615 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.031615 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.031701 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.031702 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.6116Hz
+I0724 20:24:40.045243 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.047235 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.047308 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.047310 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.048321 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.048324 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.3692Hz
+I0724 20:24:40.062443 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.065209 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.065286 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.065287 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.065300 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.065301 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.0953Hz
+I0724 20:24:40.078027 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.079739 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.079811 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.079813 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.079842 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.079843 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.8401Hz
+I0724 20:24:40.092270 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.093943 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.094017 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.094017 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.094127 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.094128 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 70.0083Hz
+I0724 20:24:40.107293 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.109050 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.109119 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.109120 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.442490 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.442503 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 5.51483Hz
+I0724 20:24:40.455240 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.457051 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.457818 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.457821 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.458863 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.458866 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 7.91511Hz
+I0724 20:24:40.472698 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.474454 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.474526 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.474527 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.474550 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.474551 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 10.1341Hz
+I0724 20:24:40.489167 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.490978 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.491060 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.491060 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.491073 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.491075 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.1587Hz
+I0724 20:24:40.503669 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.505393 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.505460 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.505462 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.505471 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.505472 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.0968Hz
+I0724 20:24:40.519019 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.521049 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.521131 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.521132 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.521162 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.521162 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.8616Hz
+I0724 20:24:40.534798 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.536545 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.536621 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.536623 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.537410 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.537415 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.4837Hz
+I0724 20:24:40.550209 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.551856 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.551932 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.551934 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.551949 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.551949 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.0636Hz
+I0724 20:24:40.564587 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.566332 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.566406 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.566408 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.566432 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.566433 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 20.5513Hz
+I0724 20:24:40.579032 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.580729 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.580793 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.580794 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.580808 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.580811 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 21.9576Hz
+I0724 20:24:40.593621 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.595472 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.595537 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.595538 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.596256 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.596258 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 23.2372Hz
+I0724 20:24:40.608996 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.610770 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.610836 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.610837 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.925240 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.925256 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.3772Hz
+I0724 20:24:40.939390 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.941190 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.941263 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.941264 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.944727 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.944734 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.187Hz
+I0724 20:24:40.957881 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.959825 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.959914 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.959918 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.959996 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.959998 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.0425Hz
+I0724 20:24:40.973469 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.975395 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.975466 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.975467 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.975479 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.975481 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.8644Hz
+I0724 20:24:40.989073 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:40.991015 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:40.991092 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:40.991094 14503 exploration_fsm.cpp:568] 
+I0724 20:24:40.991110 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:40.991111 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.6554Hz
+I0724 20:24:41.004704 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:41.006736 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.006829 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.006831 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.007717 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.007722 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.3991Hz
+I0724 20:24:41.020673 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:41.022639 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.022728 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.022730 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.022756 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.022758 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 20.1503Hz
+I0724 20:24:41.036124 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:41.038128 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.038204 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.038205 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.038318 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.038321 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 20.8665Hz
+I0724 20:24:41.050832 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:41.052489 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.052554 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.052556 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.052574 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.052575 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 21.5887Hz
+I0724 20:24:41.065626 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 95.82
+I0724 20:24:41.067339 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.067414 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.067415 14503 exploration_fsm.cpp:568] 
+W0724 20:24:41.067546 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359881.067547963 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+I0724 20:24:41.068395 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.068398 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.2547Hz
+I0724 20:24:41.092167 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 144.69
+I0724 20:24:41.094642 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.094719 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.094720 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.094734 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.094735 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.6625Hz
+I0724 20:24:41.110919 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.113441 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.113512 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.113513 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.426187 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.426201 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 3.01692Hz
+I0724 20:24:41.442931 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.445617 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.445705 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.445708 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.446590 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.446594 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 5.68412Hz
+I0724 20:24:41.463891 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.466758 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.466869 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.466871 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.466907 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.466908 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 8.0608Hz
+I0724 20:24:41.484079 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.486646 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.486725 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.486727 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.486743 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.486744 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 10.2039Hz
+I0724 20:24:41.503023 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.505877 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.505957 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.505959 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.505983 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.505985 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.1581Hz
+I0724 20:24:41.522758 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.525807 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.525885 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.525887 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.526988 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.526991 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.8807Hz
+I0724 20:24:41.543666 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.546123 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.546201 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.546202 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.546217 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.546218 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.5045Hz
+I0724 20:24:41.562197 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.564635 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.564711 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.564713 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.564734 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.564735 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.0213Hz
+I0724 20:24:41.580859 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.583243 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.583325 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.583328 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.583339 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.583340 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.4199Hz
+I0724 20:24:41.599732 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.602246 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.602316 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.602319 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.603156 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.603159 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.6687Hz
+I0724 20:24:41.620116 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.622558 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.622637 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.622637 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.941217 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.941238 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.9947Hz
+I0724 20:24:41.958504 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.961014 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.961091 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.961093 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.963405 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.963408 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.8142Hz
+I0724 20:24:41.979678 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:41.982079 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:41.982142 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:41.982143 14503 exploration_fsm.cpp:568] 
+I0724 20:24:41.982277 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:41.982278 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.6472Hz
+I0724 20:24:41.999850 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.002342 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.002427 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.002429 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.003258 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.003261 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.4096Hz
+I0724 20:24:42.019631 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.022105 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.022181 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.022182 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.022199 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.022202 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.1731Hz
+I0724 20:24:42.038530 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.040951 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.041023 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.041023 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.041038 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.041039 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.9079Hz
+I0724 20:24:42.057446 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.059978 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.060052 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.060065 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.060861 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.060863 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.596Hz
+I0724 20:24:42.077451 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.080164 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.080268 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.080271 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.080302 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.080304 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.2636Hz
+I0724 20:24:42.096910 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.099373 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.099450 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.099452 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.099467 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.099467 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.9106Hz
+I0724 20:24:42.115666 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.118098 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.118175 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.118175 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.430522 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.430534 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 3.02055Hz
+I0724 20:24:42.447188 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.449729 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.449806 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.449808 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.450727 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.450731 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 5.69376Hz
+I0724 20:24:42.467653 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.470223 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.470299 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.470300 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.470324 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.470324 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 8.0894Hz
+I0724 20:24:42.487232 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.491369 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.491470 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.491472 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.491504 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.491521 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 10.2027Hz
+I0724 20:24:42.510152 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.512986 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.513084 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.513085 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.513108 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.513108 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.0878Hz
+I0724 20:24:42.530506 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.532990 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.533064 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.533066 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.533861 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.533864 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.8123Hz
+I0724 20:24:42.550307 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.552726 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.552796 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.552798 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.552810 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.552811 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.4409Hz
+I0724 20:24:42.568789 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.571152 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.571218 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.571218 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.571231 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.571233 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.9577Hz
+I0724 20:24:42.587265 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.589614 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.589684 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.589685 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.590391 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.590394 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.3327Hz
+I0724 20:24:42.606945 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.609423 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.609493 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.609495 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.925806 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.925818 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.1014Hz
+I0724 20:24:42.942202 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.944756 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.944826 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.944828 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.947294 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.947302 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 12.9742Hz
+I0724 20:24:42.963866 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.966481 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.966554 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.966555 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.966609 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.966610 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 13.8386Hz
+I0724 20:24:42.986436 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:42.989029 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:42.989151 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:42.989152 14503 exploration_fsm.cpp:568] 
+I0724 20:24:42.989913 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:42.989915 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.5994Hz
+I0724 20:24:43.006595 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 117.8
+I0724 20:24:43.009142 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.009223 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.009224 14503 exploration_fsm.cpp:568] 
+W0724 20:24:43.009253 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359883.009254314 Transit state from PLAN_TRAJ to PLAN_TRAJ by optMsgCallback
+I0724 20:24:43.009618 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.009619 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 15.3821Hz
+I0724 20:24:43.028151 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 127.37
+I0724 20:24:43.030858 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.030954 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.030956 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.031016 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.031018 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.1022Hz
+I0724 20:24:43.047688 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.050329 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.050415 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.050417 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.051558 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.051561 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 16.8051Hz
+I0724 20:24:43.069005 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.071563 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.071635 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.071636 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.071650 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.071650 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 17.4864Hz
+I0724 20:24:43.087978 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.090610 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.090689 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.090690 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.090803 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.090804 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.1573Hz
+I0724 20:24:43.107030 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.109529 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.109596 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.109597 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.421593 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.421607 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 14.3707Hz
+I0724 20:24:43.438520 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.442467 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.442566 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.442569 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.444468 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.444478 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 43.739Hz
+I0724 20:24:43.463467 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.466081 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.466156 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.466157 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.466974 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.466976 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 44.0914Hz
+I0724 20:24:43.483443 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.485972 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.486044 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.486045 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.486059 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.486060 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 46.5515Hz
+I0724 20:24:43.502238 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.505270 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.505362 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.505362 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.505381 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.505383 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 47.7518Hz
+I0724 20:24:43.521868 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.524520 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.524590 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.524592 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.525355 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.525357 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 48.1966Hz
+I0724 20:24:43.541821 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.544406 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.544499 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.544500 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.544519 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.544521 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 48.8181Hz
+I0724 20:24:43.561007 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.563652 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.563726 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.563727 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.563764 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.563766 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 49.2439Hz
+I0724 20:24:43.580346 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.583065 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.583146 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.583148 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.583158 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.583159 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 49.5221Hz
+I0724 20:24:43.600450 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.603076 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.603180 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.603183 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.604007 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.604008 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 49.3442Hz
+I0724 20:24:43.620380 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.622910 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.622987 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.622989 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.936760 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.936779 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 19.4113Hz
+I0724 20:24:43.953516 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.957273 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.957366 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.957367 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.961872 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.961879 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 20.3604Hz
+I0724 20:24:43.980672 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:43.983295 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:43.983371 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:43.983372 14503 exploration_fsm.cpp:568] 
+I0724 20:24:43.983415 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:43.983417 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 21.3599Hz
+I0724 20:24:44.000384 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:44.003021 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.003091 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.003093 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.003911 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.003913 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 22.3254Hz
+I0724 20:24:44.020646 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:44.023319 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.023399 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.023401 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.023533 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.023535 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 23.259Hz
+I0724 20:24:44.040248 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:44.042843 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.042917 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.042917 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.043605 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.043607 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 24.1161Hz
+I0724 20:24:44.059659 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 121.33
+I0724 20:24:44.062759 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.062834 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.062836 14503 exploration_fsm.cpp:568] 
+W0724 20:24:44.062963 14503 exploration_fsm.cpp:729] [FSM] ROS Time: 1753359884.062964484 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+I0724 20:24:44.063087 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.063088 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 24.9426Hz
+I0724 20:24:44.081914 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 127.8
+I0724 20:24:44.084517 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.084589 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.084591 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.084604 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.084604 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 25.6415Hz
+I0724 20:24:44.102406 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.105489 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.105556 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.105557 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.105567 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.105568 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 26.3176Hz
+I0724 20:24:44.123807 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.126412 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.126488 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.126489 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.453987 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.453992 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 18.4041Hz
+I0724 20:24:44.472956 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.475639 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.475719 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.475721 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.475754 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.475754 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 45.9638Hz
+I0724 20:24:44.493988 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.497548 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.497625 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.497627 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.497640 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.497641 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 45.8258Hz
+I0724 20:24:44.517223 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.520124 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.520210 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.520211 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.521165 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.521168 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 44.6625Hz
+I0724 20:24:44.540113 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.542778 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.542860 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.542862 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.542874 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.542876 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 45.0057Hz
+I0724 20:24:44.560817 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.563438 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.563526 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.563527 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.563542 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.563544 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 45.6433Hz
+I0724 20:24:44.581735 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.584306 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.584378 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.584378 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.584393 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.584394 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 46.0135Hz
+I0724 20:24:44.602787 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.605523 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.605609 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.605610 14503 exploration_fsm.cpp:568] 
+I0724 20:24:44.606410 14503 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0724 20:24:44.606413 14503 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 45.9272Hz
+I0724 20:24:44.624433 14503 exploration_manager.cpp:1539] [ExplorationManager] TSP problem name: coverage_path, total cost: 122.8
+I0724 20:24:44.627012 14503 exploration_manager.cpp:904] [ExplorationManager] Next pos: -1.78152, -7.17564, 1.07265, yaw: -0.646406
+I0724 20:24:44.627064 14503 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 20:24:44.627065 14503 exploration_fsm.cpp:568] 

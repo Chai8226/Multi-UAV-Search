@@ -1,0 +1,57 @@
+<launch>
+  <arg name="drone_num" value="3"/>
+  <arg name="mode" value="uav_simulator"/>
+  <!-- complex_office / forest -->
+  <arg name="map_name" value="forest"/>
+  <arg name="odometry_topic" value="/uav_simulator/odometry"/>
+  <arg name="sensor_pose_topic" value="/uav_simulator/sensor_pose"/>
+  <arg name="depth_image" value="/uav_simulator/depth_image"/>
+
+  <!-- UAV1 -->
+  <include file="$(find exploration_manager)/launch/single_exploration.xml">
+    <arg name="mode" value="$(arg mode)"/>
+    <arg name="map_name" value="$(arg map_name)"/>
+    <arg name="odometry_topic_prefix" value="$(arg odometry_topic)"/>
+    <arg name="sensor_pose_topic_prefix" value="$(arg sensor_pose_topic)"/>
+    <arg name="depth_image_prefix" value="$(arg depth_image)"/>
+
+    <arg name="drone_id" value="1"/>
+    <arg name="drone_num" value="$(arg drone_num)"/>
+    <arg name="init_x" value="1.0"/>
+    <arg name="init_y" value="1.0"/>
+    <arg name="init_z" value="1.0"/>
+    <arg name="init_yaw" value="0.0"/>
+  </include>
+
+  <!-- UAV2 -->
+  <include file="$(find exploration_manager)/launch/single_exploration.xml">
+    <arg name="mode" value="$(arg mode)"/>
+    <arg name="map_name" value="$(arg map_name)"/>
+    <arg name="odometry_topic_prefix" value="$(arg odometry_topic)"/>
+    <arg name="sensor_pose_topic_prefix" value="$(arg sensor_pose_topic)"/>
+    <arg name="depth_image_prefix" value="$(arg depth_image)"/>
+
+    <arg name="drone_id" value="2"/>
+    <arg name="drone_num" value="$(arg drone_num)"/>
+    <arg name="init_x" value="-4"/>
+    <arg name="init_y" value="-4"/>
+    <arg name="init_z" value="1.0"/>
+    <arg name="init_yaw" value="0.0"/>
+  </include>
+
+  <!-- UAV3 -->
+  <include file="$(find exploration_manager)/launch/single_exploration.xml">
+    <arg name="mode" value="$(arg mode)"/>
+    <arg name="map_name" value="$(arg map_name)"/>
+    <arg name="odometry_topic_prefix" value="$(arg odometry_topic)"/>
+    <arg name="sensor_pose_topic_prefix" value="$(arg sensor_pose_topic)"/>
+    <arg name="depth_image_prefix" value="$(arg depth_image)"/>
+
+    <arg name="drone_id" value="3"/>
+    <arg name="drone_num" value="$(arg drone_num)"/>
+    <arg name="init_x" value="-8"/>
+    <arg name="init_y" value="-8"/>
+    <arg name="init_z" value="1.0"/>
+    <arg name="init_yaw" value="0.0"/>
+  </include>
+</launch>

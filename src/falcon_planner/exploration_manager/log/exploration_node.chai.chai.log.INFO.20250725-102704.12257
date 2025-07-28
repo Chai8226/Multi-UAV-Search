@@ -1,0 +1,32 @@
+Log file created at: 2025/07/25 10:27:04
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0725 10:27:04.465660 12257 exploration_node.cpp:24] Exploration task start at 1753410424.465682263
+I0725 10:27:04.485049 12257 exploration_node.cpp:29] 
+|---------------------------------- System Info ----------------------------------|
+CPU Name: 13th Gen Intel(R) Core(TM) i5-13600K
+CPU Cores: 14
+CPU Threads: 20
+CPU Frequency: 3900.001 MHz
+Memory Total: 31.1365 GB
+Memory Free: 20.1868 GB
+GPU Name: NVIDIA GeForce RTX 2070
+GPU Memory Total: 8 GB
+GPU Memory Free: 7.04395 GB
+|---------------------------------------------------------------------------------|
+I0725 10:27:05.706638 12257 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0725 10:27:05.706652 12257 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 0Hz
+I0725 10:27:05.706699 12257 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0725 10:27:05.706700 12257 exploration_fsm.cpp:568] 
+I0725 10:27:06.018312 12257 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0725 10:27:06.018325 12257 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 3.20848Hz
+I0725 10:27:06.018368 12257 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0725 10:27:06.018369 12257 exploration_fsm.cpp:568] 
+I0725 10:27:06.332716 12257 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0725 10:27:06.332731 12257 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 3.19449Hz
+I0725 10:27:06.332739 12257 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0725 10:27:06.332741 12257 exploration_fsm.cpp:568] 
+I0725 10:27:06.633982 12257 exploration_fsm.cpp:94] -------------------- START OF FSM 2 CALLBACK --------------------
+I0725 10:27:06.633993 12257 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 3.23505Hz
+I0725 10:27:06.634001 12257 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0725 10:27:06.634002 12257 exploration_fsm.cpp:568] 

@@ -1,0 +1,1107 @@
+Log file created at: 2025/07/24 19:38:25
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0724 19:38:25.457926 16510 exploration_node.cpp:24] Exploration task start at 1753357105.457948333
+I0724 19:38:25.543648 16510 exploration_node.cpp:29] 
+|---------------------------------- System Info ----------------------------------|
+CPU Name: 13th Gen Intel(R) Core(TM) i5-13600K
+CPU Cores: 14
+CPU Threads: 20
+CPU Frequency: 3899.998 MHz
+Memory Total: 31.1365 GB
+Memory Free: 11.0339 GB
+GPU Name: NVIDIA GeForce RTX 2070
+GPU Memory Total: 8 GB
+GPU Memory Free: 7.2168 GB
+|---------------------------------------------------------------------------------|
+I0724 19:38:26.852844 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.852876 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 0Hz
+I0724 19:38:26.852967 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.852970 17168 exploration_fsm.cpp:568] 
+I0724 19:38:26.853044 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.853046 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 5817.67Hz
+I0724 19:38:26.853068 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.853070 17168 exploration_fsm.cpp:568] 
+I0724 19:38:26.863070 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.863094 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 195.714Hz
+I0724 19:38:26.863108 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.863111 17168 exploration_fsm.cpp:568] 
+I0724 19:38:26.873078 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.873104 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 148.307Hz
+I0724 19:38:26.873117 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.873119 17170 exploration_fsm.cpp:568] 
+I0724 19:38:26.883050 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.883066 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 132.489Hz
+I0724 19:38:26.883076 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.883078 17170 exploration_fsm.cpp:568] 
+I0724 19:38:26.893061 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.893085 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 124.349Hz
+I0724 19:38:26.893100 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.893100 17171 exploration_fsm.cpp:568] 
+I0724 19:38:26.903038 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.903048 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 119.585Hz
+I0724 19:38:26.903054 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.903055 17169 exploration_fsm.cpp:568] 
+I0724 19:38:26.913069 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.913091 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 116.247Hz
+I0724 19:38:26.913105 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.913106 17171 exploration_fsm.cpp:568] 
+I0724 19:38:26.923065 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.923085 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 113.944Hz
+I0724 19:38:26.923097 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.923099 17171 exploration_fsm.cpp:568] 
+I0724 19:38:26.933009 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.933032 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 112.279Hz
+I0724 19:38:26.933055 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.933056 17169 exploration_fsm.cpp:568] 
+I0724 19:38:26.943041 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.943048 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 110.897Hz
+I0724 19:38:26.943053 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.943053 17169 exploration_fsm.cpp:568] 
+I0724 19:38:26.953019 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.953038 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 109.82Hz
+I0724 19:38:26.953044 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.953045 17169 exploration_fsm.cpp:568] 
+I0724 19:38:26.963052 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.963060 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 108.908Hz
+I0724 19:38:26.963066 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.963068 17171 exploration_fsm.cpp:568] 
+I0724 19:38:26.973048 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.973065 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 108.161Hz
+I0724 19:38:26.973075 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.973078 17169 exploration_fsm.cpp:568] 
+I0724 19:38:26.983049 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.983063 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 107.537Hz
+I0724 19:38:26.983073 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.983075 17169 exploration_fsm.cpp:568] 
+I0724 19:38:26.993041 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:26.993052 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 107.008Hz
+I0724 19:38:26.993060 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:26.993062 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.003031 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.003034 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 106.553Hz
+I0724 19:38:27.003038 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.003041 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.013010 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.013032 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 106.146Hz
+I0724 19:38:27.013048 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.013051 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.023047 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.023061 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 105.766Hz
+I0724 19:38:27.023069 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.023073 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.033296 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.033309 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 105.302Hz
+I0724 19:38:27.033318 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.033319 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.043042 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.043076 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 105.152Hz
+I0724 19:38:27.043083 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.043085 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.052997 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.053004 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 104.933Hz
+I0724 19:38:27.053007 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.053009 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.063052 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.063066 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 104.667Hz
+I0724 19:38:27.063073 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.063074 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.073057 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.073076 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 104.45Hz
+I0724 19:38:27.073086 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.073088 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.083043 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.083051 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 104.268Hz
+I0724 19:38:27.083057 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.083058 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.093003 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.093031 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 104.099Hz
+I0724 19:38:27.093039 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.093039 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.103032 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.103039 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 103.932Hz
+I0724 19:38:27.103044 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.103045 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.113075 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.113090 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 103.76Hz
+I0724 19:38:27.113098 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.113101 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.123034 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.123039 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 103.641Hz
+I0724 19:38:27.123044 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.123045 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.133001 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.133031 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 103.514Hz
+I0724 19:38:27.133040 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.133041 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.143023 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.143028 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 103.394Hz
+I0724 19:38:27.143033 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.143051 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.153008 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.153017 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 103.284Hz
+I0724 19:38:27.153024 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.153025 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.163035 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.163040 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 103.171Hz
+I0724 19:38:27.163044 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.163045 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.173012 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.173039 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 103.072Hz
+I0724 19:38:27.173048 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.173050 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.183044 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.183053 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.975Hz
+I0724 19:38:27.183058 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.183059 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.193042 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.193044 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.89Hz
+I0724 19:38:27.193046 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.193046 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.203035 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.203047 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.807Hz
+I0724 19:38:27.203056 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.203058 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.213024 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.213050 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.728Hz
+I0724 19:38:27.213054 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.213055 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.223037 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.223047 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.655Hz
+I0724 19:38:27.223054 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.223055 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.233049 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.233064 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.58Hz
+I0724 19:38:27.233074 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.233076 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.243042 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.243055 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.517Hz
+I0724 19:38:27.243064 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.243067 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.253008 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.253062 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.452Hz
+I0724 19:38:27.253079 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.253082 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.263043 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.263052 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.395Hz
+I0724 19:38:27.263059 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.263060 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.273065 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.273087 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.329Hz
+I0724 19:38:27.273094 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.273095 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.283062 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.283084 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.276Hz
+I0724 19:38:27.283089 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.283090 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.293035 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.293051 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.232Hz
+I0724 19:38:27.293058 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.293059 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.303040 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.303056 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.181Hz
+I0724 19:38:27.303068 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.303071 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.313076 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.313097 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.125Hz
+I0724 19:38:27.313107 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.313107 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.323053 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.323066 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.086Hz
+I0724 19:38:27.323073 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.323076 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.332996 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.333009 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 102.055Hz
+I0724 19:38:27.333015 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.333017 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.343089 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.343107 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.993Hz
+I0724 19:38:27.343117 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.343119 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.353055 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.353068 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.961Hz
+I0724 19:38:27.353078 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.353080 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.363039 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.363049 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.926Hz
+I0724 19:38:27.363055 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.363057 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.373054 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.373080 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.883Hz
+I0724 19:38:27.373096 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.373098 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.383097 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.383116 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.841Hz
+I0724 19:38:27.383129 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.383131 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.393035 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.393050 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.819Hz
+I0724 19:38:27.393059 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.393060 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.403071 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.403079 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.78Hz
+I0724 19:38:27.403086 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.403088 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.413019 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.413033 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.757Hz
+I0724 19:38:27.413041 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.413043 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.423044 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.423056 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.722Hz
+I0724 19:38:27.423065 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.423067 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.433045 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.433059 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.692Hz
+I0724 19:38:27.433071 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.433073 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.443034 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.443043 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.666Hz
+I0724 19:38:27.443050 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.443053 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.452997 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.453006 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.645Hz
+I0724 19:38:27.453011 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.453013 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.463040 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.463050 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.61Hz
+I0724 19:38:27.463084 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.463086 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.473048 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.473059 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.583Hz
+I0724 19:38:27.473067 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.473069 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.483099 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.483105 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.55Hz
+I0724 19:38:27.483109 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.483111 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.493052 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.493068 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.532Hz
+I0724 19:38:27.493078 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.493080 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.503041 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.503054 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.51Hz
+I0724 19:38:27.503064 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.503067 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.513082 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.513111 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.479Hz
+I0724 19:38:27.513124 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.513125 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.523046 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.523061 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.464Hz
+I0724 19:38:27.523067 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.523068 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.533003 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.533021 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.449Hz
+I0724 19:38:27.533030 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.533031 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.543047 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.543061 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.422Hz
+I0724 19:38:27.543071 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.543071 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.553021 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.553035 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.405Hz
+I0724 19:38:27.553041 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.553042 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.563051 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.563063 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.382Hz
+I0724 19:38:27.563071 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.563072 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.573050 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.573089 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.359Hz
+I0724 19:38:27.573099 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.573101 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.583036 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.583043 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.347Hz
+I0724 19:38:27.583048 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.583050 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.593046 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.593055 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.327Hz
+I0724 19:38:27.593061 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.593062 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.603034 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.603035 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.312Hz
+I0724 19:38:27.603036 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.603037 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.613037 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.613058 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.291Hz
+I0724 19:38:27.613062 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.613063 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.623039 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.623046 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.276Hz
+I0724 19:38:27.623054 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.623055 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.633041 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.633050 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.259Hz
+I0724 19:38:27.633056 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.633059 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.643034 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.643039 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.245Hz
+I0724 19:38:27.643042 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.643043 17168 exploration_fsm.cpp:568] 
+I0724 19:38:27.653005 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.653012 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.233Hz
+I0724 19:38:27.653017 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.653019 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.663048 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.663059 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.212Hz
+I0724 19:38:27.663069 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.663070 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.673043 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.673053 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.198Hz
+I0724 19:38:27.673060 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.673090 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.683039 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.683048 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.184Hz
+I0724 19:38:27.683053 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.683055 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.693006 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.693035 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.171Hz
+I0724 19:38:27.693043 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.693045 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.703037 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.703047 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.156Hz
+I0724 19:38:27.703054 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.703056 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.713048 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.713061 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.141Hz
+I0724 19:38:27.713070 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.713073 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.723047 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.723055 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.128Hz
+I0724 19:38:27.723060 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.723062 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.733021 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.733039 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.117Hz
+I0724 19:38:27.733048 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.733048 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.743050 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.743068 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.102Hz
+I0724 19:38:27.743079 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.743081 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.752986 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.752997 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.097Hz
+I0724 19:38:27.753008 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.753010 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.763053 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.763070 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.077Hz
+I0724 19:38:27.763082 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.763082 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.773010 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.773038 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.069Hz
+I0724 19:38:27.773048 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.773049 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.783043 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.783061 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.055Hz
+I0724 19:38:27.783098 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.783099 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.793079 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.793109 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.039Hz
+I0724 19:38:27.793123 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.793124 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.803030 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.803037 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.035Hz
+I0724 19:38:27.803041 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.803042 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.813019 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.813038 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.024Hz
+I0724 19:38:27.813051 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.813053 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.823048 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.823062 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 101.011Hz
+I0724 19:38:27.823071 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.823072 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.833065 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.833084 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.999Hz
+I0724 19:38:27.833096 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.833097 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.843039 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.843047 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.992Hz
+I0724 19:38:27.843053 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.843055 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.853004 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.853020 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.985Hz
+I0724 19:38:27.853030 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.853032 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.863044 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.863057 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.7234Hz
+I0724 19:38:27.863109 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.863112 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.873065 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.873080 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.7521Hz
+I0724 19:38:27.873088 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.873090 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.883041 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.883055 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9132Hz
+I0724 19:38:27.883064 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.883066 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.893019 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.893033 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9947Hz
+I0724 19:38:27.893041 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.893043 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.903039 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.903054 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9508Hz
+I0724 19:38:27.903065 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.903067 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.913080 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.913106 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.8723Hz
+I0724 19:38:27.913113 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.913115 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.923046 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.923058 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9587Hz
+I0724 19:38:27.923066 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.923067 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.933046 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.933063 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9594Hz
+I0724 19:38:27.933070 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.933071 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.943049 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.943066 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9593Hz
+I0724 19:38:27.943077 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.943079 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.952994 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.953003 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.026Hz
+I0724 19:38:27.953009 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.953011 17169 exploration_fsm.cpp:568] 
+I0724 19:38:27.963038 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.963047 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9847Hz
+I0724 19:38:27.963052 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.963052 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.973037 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.973050 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9824Hz
+I0724 19:38:27.973060 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.973062 17170 exploration_fsm.cpp:568] 
+I0724 19:38:27.983081 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.983090 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9532Hz
+I0724 19:38:27.983095 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.983096 17171 exploration_fsm.cpp:568] 
+I0724 19:38:27.993077 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:27.993084 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9609Hz
+I0724 19:38:27.993111 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:27.993112 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.003036 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.003044 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.99Hz
+I0724 19:38:28.003050 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.003052 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.013010 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.013037 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9961Hz
+I0724 19:38:28.013054 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.013056 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.023065 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.023092 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9634Hz
+I0724 19:38:28.023104 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.023105 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.033052 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.033066 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9804Hz
+I0724 19:38:28.033073 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.033074 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.043044 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.043056 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9865Hz
+I0724 19:38:28.043063 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.043066 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.052994 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.053011 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.009Hz
+I0724 19:38:28.053022 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.053025 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.063117 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.063133 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9507Hz
+I0724 19:38:28.063144 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.063146 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.073091 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.073120 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9592Hz
+I0724 19:38:28.073132 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.073133 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.083047 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.083062 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9857Hz
+I0724 19:38:28.083070 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.083070 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.093021 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.093048 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9921Hz
+I0724 19:38:28.093055 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.093055 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.103032 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.103060 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9875Hz
+I0724 19:38:28.103066 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.103067 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.113056 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.113077 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9822Hz
+I0724 19:38:28.113087 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.113088 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.123032 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.123035 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9978Hz
+I0724 19:38:28.123037 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.123039 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.133005 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.133026 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.001Hz
+I0724 19:38:28.133031 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.133031 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.143036 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.143044 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9951Hz
+I0724 19:38:28.143049 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.143051 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.152992 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.153000 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.01Hz
+I0724 19:38:28.153007 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.153008 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.163034 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.163039 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9966Hz
+I0724 19:38:28.163043 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.163044 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.173008 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.173033 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9987Hz
+I0724 19:38:28.173039 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.173040 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.183043 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.183053 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9927Hz
+I0724 19:38:28.183060 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.183060 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.193046 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.193056 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9923Hz
+I0724 19:38:28.193063 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.193065 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.203033 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.203042 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9964Hz
+I0724 19:38:28.203049 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.203080 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.212988 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.212999 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.008Hz
+I0724 19:38:28.213008 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.213011 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.223038 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.223048 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9951Hz
+I0724 19:38:28.223054 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.223057 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.233049 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.233062 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9912Hz
+I0724 19:38:28.233070 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.233071 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.243042 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.243060 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9921Hz
+I0724 19:38:28.243072 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.243073 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.253001 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.253014 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.004Hz
+I0724 19:38:28.253023 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.253024 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.263048 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.263064 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9916Hz
+I0724 19:38:28.263073 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.263075 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.273044 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.273056 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9937Hz
+I0724 19:38:28.273062 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.273063 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.283049 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.283061 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9927Hz
+I0724 19:38:28.283071 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.283073 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.293023 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.293036 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9986Hz
+I0724 19:38:28.293046 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.293048 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.303035 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.303047 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9962Hz
+I0724 19:38:28.303058 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.303061 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.313073 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.313098 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9851Hz
+I0724 19:38:28.313148 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.313149 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.323052 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.323063 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9929Hz
+I0724 19:38:28.323073 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.323076 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.333003 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.333031 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9997Hz
+I0724 19:38:28.333038 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.333039 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.343041 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.343052 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9953Hz
+I0724 19:38:28.343058 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.343060 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.352990 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.353001 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.006Hz
+I0724 19:38:28.353008 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.353009 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.363054 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.363071 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.992Hz
+I0724 19:38:28.363082 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.363085 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.373049 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.373068 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9924Hz
+I0724 19:38:28.373076 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.373077 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.383037 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.383046 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9969Hz
+I0724 19:38:28.383052 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.383054 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.393049 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.393061 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9941Hz
+I0724 19:38:28.393070 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.393072 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.403043 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.403062 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9941Hz
+I0724 19:38:28.403072 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.403074 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.413025 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.413048 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9965Hz
+I0724 19:38:28.413057 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.413058 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.423051 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.423095 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9886Hz
+I0724 19:38:28.423106 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.423108 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.433045 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.433058 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9953Hz
+I0724 19:38:28.433064 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.433066 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.443035 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.443041 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.998Hz
+I0724 19:38:28.443045 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.443046 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.452986 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.453002 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.005Hz
+I0724 19:38:28.453015 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.453017 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.463052 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.463068 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9939Hz
+I0724 19:38:28.463078 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.463079 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.473067 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.473093 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9897Hz
+I0724 19:38:28.473105 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.473107 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.483044 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.483060 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9952Hz
+I0724 19:38:28.483070 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.483071 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.493027 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.493054 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9962Hz
+I0724 19:38:28.493062 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.493063 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.503038 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.503053 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9963Hz
+I0724 19:38:28.503064 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.503067 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.513051 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.513069 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9942Hz
+I0724 19:38:28.513080 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.513082 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.523059 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.523082 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9923Hz
+I0724 19:38:28.523097 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.523154 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.533025 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.533051 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9969Hz
+I0724 19:38:28.533061 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.533063 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.543068 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.543097 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9903Hz
+I0724 19:38:28.543120 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.543123 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.552989 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.553001 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.004Hz
+I0724 19:38:28.553009 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.553010 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.563040 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.563050 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9971Hz
+I0724 19:38:28.563058 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.563059 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.572997 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.573011 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.003Hz
+I0724 19:38:28.573020 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.573022 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.583042 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.583055 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9965Hz
+I0724 19:38:28.583065 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.583066 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.593065 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.593094 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9916Hz
+I0724 19:38:28.593101 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.593102 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.603034 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.603037 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9989Hz
+I0724 19:38:28.603040 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.603041 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.613011 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.613025 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.001Hz
+I0724 19:38:28.613036 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.613039 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.623050 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.623063 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9956Hz
+I0724 19:38:28.623071 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.623073 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.633039 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.633075 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9941Hz
+I0724 19:38:28.633082 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.633085 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.643039 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.643049 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9977Hz
+I0724 19:38:28.643054 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.643056 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.652980 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.652987 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.005Hz
+I0724 19:38:28.652992 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.652994 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.663049 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.663061 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9961Hz
+I0724 19:38:28.663070 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.663072 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.673058 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.673084 17169 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9933Hz
+I0724 19:38:28.673089 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.673089 17169 exploration_fsm.cpp:568] 
+I0724 19:38:28.683033 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.683044 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9983Hz
+I0724 19:38:28.683051 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.683053 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.693090 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.693130 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9882Hz
+I0724 19:38:28.693149 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.693151 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.703042 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.703056 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9969Hz
+I0724 19:38:28.703065 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.703066 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.713047 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.713063 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9963Hz
+I0724 19:38:28.713073 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.713075 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.723034 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.723043 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9984Hz
+I0724 19:38:28.723050 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.723052 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.733011 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.733026 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100Hz
+I0724 19:38:28.733035 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.733037 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.743049 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.743063 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9962Hz
+I0724 19:38:28.743072 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.743073 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.753023 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.753036 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9993Hz
+I0724 19:38:28.753046 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.753046 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.763057 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.763074 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9951Hz
+I0724 19:38:28.763087 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.763088 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.773025 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.773038 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.999Hz
+I0724 19:38:28.773046 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.773046 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.783002 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.783018 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.001Hz
+I0724 19:38:28.783026 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.783027 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.793077 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.793094 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9931Hz
+I0724 19:38:28.793105 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.793108 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.803038 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.803054 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9974Hz
+I0724 19:38:28.803066 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.803068 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.812987 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.813001 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.003Hz
+I0724 19:38:28.813009 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.813009 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.823051 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.823066 17171 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9962Hz
+I0724 19:38:28.823077 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.823079 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.833061 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.833079 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.995Hz
+I0724 19:38:28.833089 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.833091 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.843047 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.843063 17168 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 99.9966Hz
+I0724 19:38:28.843106 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.843107 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.853003 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.853015 17170 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 100.001Hz
+W0724 19:38:28.853071 17170 exploration_fsm.cpp:120] [FSM] Receive odom from topic /uav_simulator/odometry_1
+W0724 19:38:28.853188 17170 exploration_fsm.cpp:729] [FSM] ROS Time: 1753357108.853188953 Transit state from INIT to WAIT_TRIGGER by FSM
+I0724 19:38:28.853190 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.853191 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.863051 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.863070 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9962Hz
+I0724 19:38:28.863147 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.863149 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.873060 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.873075 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.035Hz
+I0724 19:38:28.873111 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.873111 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.883041 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.883049 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.147Hz
+I0724 19:38:28.883070 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.883071 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.893007 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.893028 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.174Hz
+I0724 19:38:28.893069 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.893071 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.903038 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.903051 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.071Hz
+I0724 19:38:28.903082 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.903084 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.913056 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.913070 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.018Hz
+I0724 19:38:28.913103 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.913106 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.923066 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.923076 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.004Hz
+I0724 19:38:28.923110 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.923112 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.933064 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.933084 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9926Hz
+I0724 19:38:28.933199 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.933200 17171 exploration_fsm.cpp:568] 
+I0724 19:38:28.943056 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.943096 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9779Hz
+I0724 19:38:28.943127 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.943128 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.952997 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.953017 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.069Hz
+I0724 19:38:28.953081 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.953084 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.963059 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.963078 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.002Hz
+I0724 19:38:28.963127 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.963129 17170 exploration_fsm.cpp:568] 
+I0724 19:38:28.973043 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.973062 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.015Hz
+I0724 19:38:28.973084 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.973085 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.983054 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.983072 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.006Hz
+I0724 19:38:28.983110 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.983112 17168 exploration_fsm.cpp:568] 
+I0724 19:38:28.993068 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:28.993093 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.99Hz
+I0724 19:38:28.993134 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:28.993135 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.003036 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.003044 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.025Hz
+I0724 19:38:29.003065 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.003065 17168 exploration_fsm.cpp:568] 
+I0724 19:38:29.013031 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.013063 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.01Hz
+I0724 19:38:29.013120 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.013121 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.023047 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.023061 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.011Hz
+I0724 19:38:29.023088 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.023089 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.033056 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.033071 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.005Hz
+I0724 19:38:29.033105 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.033108 17168 exploration_fsm.cpp:568] 
+I0724 19:38:29.043063 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.043088 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9952Hz
+I0724 19:38:29.043141 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.043198 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.053117 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.053138 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9692Hz
+I0724 19:38:29.053225 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.053228 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.063043 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.063057 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.011Hz
+I0724 19:38:29.063097 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.063099 17168 exploration_fsm.cpp:568] 
+I0724 19:38:29.073045 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.073057 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.011Hz
+I0724 19:38:29.073087 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.073091 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.083053 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.083067 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.005Hz
+I0724 19:38:29.083101 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.083103 17168 exploration_fsm.cpp:568] 
+I0724 19:38:29.093014 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.093025 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.023Hz
+I0724 19:38:29.093060 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.093062 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.103009 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.103035 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.019Hz
+I0724 19:38:29.103092 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.103096 17168 exploration_fsm.cpp:568] 
+I0724 19:38:29.113061 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.113083 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9982Hz
+I0724 19:38:29.113119 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.113122 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.123046 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.123059 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.008Hz
+I0724 19:38:29.123086 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.123090 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.132990 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.133005 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.027Hz
+I0724 19:38:29.133059 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.133062 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.143038 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.143049 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.011Hz
+I0724 19:38:29.143078 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.143080 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.153010 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.153117 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9868Hz
+I0724 19:38:29.153184 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.153187 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.163045 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.163059 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.007Hz
+I0724 19:38:29.163091 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.163094 17168 exploration_fsm.cpp:568] 
+I0724 19:38:29.173020 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.173041 17169 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.012Hz
+I0724 19:38:29.173066 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.173067 17169 exploration_fsm.cpp:568] 
+I0724 19:38:29.183051 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.183065 17168 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.005Hz
+I0724 19:38:29.183099 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.183102 17168 exploration_fsm.cpp:568] 
+I0724 19:38:29.193066 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.193091 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9969Hz
+I0724 19:38:29.193114 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.193115 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.203042 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.203052 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.008Hz
+I0724 19:38:29.203081 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.203084 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.213001 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.213023 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.016Hz
+I0724 19:38:29.213040 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.213042 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.223038 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.223042 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.01Hz
+I0724 19:38:29.223058 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.223059 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.233079 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.233101 17169 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.994Hz
+I0724 19:38:29.233145 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.233148 17169 exploration_fsm.cpp:568] 
+I0724 19:38:29.243085 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.243099 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9946Hz
+I0724 19:38:29.243127 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.243129 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.252993 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.253005 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.019Hz
+I0724 19:38:29.253082 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.253085 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.263036 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.263041 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.009Hz
+I0724 19:38:29.263058 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.263060 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.273064 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.273090 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9973Hz
+I0724 19:38:29.273113 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.273113 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.283035 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.283048 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.007Hz
+I0724 19:38:29.283078 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.283079 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.293028 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.293048 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.008Hz
+I0724 19:38:29.293082 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.293084 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.303032 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.303045 17169 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.008Hz
+I0724 19:38:29.303069 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.303072 17169 exploration_fsm.cpp:568] 
+I0724 19:38:29.313040 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.313050 17169 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.007Hz
+I0724 19:38:29.313073 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.313076 17169 exploration_fsm.cpp:568] 
+I0724 19:38:29.323056 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.323074 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.001Hz
+I0724 19:38:29.323117 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.323118 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.333057 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.333081 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 99.9996Hz
+I0724 19:38:29.333122 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.333124 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.343042 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.343055 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.005Hz
+I0724 19:38:29.343091 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.343094 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.352988 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.353003 17170 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 100.015Hz
+I0724 19:38:29.721145 17170 exploration_manager.cpp:1525] [ExplorationManager] TSP problem name: coverage_path, total cost: 719.52
+I0724 19:38:29.721240 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.721242 17170 exploration_fsm.cpp:568] 
+I0724 19:38:29.721271 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.721276 17171 exploration_fsm.cpp:100] [FSM] Current state: WAIT_TRIGGER, callback rate: 58.2617Hz
+W0724 19:38:29.848479 17170 exploration_fsm.cpp:729] [FSM] ROS Time: 1753357109.848484650 Transit state from WAIT_TRIGGER to PLAN_TRAJ by optResMsgCallback
+I0724 19:38:29.993964 17171 exploration_manager.cpp:1525] [ExplorationManager] TSP problem name: coverage_path, total cost: 719.52
+I0724 19:38:29.994099 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:29.994102 17171 exploration_fsm.cpp:568] 
+I0724 19:38:29.994170 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:29.994179 17169 exploration_fsm.cpp:100] [FSM] Current state: PLAN_TRAJ, callback rate: 45.0889Hz
+I0724 19:38:30.100409 17169 exploration_manager.cpp:1525] [ExplorationManager] TSP problem name: coverage_path, total cost: 391.26
+I0724 19:38:30.111851 17169 exploration_manager.cpp:904] [ExplorationManager] Next pos: 2.17664, 0.375078, 1.14299, yaw: 1.7692
+W0724 19:38:30.114324 17169 exploration_fsm.cpp:729] [FSM] ROS Time: 1753357110.114329065 Transit state from PLAN_TRAJ to PUB_TRAJ by FSM
+I0724 19:38:30.114490 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.114495 17169 exploration_fsm.cpp:568] 
+I0724 19:38:30.114567 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.114585 17168 exploration_fsm.cpp:100] [FSM] Current state: PUB_TRAJ, callback rate: 8.30565Hz
+W0724 19:38:30.114688 17168 exploration_fsm.cpp:729] [FSM] ROS Time: 1753357110.114690073 Transit state from PUB_TRAJ to EXEC_TRAJ by FSM
+I0724 19:38:30.114699 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.114701 17168 exploration_fsm.cpp:568] 
+I0724 19:38:30.124619 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.124647 17170 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 15.3302Hz
+I0724 19:38:30.124665 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.124667 17170 exploration_fsm.cpp:568] 
+I0724 19:38:30.134570 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.134593 17169 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 21.3665Hz
+I0724 19:38:30.134605 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.134608 17169 exploration_fsm.cpp:568] 
+I0724 19:38:30.144618 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.144630 17169 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 26.588Hz
+I0724 19:38:30.144639 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.144641 17169 exploration_fsm.cpp:568] 
+I0724 19:38:30.154563 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.154573 17170 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 31.1745Hz
+I0724 19:38:30.154580 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.154582 17170 exploration_fsm.cpp:568] 
+I0724 19:38:30.164561 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.164570 17170 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 35.2146Hz
+I0724 19:38:30.164577 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.164578 17170 exploration_fsm.cpp:568] 
+I0724 19:38:30.174573 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.174582 17171 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 38.8036Hz
+I0724 19:38:30.174585 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.174587 17171 exploration_fsm.cpp:568] 
+I0724 19:38:30.184572 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.184576 17171 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 42.0189Hz
+I0724 19:38:30.184578 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.184579 17171 exploration_fsm.cpp:568] 
+I0724 19:38:30.194572 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.194581 17170 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 44.9113Hz
+I0724 19:38:30.194587 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.194589 17170 exploration_fsm.cpp:568] 
+I0724 19:38:30.204564 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.204581 17171 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 47.5296Hz
+I0724 19:38:30.204591 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.204592 17171 exploration_fsm.cpp:568] 
+I0724 19:38:30.214566 17170 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.214582 17170 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 49.91Hz
+I0724 19:38:30.214594 17170 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.214596 17170 exploration_fsm.cpp:568] 
+I0724 19:38:30.224578 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.224596 17168 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 52.0819Hz
+I0724 19:38:30.224602 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.224604 17168 exploration_fsm.cpp:568] 
+I0724 19:38:30.234591 17169 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.234611 17169 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 54.0709Hz
+I0724 19:38:30.234623 17169 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.234625 17169 exploration_fsm.cpp:568] 
+I0724 19:38:30.244571 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.244594 17168 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 55.9087Hz
+I0724 19:38:30.244611 17168 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.244612 17168 exploration_fsm.cpp:568] 
+I0724 19:38:30.254583 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.254611 17171 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 57.5983Hz
+I0724 19:38:30.254617 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.254618 17171 exploration_fsm.cpp:568] 
+I0724 19:38:30.264585 17171 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.264600 17171 exploration_fsm.cpp:100] [FSM] Current state: EXEC_TRAJ, callback rate: 59.1687Hz
+I0724 19:38:30.264616 17171 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 19:38:30.264616 17171 exploration_fsm.cpp:568] 
+I0724 19:38:30.274596 17168 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 19:38:30.274623 17168 exploration_f

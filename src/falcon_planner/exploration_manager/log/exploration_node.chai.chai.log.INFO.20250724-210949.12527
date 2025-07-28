@@ -1,0 +1,54 @@
+Log file created at: 2025/07/24 21:09:49
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0724 21:09:49.024945 12527 exploration_node.cpp:24] Exploration task start at 1753362589.024967348
+I0724 21:09:49.091406 12527 exploration_node.cpp:29] 
+|---------------------------------- System Info ----------------------------------|
+CPU Name: 13th Gen Intel(R) Core(TM) i5-13600K
+CPU Cores: 14
+CPU Threads: 20
+CPU Frequency: 3900.000 MHz
+Memory Total: 31.1365 GB
+Memory Free: 9.55635 GB
+GPU Name: NVIDIA GeForce RTX 2070
+GPU Memory Total: 8 GB
+GPU Memory Free: 6.90332 GB
+|---------------------------------------------------------------------------------|
+I0724 21:09:50.322230 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:50.322242 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 0Hz
+I0724 21:09:50.322283 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:50.322284 12527 exploration_fsm.cpp:568] 
+I0724 21:09:50.672114 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:50.672129 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 2.85805Hz
+I0724 21:09:50.672178 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:50.672179 12527 exploration_fsm.cpp:568] 
+I0724 21:09:50.994709 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:50.994721 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 2.97406Hz
+I0724 21:09:50.994730 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:50.994731 12527 exploration_fsm.cpp:568] 
+I0724 21:09:51.324555 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:51.324568 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 2.99304Hz
+I0724 21:09:51.324576 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:51.324577 12527 exploration_fsm.cpp:568] 
+I0724 21:09:51.645355 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:51.645373 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 3.11723Hz
+I0724 21:09:51.645380 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:51.645381 12527 exploration_fsm.cpp:568] 
+I0724 21:09:51.646818 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:51.646822 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 6.20643Hz
+I0724 21:09:51.646826 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:51.646827 12527 exploration_fsm.cpp:568] 
+I0724 21:09:51.655555 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:51.655570 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 9.06364Hz
+I0724 21:09:51.655578 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:51.655579 12527 exploration_fsm.cpp:568] 
+I0724 21:09:51.665535 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:51.665549 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 11.7312Hz
+I0724 21:09:51.665555 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:51.665556 12527 exploration_fsm.cpp:568] 
+I0724 21:09:51.675549 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:51.675563 12527 exploration_fsm.cpp:100] [FSM] Current state: INIT, callback rate: 14.2456Hz
+I0724 21:09:51.675626 12527 exploration_fsm.cpp:567] --------------------END OF CALLBACK--------------------
+I0724 21:09:51.675626 12527 exploration_fsm.cpp:568] 
+I0724 21:09:51.685532 12527 exploration_fsm.cpp:94] -------------------- START OF FSM 1 CALLBACK --------------------
+I0724 21:09:51.685544 12527 exploration_fsm.cpp:1

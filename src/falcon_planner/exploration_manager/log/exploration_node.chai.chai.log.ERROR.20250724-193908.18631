@@ -1,0 +1,4 @@
+Log file created at: 2025/07/24 19:39:08
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0724 19:39:08.351078 18799 hierarchical_grid.cpp:2053] Check failed: cell_center_id1 >= 0 (-1272715640 vs. 0) cell_center_id1: -1272715640

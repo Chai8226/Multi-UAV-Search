@@ -1,0 +1,9 @@
+<launch>
+  <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find exploration_manager)/config/rviz_swarm.rviz" /> -->
+
+  <node type="rviz" name="rviz_1" pkg="rviz" args="-d $(find exploration_manager)/config/rviz_swarm_1.rviz" />
+
+  <node type="rviz" name="rviz_2" pkg="rviz" args="-d $(find exploration_manager)/config/rviz_swarm_2.rviz" />
+
+  <node type="rviz" name="rviz_3" pkg="rviz" args="-d $(find exploration_manager)/config/rviz_swarm_3.rviz" />
+</launch>

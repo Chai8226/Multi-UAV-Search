@@ -1,0 +1,9 @@
+Log file created at: 2025/07/24 19:38:28
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+W0724 19:38:28.855669 17173 exploration_fsm.cpp:120] [FSM] Receive odom from topic /uav_simulator/odometry_2
+W0724 19:38:28.855772 17173 exploration_fsm.cpp:729] [FSM] ROS Time: 1753357108.855774939 Transit state from INIT to WAIT_TRIGGER by FSM
+W0724 19:38:29.848129 17173 exploration_fsm.cpp:729] [FSM] ROS Time: 1753357109.848139308 Transit state from WAIT_TRIGGER to PLAN_TRAJ by optMsgCallback
+W0724 19:38:30.855332 17173 exploration_fsm.cpp:729] [FSM] ROS Time: 1753357110.855336119 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+W0724 19:38:33.853139 17174 exploration_fsm.cpp:729] [FSM] ROS Time: 1753357113.853145998 Transit state from PLAN_TRAJ to PLAN_TRAJ by optResMsgCallback
+F0724 19:38:33.853287 17172 hierarchical_grid.cpp:2053] Check failed: cell_center_id1 >= 0 (-1342127116 vs. 0) cell_center_id1: -1342127116

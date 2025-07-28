@@ -1,0 +1,83 @@
+<launch>
+  <arg name="mode" default="uav_simulator"/>
+  <arg name="map_name" default="complex_office"/>
+  <arg name="odometry_topic_prefix" default="/uav_simulator/odometry"/>
+  <arg name="sensor_pose_topic_prefix" default="/uav_simulator/sensor_pose"/>
+  <arg name="depth_image_prefix" default="/uav_simulator/depth_image"/>
+  <arg name="color_image_prefix" default="/uav_simulator/color_image"/>
+  <arg name="drone_id" default="1"/>
+  <arg name="drone_num" default="1"/>
+  <arg name="init_x" default="0.0" />
+  <arg name="init_y" default="0.0" />
+  <arg name="init_z" default="0.0" />
+  <arg name="init_yaw" default="0.0" />
+
+  <!-- Load parameter for modules --> 
+  <rosparam command="load" file="$(find exploration_manager)/config/robot/uav_model_simulator.yaml"/>
+  <rosparam command="load" file="$(find exploration_manager)/config/map/$(arg map_name).yaml"/>
+  <rosparam command="load" file="$(find exploration_manager)/config/exploration_manager.yaml"/>
+  <rosparam command="load" file="$(find voxel_mapping)/config/voxel_mapping.yaml"/>
+  <rosparam command="load" file="$(find pathfinding)/config/astar.yaml"/>
+  <rosparam command="load" file="$(find fast_planner)/config/fast_planner.yaml"/>
+  <rosparam command="load" file="$(find exploration_preprocessing)/config/frontier_finder.yaml"/>
+  <rosparam command="load" file="$(find exploration_preprocessing)/config/hgrid.yaml"/>
+  <rosparam command="load" file="$(find exploration_utils)/config/perception_utils.yaml"/>
+  <!-- Modify parameter for UAV -->
+  <param name="exploration_manager/drone_num" value="$(arg drone_num)"/>
+  
+  <!-- Launch exploration node -->
+  <node pkg="exploration_manager" name="exploration_node_$(arg drone_id)" type="exploration_node" output="screen">
+    <param name="drone_id" value="$(arg drone_id)"/>
+    <remap from="~odom_world_topic" to="$(arg odometry_topic_prefix)_$(arg drone_id)"/>
+    <remap from="~depth_image_topic" to="$(arg depth_image_prefix)_$(arg drone_id)"/>
+    <remap from="~sensor_pose_topic" to="$(arg sensor_pose_topic_prefix)_$(arg drone_id)"/>
+    <remap from="/swarm_expl/drone_state_send" to="/swarm_expl/drone_state" />
+    <remap from="/swarm_expl/drone_state_recv" to="/swarm_expl/drone_state" />
+    <remap from="/swarm_expl/pair_opt_send" to="/swarm_expl/pair_opt" />
+    <remap from="/swarm_expl/pair_opt_recv" to="/swarm_expl/pair_opt" />
+    <remap from="/swarm_expl/grid_send" to="swarm_expl/grid" />
+    <remap from="/swarm_expl/grid_recv" to="swarm_expl/grid" />
+    <remap from="/swarm_expl/pair_opt_res_send" to="/swarm_expl/pair_opt_res" />
+    <remap from="/swarm_expl/pair_opt_res_recv" to="/swarm_expl/pair_opt_res" />
+    <remap from="/swarm_expl/swarm_traj_recv" to="/planning/swarm_traj" />
+    <remap from="/swarm_expl/swarm_traj_send" to="/planning/swarm_traj" />
+  </node>
+ 
+  <!-- Launch trajectory server -->
+  <node pkg="fast_planner" name="traj_server_$(arg drone_id)" type="traj_server" output="screen" >
+    <param name="drone_id" value="$(arg drone_id)"/>
+    <param name="init_x" value="$(arg init_x)"/>
+    <param name="init_y" value="$(arg init_y)"/>
+    <param name="init_z" value="$(arg init_z)"/>
+    <param name="init_yaw" value="$(arg init_yaw)"/>
+  </node>
+
+  <!-- Launch UAV Simulator if needed -->
+  <group if="$(eval 'true' if arg('mode')=='uav_simulator' else 'false')">
+    <!-- Map Render -->
+    <rosparam command="load" file="$(find pointcloud_render)/config/pointcloud_render.yaml"/>
+    <rosparam command="load" file="$(find mesh_render)/config/mesh_render.yaml"/>
+    <node pkg="map_render" name="map_render_node_$(arg drone_id)" type="map_render_node" output="screen">
+      <remap from="/uav_simulator/odometry" to="$(arg odometry_topic_prefix)_$(arg drone_id)"/>
+      <remap from="/uav_simulator/depth_image" to="$(arg depth_image_prefix)_$(arg drone_id)"/>
+      <remap from="/uav_simulator/color_image" to="$(arg color_image_prefix)_$(arg drone_id)"/>
+      <remap from="/uav_simulator/sensor_pose" to="$(arg sensor_pose_topic_prefix)_$(arg drone_id)"/>
+    </node>
+
+    <!-- Odometry Generator -->
+    <node pkg="poscmd_2_odom" name="poscmd_2_odom_$(arg drone_id)" type="poscmd_2_odom" output="screen">
+      <param name="init_x" value="$(arg init_x)"/>
+      <param name="init_y" value="$(arg init_y)"/>
+      <param name="init_z" value="$(arg init_z)"/>
+      <param name="init_yaw" value="$(arg init_yaw)"/>
+      <remap from="~command" to="/planning/pos_cmd_$(arg drone_id)"/>
+      <remap from="~odometry" to="$(arg odometry_topic_prefix)_$(arg drone_id)"/>
+    </node>
+
+    <!-- Robot Visualier -->
+    <node pkg="odom_visualization" name="odom_visualization_$(arg drone_id)" type="odom_visualization" output="screen">
+      <remap from="~odometry" to="$(arg odometry_topic_prefix)_$(arg drone_id)"/>
+    </node>
+  </group>
+
+</launch>

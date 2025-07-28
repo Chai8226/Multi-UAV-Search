@@ -1,0 +1,16 @@
+Log file created at: 2025/07/24 21:10:52
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0724 21:10:52.005709 13853 exploration_node.cpp:24] Exploration task start at 1753362652.005741662
+I0724 21:10:52.023655 13853 exploration_node.cpp:29] 
+|---------------------------------- System Info ----------------------------------|
+CPU Name: 13th Gen Intel(R) Core(TM) i5-13600K
+CPU Cores: 14
+CPU Threads: 20
+CPU Frequency: 3899.998 MHz
+Memory Total: 31.1365 GB
+Memory Free: 8.86982 GB
+GPU Name: NVIDIA GeForce RTX 2070
+GPU Memory Total: 8 GB
+GPU Memory Free: 6.95117 GB
+|---------------------------------------------------------------------------------|

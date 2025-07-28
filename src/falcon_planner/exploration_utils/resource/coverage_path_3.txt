@@ -1,0 +1,12 @@
+NAME : coverage_path.540.tour
+COMMENT : Length = 540
+COMMENT : Found by LKH [Keld Helsgaun] Sat Jul 26 10:28:19 2025
+TYPE : TOUR
+DIMENSION : 4
+TOUR_SECTION
+1
+2
+3
+4
+-1
+EOF
