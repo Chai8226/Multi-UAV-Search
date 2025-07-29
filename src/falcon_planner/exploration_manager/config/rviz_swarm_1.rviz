@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /UAV11
         - /UAV11/Planner1
+        - /UAV11/Planner1/frontier1
         - /UAV11/Planner1/frontier1/Namespaces1
         - /UAV11/Planner1/HGrid_gp1/Namespaces1
         - /UAV11/Planner1/HGrid Array1/Namespaces1
@@ -393,15 +394,15 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 117.9764633178711
+      Distance: 128.3555908203125
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.604149341583252
-        Y: -11.41552734375
+        X: 0.6068798303604126
+        Y: -14.631959915161133
         Z: -5.500058174133301
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806

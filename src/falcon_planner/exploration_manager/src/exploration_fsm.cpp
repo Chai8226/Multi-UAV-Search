@@ -555,7 +555,7 @@ void ExplorationFSM::FSMCallback(const ros::TimerEvent &e) {
         // No frontier detected, finish exploration
         transitState(FINISH, "FSM");
         ROS_WARN("[FSM] Finish exploration: No frontier detected");
-        // clearVisMarker();
+        clearVisMarker();
         // visualize();
       }
     }
@@ -873,6 +873,7 @@ void ExplorationFSM::clearVisMarker() {
   visualization_->drawLines({}, 0.07, Vector4d(0, 0, 1, 1), "refined_tour", 0, 6);
   visualization_->drawSpheres({}, 0.1, Vector4d(0, 0, 1, 1), "B-Spline", 0, 0);
   visualization_->drawLines({}, {}, 0.03, Vector4d(1, 0, 0, 1), "current_pose", 0, 6);
+  visualization_->drawAssignedGridCells({}, getId(), "assigned_unknown_grids");
 }
 
 /* ================================= Swarm function ======================================== */
