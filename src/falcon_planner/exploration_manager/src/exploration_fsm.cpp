@@ -23,6 +23,32 @@ void ExplorationFSM::init(ros::NodeHandle &nh) {
   nh.param("/exploration_manager/fsm/pair_opt_interval", fp_->pair_opt_interval_, 1.0);
   nh.param("/exploration_manager/fsm/repeat_send_num", fp_->repeat_send_num_, 10);
 
+  // target
+  XmlRpc::XmlRpcValue poses_xml;
+  if (nh.getParam("/exploration_manager/fsm/target_poses", poses_xml)) {
+    ROS_ASSERT(poses_xml.getType() == XmlRpc::XmlRpcValue::TypeArray);
+
+    // 遍历数组中的每一个目标点
+    for (int i = 0; i < poses_xml.size(); ++i) {
+      XmlRpc::XmlRpcValue pose_xml = poses_xml[i];
+      ROS_ASSERT(pose_xml.getType() == XmlRpc::XmlRpcValue::TypeStruct);
+
+      Vector3d p;
+      p[0] = static_cast<double>(pose_xml["x"]);
+      p[1] = static_cast<double>(pose_xml["y"]);
+      p[2] = static_cast<double>(pose_xml["z"]);
+
+      preset_target_poses_.push_back(p);
+    }
+
+    ROS_INFO("[FSM] Successfully loaded %zu target poses.", preset_target_poses_.size());
+    for (const auto& pos : preset_target_poses_) {
+      ROS_INFO("Target -> x: %.2f, y: %.2f, z: %.2f", pos.x(), pos.y(), pos.z());
+    }
+  } else {
+    ROS_WARN("[FSM] Failed to get param 'target_poses'. No predefined targets will be used.");
+  }
+
   fp_->replan_duration_ = fp_->replan_duration_default_;
 
   /* Initialize main modules */
@@ -832,7 +858,8 @@ void ExplorationFSM::visualize() {
     visualization_->drawSpheres(ed_ptr->n_points_[i], 0.2, visualization_->getColor(double(ed_ptr->refined_ids_[i]) / ed_ptr->frontiers_.size()),
                                 "n_points", i, PlanningVisualization::PUBLISHER::VIEWPOINT);
   for (int i = ed_ptr->n_points_.size(); i < 20; ++i)
-    visualization_->drawSpheres({}, 0.1, Vector4d(0, 0, 0, 1), "n_points", i, PlanningVisualization::PUBLISHER::VIEWPOINT);
+    visualization_->drawSpheres({}, 0.1, Vector4d(0, 0, 0, 1), "n_points", i, 
+                                PlanningVisualization::PUBLISHER::VIEWPOINT);
 
   // Draw next goal position
   Eigen::Quaterniond next_q;
@@ -862,6 +889,15 @@ void ExplorationFSM::visualize() {
     }
     visualization_->drawAssignedGridCells(assigned_unknown_cells, getId(), "assigned_unknown_grids");
   }
+
+  // Visualize preset_target_poses_ as transparent grey spheres
+  visualization_->drawSpheres(preset_target_poses_, 1, PlanningVisualization::Color::Purple(), 
+                              "preset_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
+
+  // Visualize searched_target_poses_ as green spheres
+  if (!searched_target_poses_.empty()) 
+    visualization_->drawSpheres(searched_target_poses_, 1, PlanningVisualization::Color::Green(), 
+                                "searched_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
 
 }
 

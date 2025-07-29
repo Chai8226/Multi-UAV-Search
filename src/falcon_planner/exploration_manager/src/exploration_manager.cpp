@@ -1362,7 +1362,7 @@ int ExplorationManager::updateFrontierStruct(const Eigen::Vector3d &pos) {
       all_centers_unknown_active.push_back(center_unknown);
     }
   }
-  // TODO
+  
   // frontier_finder_->computeFrontiersToVisit();
   frontier_finder_->computeFrontiersToVisitNew(all_centers_unknown_active);
 

@@ -18,6 +18,7 @@
 #include <std_msgs/Empty.h>
 #include <std_msgs/Int32.h>
 #include <std_msgs/Float32.h>
+#include <XmlRpcValue.h>
 #include <visualization_msgs/Marker.h>
 #include "exploration_manager/exploration_manager.h"
 #include <exploration_manager/DroneState.h>
@@ -72,6 +73,11 @@ private:
   bool frontier_ready_;
 
   ros::Time trajectory_start_time_;
+
+  /* target */
+  std::vector<Vector3d> preset_target_poses_;
+  std::map<int, Vector3d> detected_target_poses_;
+  std::vector<Vector3d> searched_target_poses_;
 
   /* helper functions */
   int callExplorationPlanner();

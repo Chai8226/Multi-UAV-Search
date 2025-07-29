@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /UAV21
-        - /UAV21/Planner1
         - /UAV21/Planner1/frontier1
         - /UAV21/Planner1/frontier1/Namespaces1
         - /UAV21/Planner1/HGrid_gp1/Namespaces1
@@ -368,6 +367,14 @@ Visualization Manager:
           Name: Sensor Data
       Enabled: true
       Name: UAV2
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /planning_vis/target_2
+      Name: preset_target
+      Namespaces:
+        preset_targets: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -395,7 +402,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 124.54437255859375
+      Distance: 153.97877502441406
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -410,7 +417,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 1.5647963285446167
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
       Yaw: 4.715000152587891

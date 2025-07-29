@@ -108,5 +108,6 @@
         "eigen": "cpp",
         "filesystem": "cpp",
         "__memory": "cpp"
-    }
+    },
+    "todo-tree.tree.scanMode": "workspace only"
 }
