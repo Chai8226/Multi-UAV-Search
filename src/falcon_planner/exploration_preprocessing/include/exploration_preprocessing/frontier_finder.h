@@ -91,6 +91,8 @@ public:
   bool isFrontierCovered();
   void wrapYaw(double &yaw);
 
+  bool insideFOVWithoutOcclud(const Vector3d& begin, const double& yaw, const Vector3d& end);
+
   shared_ptr<PerceptionUtils> percep_utils_;
   unique_ptr<RayCaster> raycaster_;
 

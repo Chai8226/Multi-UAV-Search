@@ -75,8 +75,9 @@ private:
   ros::Time trajectory_start_time_;
 
   /* target */
+  ros::Subscriber target_sub_;
   std::vector<Vector3d> preset_target_poses_;
-  std::map<int, Vector3d> detected_target_poses_;
+  std::vector<Vector3d> detected_target_poses_;
   std::vector<Vector3d> searched_target_poses_;
 
   /* helper functions */
@@ -119,6 +120,14 @@ private:
            inner_bbox.box_max.z <= outer_bbox.box_max.z;
   }
   int getId();
+
+  // target
+  void checkTargetSearched();
+  void getActiveTarget(vector<Vector3d>& active_target);
+  bool targetSearched(const Vector3d& target_pos);
+  void targetMsgCallback(const geometry_msgs::PoseArrayConstPtr& msg);
+  bool inDetected(const Vector3d& target_pos);
+  bool inSearched(const Vector3d& target_pos);
   
 };
 

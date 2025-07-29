@@ -89,6 +89,7 @@ private:
   bool verbose_;
 
   // swarm
+  int drone_id_;
   ros::Publisher detected_targets_pub_;
   std::vector<Vector3d> preset_target_poses_;
   std::unique_ptr<open3d::t::geometry::RaycastingScene> raycast_scene_;

@@ -102,6 +102,9 @@ void ExplorationFSM::init(ros::NodeHandle &nh) {
   swarm_traj_pub_ = nh.advertise<trajectory::Bspline>("/swarm_expl/swarm_traj_send", 10);
   swarm_traj_sub_ = nh.subscribe("/swarm_expl/swarm_traj_recv", 100, &ExplorationFSM::swarmTrajCallback, this);
   swarm_traj_timer_ = nh.createTimer(ros::Duration(0.1), &ExplorationFSM::swarmTrajTimerCallback, this);
+  // target
+  target_sub_ = nh.subscribe("/detected_targets", 10, &ExplorationFSM::targetMsgCallback, this);
+
 
   expl_manager_->ed_->idle_time_ = ros::Time::now();
 
@@ -130,6 +133,9 @@ void ExplorationFSM::FSMCallback(const ros::TimerEvent &e) {
   }
   cnt_callback++;
 
+  // check target
+  checkTargetSearched();
+  
   switch (state_) {
   case INIT: {
     if (!fd_->have_odom_) {
@@ -890,11 +896,22 @@ void ExplorationFSM::visualize() {
     visualization_->drawAssignedGridCells(assigned_unknown_cells, getId(), "assigned_unknown_grids");
   }
 
-  // Visualize preset_target_poses_ as transparent grey spheres
-  visualization_->drawSpheres(preset_target_poses_, 1, PlanningVisualization::Color::Purple(), 
+  // Visualize target
+  std::vector<Vector3d> undetected_preset_targets;
+  for (const auto& preset_pos : preset_target_poses_) {
+    if (!inDetected(preset_pos)) {
+      undetected_preset_targets.push_back(preset_pos);
+    }
+  }
+  std::vector<Vector3d> active_targets;
+  getActiveTarget(active_targets);
+  visualization_->drawSpheres(undetected_preset_targets, 1, PlanningVisualization::Color::Red(), 
                               "preset_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
+  
+  if (!detected_target_poses_.empty()) 
+    visualization_->drawSpheres(active_targets, 1, PlanningVisualization::Color::Yellow(), 
+                                "detected_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
 
-  // Visualize searched_target_poses_ as green spheres
   if (!searched_target_poses_.empty()) 
     visualization_->drawSpheres(searched_target_poses_, 1, PlanningVisualization::Color::Green(), 
                                 "searched_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
@@ -1618,5 +1635,101 @@ int ExplorationFSM::getId() {
   return expl_manager_->ep_->drone_id_;
 }
 
+
+/* ================================= Target function ======================================== */
+void ExplorationFSM::targetMsgCallback(const geometry_msgs::PoseArrayConstPtr& msg) {
+  if (msg->poses.empty()) {
+    ROS_WARN("[ExplorationFSM] No targets received.");
+    return;
+  }
+
+  const double distance_threshold = 0.2; 
+  int new_targets_added = 0;
+
+  for (const auto& pose : msg->poses) {
+    Vector3d target_pos(pose.position.x, pose.position.y, pose.position.z);
+    auto it = std::find_if(detected_target_poses_.begin(), detected_target_poses_.end(),
+      [&](const Vector3d& existing_pos) {return (existing_pos - target_pos).norm() < distance_threshold;});
+      
+    if (it == detected_target_poses_.end()) {
+      detected_target_poses_.push_back(target_pos);
+      new_targets_added++;
+    }
+  }
+
+  if (new_targets_added > 0) {
+    ROS_INFO("[ExplorationFSM] Added %d new targets. Total detected targets: %zu.", 
+              new_targets_added, detected_target_poses_.size());
+  }
+}
+
+/**
+ * @brief Check if the target is searched
+ * @param target_pos The position of the target to check
+*/
+bool ExplorationFSM::targetSearched(const Vector3d& target_pos) {
+  return expl_manager_->frontier_finder_->insideFOVWithoutOcclud(fd_->odom_pos_, fd_->odom_yaw_, target_pos);
+}
+
+/**
+ * @brief Check if the target is searched
+*/
+void ExplorationFSM::checkTargetSearched() {
+  if (detected_target_poses_.empty()) {
+    return;
+  }
+
+  int newly_searched_count = 0;
+
+  for (const auto& target : detected_target_poses_) {
+    if (targetSearched(target)) {
+      if (!inSearched(target)) {
+        searched_target_poses_.push_back(target);
+        newly_searched_count++;
+      }
+    }
+  }
+
+  if (newly_searched_count > 0) {
+    ROS_INFO("[FSM] %d detected targets were newly confirmed as searched. Total searched now: %zu.",
+             newly_searched_count, searched_target_poses_.size());
+  }
+}
+
+/**
+ * @brief get the active target pos 
+*/
+void ExplorationFSM::getActiveTarget(vector<Vector3d>& active_target) {
+  active_target.clear();
+
+  std::copy_if(detected_target_poses_.begin(), detected_target_poses_.end(),
+    std::back_inserter(active_target),
+    [&](const Vector3d& pos) {
+      return !inSearched(pos);
+    }
+  );
+}
+
+/**
+ * @brief Check if the target in detected list
+*/
+bool ExplorationFSM::inDetected(const Vector3d& target_pos) {
+  const double distance_threshold = 0.2;
+  return std::any_of(detected_target_poses_.begin(), detected_target_poses_.end(),
+    [&](const Vector3d& existing_pos) {
+      return (existing_pos - target_pos).norm() < distance_threshold;
+    });
+}
+
+/**
+ * @brief Check if the target in searched list
+*/
+bool ExplorationFSM::inSearched(const Vector3d& target_pos) {
+  const double distance_threshold = 0.2;
+  return std::any_of(searched_target_poses_.begin(), searched_target_poses_.end(),
+    [&](const Vector3d& existing_pos) {
+      return (existing_pos - target_pos).norm() < distance_threshold;
+    });
+}
 
 } // namespace fast_planner

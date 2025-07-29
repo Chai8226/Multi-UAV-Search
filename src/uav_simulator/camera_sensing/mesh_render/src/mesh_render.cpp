@@ -13,6 +13,7 @@ MeshRender::~MeshRender() {
 int MeshRender::initialize(ros::NodeHandle &nh) {
   // Read render parameters
   std::string open3d_resource_path;
+  nh.param("drone_id", drone_id_, -1);
   nh.param("/mesh_render/open3d_resource_path", open3d_resource_path, std::string(""));
   nh.param("/mesh_render/enable_depth", enable_depth_, true);
   nh.param("/mesh_render/enable_color", enable_color_, false);
@@ -186,14 +187,12 @@ void MeshRender::renderCallback(const ros::TimerEvent &event) {
 
   // Get from world frame first
   camera_pos = T_w_b_.block<3, 1>(0, 3).cast<float>();
-  camera_lookat = T_w_b_.block<3, 3>(0, 0).cast<float>() * camera_lookat_b +
-                  T_w_b_.block<3, 1>(0, 3).cast<float>();
+  camera_lookat = T_w_b_.block<3, 3>(0, 0).cast<float>() * camera_lookat_b + T_w_b_.block<3, 1>(0, 3).cast<float>();
   camera_up = T_w_b_.block<3, 3>(0, 0).cast<float>() * camera_up_b;
 
   // Transform to map frame
   camera_pos = T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_pos + T_m_w_.block<3, 1>(0, 3).cast<float>();
-  camera_lookat = T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_lookat +
-                  T_m_w_.block<3, 1>(0, 3).cast<float>();
+  camera_lookat = T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_lookat + T_m_w_.block<3, 1>(0, 3).cast<float>();
   camera_up = T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_up;
 
   T_m_b_ = T_m_w_ * T_w_b_;
@@ -261,24 +260,6 @@ void MeshRender::renderCallback(const ros::TimerEvent &event) {
     color_image_pub_.publish(out_msg.toImageMsg());
   }
 
-  // Publish 
-  T_w_c_ = T_w_b_ * T_b_c_;
-  Eigen::Quaterniond q_w_c_(T_w_c_.block<3, 3>(0, 0));
-
-  geometry_msgs::TransformStamped sensor_pose;
-  sensor_pose.header.stamp = latest_odometry_timestamp_;
-  sensor_pose.header.frame_id = "world";
-  sensor_pose.child_frame_id = "camera";
-  sensor_pose.transform.translation.x = T_w_c_(0, 3);
-  sensor_pose.transform.translation.y = T_w_c_(1, 3);
-  sensor_pose.transform.translation.z = T_w_c_(2, 3);
-  sensor_pose.transform.rotation.w = q_w_c_.w();
-  sensor_pose.transform.rotation.x = q_w_c_.x();
-  sensor_pose.transform.rotation.y = q_w_c_.y();
-  sensor_pose.transform.rotation.z = q_w_c_.z();
-
-  sensor_pose_pub_.publish(sensor_pose);
-
   // swarm
   geometry_msgs::PoseArray detected_targets_msg;
   detected_targets_msg.header.stamp = latest_odometry_timestamp_;
@@ -297,9 +278,27 @@ void MeshRender::renderCallback(const ros::TimerEvent &event) {
     }
   }
   if (!detected_targets_msg.poses.empty()) {
-    ROS_WARN("\033[1;35m[MeshRender] Detected target!!!!\033[0m");
+    ROS_WARN("\033[1;35m[MeshRender] ------Detected target!!!!-----\033[0m");
     detected_targets_pub_.publish(detected_targets_msg);
   }
+
+  // Publish 
+  T_w_c_ = T_w_b_ * T_b_c_;
+  Eigen::Quaterniond q_w_c_(T_w_c_.block<3, 3>(0, 0));
+
+  geometry_msgs::TransformStamped sensor_pose;
+  sensor_pose.header.stamp = latest_odometry_timestamp_;
+  sensor_pose.header.frame_id = "world";
+  sensor_pose.child_frame_id = "camera";
+  sensor_pose.transform.translation.x = T_w_c_(0, 3);
+  sensor_pose.transform.translation.y = T_w_c_(1, 3);
+  sensor_pose.transform.translation.z = T_w_c_(2, 3);
+  sensor_pose.transform.rotation.w = q_w_c_.w();
+  sensor_pose.transform.rotation.x = q_w_c_.x();
+  sensor_pose.transform.rotation.y = q_w_c_.y();
+  sensor_pose.transform.rotation.z = q_w_c_.z();
+
+  sensor_pose_pub_.publish(sensor_pose);
 }
 
 template <typename Scalar>
@@ -351,7 +350,21 @@ bool MeshRender::canSeeTarget(const Eigen::Vector3d& target_pos_world) {
   }
 
   // ============== 步骤 1: 视场角 (FoV) 检查 ==============
-  Eigen::Matrix4d T_w_c = T_w_b_ * T_b_c_;
+  Eigen::Matrix4d T_w_c;
+  T_w_c.setIdentity();
+
+  Eigen::Vector3d camera_pos_world = T_w_b_.block<3, 1>(0, 3);
+  T_w_c.block<3, 1>(0, 3) = camera_pos_world;
+
+  Eigen::Vector3d z_axis_cam = T_w_b_.block<3, 3>(0, 0) * Eigen::Vector3d::UnitX();
+  Eigen::Vector3d up_vec_ref = T_w_b_.block<3, 3>(0, 0) * Eigen::Vector3d::UnitZ();
+  Eigen::Vector3d x_axis_cam = z_axis_cam.cross(up_vec_ref).normalized();
+  Eigen::Vector3d y_axis_cam = z_axis_cam.cross(x_axis_cam);
+
+  T_w_c.block<3, 1>(0, 0) = x_axis_cam;
+  T_w_c.block<3, 1>(0, 1) = y_axis_cam;
+  T_w_c.block<3, 1>(0, 2) = z_axis_cam;
+
   Eigen::Matrix4d T_c_w = T_w_c.inverse();
 
   Eigen::Vector4d target_pos_world_h(target_pos_world.x(), target_pos_world.y(), target_pos_world.z(), 1.0);
@@ -359,7 +372,9 @@ bool MeshRender::canSeeTarget(const Eigen::Vector3d& target_pos_world) {
   
   Eigen::Vector3d target_pos_camera = target_pos_camera_h.head<3>() / target_pos_camera_h.w();
 
-  if (target_pos_camera.z() < 0.1 || target_pos_camera.z() > 10.0) {
+  ROS_WARN("\033[1;35m[MeshRender] ------test!!!!-----\033[0m");
+  std::cout << target_pos_camera.z() << std::endl;
+  if (target_pos_camera.z() < 0.1 || target_pos_camera.z() > 10) {
     return false;
   }
 
@@ -371,8 +386,6 @@ bool MeshRender::canSeeTarget(const Eigen::Vector3d& target_pos_world) {
   }
 
   // ============== 步骤 2: 遮挡检查 (Ray Casting) ==============
-  Eigen::Vector3d camera_pos_world = T_w_c.block<3, 1>(0, 3);
-  
   Eigen::Vector4d camera_pos_world_h(camera_pos_world.x(), camera_pos_world.y(), camera_pos_world.z(), 1.0);
   Eigen::Vector3d camera_pos_map = (T_m_w_ * camera_pos_world_h).head<3>();
   Eigen::Vector3d target_pos_map = (T_m_w_ * target_pos_world_h).head<3>();
