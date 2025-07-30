@@ -32,7 +32,7 @@ int MeshRender::initialize(ros::NodeHandle &nh) {
 
   // swarm
   XmlRpc::XmlRpcValue poses_xml;
-  if (nh.getParam("/exploration_manager/fsm/target_poses", poses_xml)) {
+  if (nh.getParam("/map_config/target_poses", poses_xml)) {
     ROS_ASSERT(poses_xml.getType() == XmlRpc::XmlRpcValue::TypeArray);
     for (int i = 0; i < poses_xml.size(); ++i) {
       XmlRpc::XmlRpcValue pose_xml = poses_xml[i];
@@ -372,8 +372,8 @@ bool MeshRender::canSeeTarget(const Eigen::Vector3d& target_pos_world) {
   
   Eigen::Vector3d target_pos_camera = target_pos_camera_h.head<3>() / target_pos_camera_h.w();
 
-  ROS_WARN("\033[1;35m[MeshRender] ------test!!!!-----\033[0m");
-  std::cout << target_pos_camera.z() << std::endl;
+  // ROS_WARN("\033[1;35m[MeshRender] ------test!!!!-----\033[0m");
+  // std::cout << target_pos_camera.z() << std::endl;
   if (target_pos_camera.z() < 0.1 || target_pos_camera.z() > 10) {
     return false;
   }

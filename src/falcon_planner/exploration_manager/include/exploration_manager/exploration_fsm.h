@@ -105,7 +105,7 @@ private:
   void gridTimerCallback(const ros::TimerEvent &e);
   void optMsgCallback(const exploration_manager::PairOptConstPtr& msg);
   void optResMsgCallback(const exploration_manager::PairOptResponseConstPtr& msg);
-  int optSlover(const Eigen::MatrixXd &cost_mat, vector<int> &new_1, vector<int> &new_2,
+  int optSolver(const Eigen::MatrixXd &cost_mat, vector<int> &new_1, vector<int> &new_2,
                 const std::map<int, pair<int, int>> &cost_mat_id_to_cell_center_id,
                 const unordered_set<int>& pre_assigned_1, const unordered_set<int>& pre_assigned_2);
   int pubGrids(vector<int>& local_unknown_ids_out);
@@ -129,6 +129,7 @@ private:
   bool inDetected(const Vector3d& target_pos);
   bool inSearched(const Vector3d& target_pos);
   
+  std::mutex data_mutex_;
 };
 
 } // namespace fast_planner

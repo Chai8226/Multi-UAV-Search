@@ -23,16 +23,3 @@ exploration_manager:
     attempt_interval: 0.5
     pair_opt_interval: 2.0
     repeat_send_num: 10
-
-    # target poses
-    target_poses:
-      - x: 3.0
-        y: 20.0
-        z: 1.0
-
-      #- x: 10.0
-      #   y: 5.0
-      #   z: 1.0
-      # - x: -10.0
-      #   y: 5.0
-      #   z: 1.0

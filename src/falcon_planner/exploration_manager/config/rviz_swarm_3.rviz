@@ -13,9 +13,8 @@ Panels:
         - /UAV31/Planner1/HGrid1
         - /UAV31/Planner1/assigned_grids1
         - /UAV31/Sensor Data1/Depth Img1
-        - /preset_target1
         - /preset_target1/Namespaces1
-      Splitter Ratio: 0.4376811683177948
+      Splitter Ratio: 0.7188405990600586
     Tree Height: 1154
   - Class: rviz/Selection
     Name: Selection
@@ -91,13 +90,13 @@ Visualization Manager:
               Queue Size: 100
               Value: false
             - Class: rviz/Marker
-              Enabled: true
+              Enabled: false
               Marker Topic: /planning/travel_traj_3
               Name: executed_traj
               Namespaces:
                 {}
               Queue Size: 100
-              Value: true
+              Value: false
             - Alpha: 1
               Autocompute Intensity Bounds: true
               Autocompute Value Bounds:
@@ -131,10 +130,10 @@ Visualization Manager:
               Marker Topic: /planning/position_cmd_vis_3
               Name: position_cmd
               Namespaces:
-                {}
+                current_fov: true
               Queue Size: 10
               Value: true
-          Enabled: false
+          Enabled: true
           Name: Trajectory
         - Class: rviz/Group
           Displays:
@@ -190,9 +189,7 @@ Visualization Manager:
               Marker Topic: /planning_vis/hgrid_3
               Name: HGrid_gp
               Namespaces:
-                grid_tour2_cost: true
                 hgrid_tour_mc: true
-                hgrid_tour_mc_frt: true
               Queue Size: 10
               Value: true
             - Alpha: 1
@@ -231,7 +228,7 @@ Visualization Manager:
               Marker Topic: /planning_vis/assigned_grids_3
               Name: assigned_grids
               Namespaces:
-                assigned_unknown_grids: true
+                {}
               Queue Size: 10
               Value: true
           Enabled: true
@@ -393,7 +390,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5597963333129883
+      Pitch: 1.5647963285446167
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
       Yaw: 4.710008144378662

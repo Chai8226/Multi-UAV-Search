@@ -5,6 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /UAV11
+        - /UAV11/Trajectory1
         - /UAV11/Planner1/frontier1
         - /UAV11/Planner1/frontier1/Namespaces1
         - /UAV11/Planner1/HGrid_gp1/Namespaces1
@@ -71,13 +72,13 @@ Visualization Manager:
         - Class: rviz/Group
           Displays:
             - Class: rviz/Marker
-              Enabled: true
+              Enabled: false
               Marker Topic: /planning_vis/trajectory_1
               Name: bspline_traj
               Namespaces:
                 {}
               Queue Size: 100
-              Value: true
+              Value: false
             - Class: rviz/Marker
               Enabled: false
               Marker Topic: /planning_vis/yaw_1
@@ -87,13 +88,13 @@ Visualization Manager:
               Queue Size: 100
               Value: false
             - Class: rviz/Marker
-              Enabled: true
+              Enabled: false
               Marker Topic: /planning/travel_traj_1
               Name: executed_traj
               Namespaces:
                 {}
               Queue Size: 100
-              Value: true
+              Value: false
             - Alpha: 1
               Autocompute Intensity Bounds: true
               Autocompute Value Bounds:
@@ -127,10 +128,10 @@ Visualization Manager:
               Marker Topic: /planning/position_cmd_vis_1
               Name: position_cmd
               Namespaces:
-                {}
+                current_fov: true
               Queue Size: 10
               Value: true
-          Enabled: false
+          Enabled: true
           Name: Trajectory
         - Class: rviz/Group
           Displays:
@@ -372,7 +373,9 @@ Visualization Manager:
       Marker Topic: /planning_vis/target_1
       Name: preset_target
       Namespaces:
+        detected_targets: true
         preset_targets: true
+        searched_targets: true
       Queue Size: 100
       Value: true
   Enabled: true

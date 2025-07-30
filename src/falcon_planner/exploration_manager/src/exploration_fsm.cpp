@@ -25,7 +25,7 @@ void ExplorationFSM::init(ros::NodeHandle &nh) {
 
   // target
   XmlRpc::XmlRpcValue poses_xml;
-  if (nh.getParam("/exploration_manager/fsm/target_poses", poses_xml)) {
+  if (nh.getParam("/map_config/target_poses", poses_xml)) {
     ROS_ASSERT(poses_xml.getType() == XmlRpc::XmlRpcValue::TypeArray);
 
     // 遍历数组中的每一个目标点
@@ -898,7 +898,9 @@ void ExplorationFSM::visualize() {
 
   // Visualize target
   std::vector<Vector3d> undetected_preset_targets;
-  for (const auto& preset_pos : preset_target_poses_) {
+  vector<Vector3d> preset_target_poses = preset_target_poses_;
+  vector<Vector3d> searched_target_poses = searched_target_poses_;
+  for (const auto& preset_pos : preset_target_poses) {
     if (!inDetected(preset_pos)) {
       undetected_preset_targets.push_back(preset_pos);
     }
@@ -913,7 +915,7 @@ void ExplorationFSM::visualize() {
                                 "detected_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
 
   if (!searched_target_poses_.empty()) 
-    visualization_->drawSpheres(searched_target_poses_, 1, PlanningVisualization::Color::Green(), 
+    visualization_->drawSpheres(searched_target_poses, 1, PlanningVisualization::Color::Green(), 
                                 "searched_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
 
 }
@@ -988,7 +990,6 @@ void ExplorationFSM::droneStateMsgCallback(const exploration_manager::DroneState
   // print swarm state
   // ROS_INFO("[Swarm] Update UAV%s State", std::to_string(msg->drone_id).c_str());
 }
-
 
 /**
  * @brief Pair opt periodically
@@ -1134,7 +1135,7 @@ void ExplorationFSM::optTimerCallback(const ros::TimerEvent &e) {
 
   // 调用求解器
   vector<int> temp_assigned_1, temp_assigned_2;
-  if (optSlover(cost_mat, temp_assigned_1, temp_assigned_2, cost_mat_id_to_cell_center_id, uav1_pre_assigned_grids, uav2_pre_assigned_grids)) {
+  if (optSolver(cost_mat, temp_assigned_1, temp_assigned_2, cost_mat_id_to_cell_center_id, uav1_pre_assigned_grids, uav2_pre_assigned_grids)) {
     vector<int> cell_ids_new_1, cell_ids_new_2;
     cell_ids_new_1.assign(uav1_pre_assigned_grids.begin(), uav1_pre_assigned_grids.end());
     cell_ids_new_1.insert(cell_ids_new_1.end(), temp_assigned_1.begin(), temp_assigned_1.end());
@@ -1262,7 +1263,7 @@ void ExplorationFSM::optResMsgCallback(const exploration_manager::PairOptRespons
 /**
  * @brief Solve Allocation
 */
-int ExplorationFSM::optSlover(const Eigen::MatrixXd &cost_mat, vector<int> &new_1, vector<int> &new_2,
+int ExplorationFSM::optSolver(const Eigen::MatrixXd &cost_mat, vector<int> &new_1, vector<int> &new_2,
                               const std::map<int, pair<int, int>> &cost_mat_id_to_cell_center_id,
                               const unordered_set<int>& pre_assigned_1, const unordered_set<int>& pre_assigned_2) {
   new_1.clear();
@@ -1309,12 +1310,14 @@ int ExplorationFSM::optSlover(const Eigen::MatrixXd &cost_mat, vector<int> &new_
 void ExplorationFSM::gridTimerCallback(const ros::TimerEvent &e) {
   if (state_ == INIT || !frontier_ready_) return;
   
+  // pub
   vector<int> local_unknown_ids;
   if (pubGrids(local_unknown_ids) == -1) {
     ROS_WARN("[Swarm] Swarm Grids is not ready for publishing yet.");
     return;
   }
 
+  // local update
   if (!fd_->swarm_unassigned_ids_.empty()) {
     vector<int> temp_swarm_ids;
     
@@ -1450,7 +1453,7 @@ void ExplorationFSM::gridMsgCallback(const exploration_manager::UnassignedGridsC
       b.box_max.x = p.second.x(); b.box_max.y = p.second.y(); b.box_max.z = p.second.z();
       local_frees[id].push_back(b);
     }
-    for(const auto& p : unknown_bboxes_pair) {
+    for (const auto& p : unknown_bboxes_pair) {
       exploration_manager::bbox b;
       b.box_min.x = p.first.x(); b.box_min.y = p.first.y(); b.box_min.z = p.first.z();
       b.box_max.x = p.second.x(); b.box_max.y = p.second.y(); b.box_max.z = p.second.z();
@@ -1701,8 +1704,8 @@ void ExplorationFSM::checkTargetSearched() {
 */
 void ExplorationFSM::getActiveTarget(vector<Vector3d>& active_target) {
   active_target.clear();
-
-  std::copy_if(detected_target_poses_.begin(), detected_target_poses_.end(),
+  vector<Vector3d> detected_target_poses = detected_target_poses_;
+  std::copy_if(detected_target_poses.begin(), detected_target_poses.end(),
     std::back_inserter(active_target),
     [&](const Vector3d& pos) {
       return !inSearched(pos);
