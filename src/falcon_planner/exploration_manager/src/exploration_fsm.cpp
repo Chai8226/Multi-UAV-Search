@@ -135,8 +135,13 @@ void ExplorationFSM::FSMCallback(const ros::TimerEvent &e) {
   }
   cnt_callback++;
 
-  // check target
+  // check target and set poses
   checkTargetSearched();
+  std::vector<Vector3d> active_targets;
+  getActiveTarget(active_targets);
+  if (!active_targets.empty()) {
+    hierarchical_grid_->swarm_uniform_grids_[0].setTargetPoses(active_targets);
+  }
   
   switch (state_) {
   case INIT: {
@@ -576,15 +581,14 @@ void ExplorationFSM::FSMCallback(const ros::TimerEvent &e) {
 
       if (expl_manager_->updateFrontierStruct(fd_->odom_pos_) != 0) {
         // Update frontier and plan new motion
-        thread vis_thread(&ExplorationFSM::visualize, this);
-        vis_thread.detach();
+        // thread vis_thread(&ExplorationFSM::visualize, this);
+        // vis_thread.detach();
 
         transitState(PLAN_TRAJ, "FSM");
 
         // Use following code can debug the planner step by step
         // transitState(WAIT_TRIGGER, "FSM");
         // fd_->static_state_ = true;
-
       } else {
         // No frontier detected, finish exploration
         transitState(FINISH, "FSM");
@@ -1692,6 +1696,9 @@ void ExplorationFSM::swarmTargetCallback(const exploration_manager::TargetArrayC
       if (!inSearched(target_pos)) {
         searched_target_poses_.push_back(target_pos);
         updated_to_searched++;
+      }
+      if (!inDetected(target_pos)) {
+        detected_target_poses_.push_back(target_pos);
       }
     }
   }

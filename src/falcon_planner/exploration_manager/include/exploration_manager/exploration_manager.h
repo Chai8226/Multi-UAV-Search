@@ -73,6 +73,10 @@ private:
   // Refine local tour for next few frontiers, using more diverse viewpoints
   void refineLocalTourHGrid(const Vector3d &cur_pos, const Vector3d &cur_vel, const Vector3d &cur_yaw, const Vector3d &next_pos,
                             const vector<vector<Vector3d>> &n_points, const vector<vector<double>> &n_yaws, vector<Vector3d> &refined_pts, vector<double> &refined_yaws);
+  void refineLocalTourHGridNew(const Vector3d &cur_pos, const Vector3d &cur_vel, const Vector3d &cur_yaw,
+                               const Vector3d &next_pos, const vector<vector<Vector3d>> &n_points,
+                               const vector<vector<double>> &n_yaws, vector<Vector3d> &refined_pts,
+                               vector<double> &refined_yaws, const vector<Vector3d>& active_target_poses);
 
   void solveTSP(const Eigen::MatrixXd &cost_matrix, const TSPConfig &config, vector<int> &result_indices, double &total_cost);
 

@@ -271,6 +271,14 @@ public:
     return;
   }
 
+  // target
+  void setTargetPoses(const std::vector<Position> &target_poses) {
+    active_target_poses_ = target_poses;
+  }
+  void getTargetPoses(std::vector<Position> &target_poses) {
+    target_poses = active_target_poses_;
+  }
+
   friend class HierarchicalGrid;
 
 private:
@@ -290,6 +298,9 @@ private:
   std::vector<std::vector<std::pair<int, int>>> ccl_free_unknown_states_and_centers_idx_;
 
   double space_decomp_time_, connectivity_graph_time_;
+
+  // target
+  std::vector<Position> active_target_poses_;
 };
 
 // Class definition for a hierarchical grid including multiple layers of uniform grids

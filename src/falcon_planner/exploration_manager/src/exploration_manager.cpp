@@ -110,6 +110,8 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
   clearExplorationData();
 
   // ---------- Do global and local tour planning and retrieve the next viewpoint ---------
+  vector<Vector3d> active_target_poses;
+  hierarchical_grid_->swarm_uniform_grids_[0].getTargetPoses(active_target_poses);
   Vector3d next_pos;
   double next_yaw;
 
@@ -155,7 +157,7 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
   // cost mat computation
   PathCostEvaluator::astar_->setProfile(Astar::PROFILE::COARSE);
   if (ep_->swarm_) {
-    ROS_INFO("[Swarm] calculateCostMatrixForSwarm!");
+    // ROS_INFO("[Swarm] calculateCostMatrixForSwarm!");
     hierarchical_grid_->calculateCostMatrixForSwarm(pos, vel, yaw[0], ed_->grid_tour2_cell_centers_id_, cost_matrix2, cost_mat_id_to_cell_center_id);
   } else {
     hierarchical_grid_->calculateCostMatrix2(pos, vel, yaw[0], ed_->grid_tour2_, cost_matrix2, cost_mat_id_to_cell_center_id);
@@ -318,7 +320,26 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
   // grid_tour2_cost, size = n - 1, cost of each segment
   // cost matrix: (n + m) * (n + m)
   // cost matrix: n * n part could reuse the previous one
+  // TODO
   if (frontier_ids.size() > 0) {
+    const double TARGET_INFLUENCE_RADIUS = 8.0;  // 目标引力的最大影响半径 (米)
+    const double MIN_TARGET_FACTOR = 0.5;        // 最小引力因子 (成本折扣)
+
+    std::unordered_map<int, double> frontier_incentive_factors; // key: frontier_id, value: factor
+    if (!active_target_poses.empty()) {
+      for (int frontier_id : frontier_ids) {
+        double min_dist_to_target = std::numeric_limits<double>::max();
+        for (const auto& target_pos : active_target_poses) {
+          min_dist_to_target = std::min(min_dist_to_target, (ed_->points_[frontier_id] - target_pos).norm());
+        }
+
+        if (min_dist_to_target < TARGET_INFLUENCE_RADIUS) {
+          double factor = MIN_TARGET_FACTOR + (1.0 - MIN_TARGET_FACTOR) * (min_dist_to_target / TARGET_INFLUENCE_RADIUS);
+          frontier_incentive_factors[frontier_id] = factor;
+        }
+      }
+    }
+
     auto checkPathUnknown = [&](const vector<Position> &path) {
       for (int i = 0; i < path.size() - 1; ++i) {
         Position start_pos = path[i];
@@ -347,6 +368,7 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
     double astar_resolution_ori = PathCostEvaluator::astar_->getResolution();
     double astar_max_search_time_ori = PathCostEvaluator::astar_->getMaxSearchTime();
     PathCostEvaluator::astar_->setProfile(Astar::PROFILE::COARSE2);
+
     // Get cost matrix for frontiers, cost_matrix_tmp1
     for (int i = 0; i < frontier_ids.size(); ++i) {
       for (int j = i; j < frontier_ids.size(); ++j) {
@@ -359,8 +381,11 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
           if (checkPathUnknown(path) && cost < 499.0) {
             cost *= ep_->unknown_penalty_factor_;
           }
-          cost_matrix_tmp1(i, j) = cost;
-          cost_matrix_tmp1(j, i) = cost;
+          double factor_i = frontier_incentive_factors.count(frontier_ids[i]) ? frontier_incentive_factors.at(frontier_ids[i]) : 1.0;
+          double factor_j = frontier_incentive_factors.count(frontier_ids[j]) ? frontier_incentive_factors.at(frontier_ids[j]) : 1.0;
+
+          cost_matrix_tmp1(i, j) = cost * factor_j; 
+          cost_matrix_tmp1(j, i) = cost * factor_i; 
         }
       }
     }
@@ -407,6 +432,9 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
             CHECK_GT(cost2, 1e-4) << "Cost from CP" << j << " to frontier " << frontier_ids[i] << " is zero";
           }
         }
+        double factor_i = frontier_incentive_factors.count(frontier_ids[i]) ? frontier_incentive_factors.at(frontier_ids[i]) : 1.0;
+        cost2 *= factor_i;
+
         cost_matrix_tmp2(i, j) = cost1;
         cost_matrix_tmp3(j, i) = cost2;
       }
@@ -481,9 +509,9 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
     t1 = ros::Time::now();
     vector<int> sop_path;
 
-    cout << "solveSOP 1111111111111111111111111" << endl;
+    // cout << "solveSOP 1111111111111111111111111" << endl;
     solveSOP(cost_matrix_sop_remove_next, sop_path);
-    cout << "solveSOP 22222222222222222222222222" << endl;
+    // cout << "solveSOP 22222222222222222222222222" << endl;
 
     double sop_time = (ros::Time::now() - t1).toSec();
     // ROS_INFO("[ExplorationManager] SOP time: %.2f ms", sop_time * 1000.0);
@@ -605,7 +633,7 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
       next_pos = cell_frontier_viewpoints[min_cost_id];
       next_yaw = cell_frontier_yaws[min_cost_id];
     } else {
-      // TODO swarm:  No frontier in next grid, find a nearest viewpoint
+      // swarm:  No frontier in next grid, find a nearest viewpoint
       // - 1：先在swarm grid中寻找best的viewpoint
       // - 2：若没有，则根据全局规划的第一个grid的未知中心，采用computeCostUnknown 找到代价最小的边界的视点3个，选择当前位置到这些视点代价最小的一个
       // - 3：若还没有，则在全局规划路径所有剩余的Grid中搜索，找到距离这些区域的未知中心最近的 3个 候选视点，然后选择一个距离无人机当前位置代价最小的视点
@@ -870,7 +898,9 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
       double grid_yaw;
 
       vector<double> refined_yaws;
-      refineLocalTourHGrid(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, ed_->refined_points_, refined_yaws);
+      // refineLocalTourHGrid(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, ed_->refined_points_, refined_yaws);
+      refineLocalTourHGridNew(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, 
+                            ed_->refined_points_, refined_yaws, active_target_poses);
       ROS_INFO("[ExplorationManager] Refined points: %d", ed_->refined_points_.size());
       if (ed_->refined_points_.empty()) {
         // No refined points, use the first viewpoint
@@ -920,7 +950,9 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
     }
 
     vector<double> refined_yaws;
-    refineLocalTourHGrid(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, ed_->refined_points_, refined_yaws);
+    // refineLocalTourHGrid(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, ed_->refined_points_, refined_yaws);
+    refineLocalTourHGridNew(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, 
+                            ed_->refined_points_, refined_yaws, active_target_poses);
     if (ed_->refined_points_.empty()) {
       // No refined points, use the first viewpoint
       next_pos = ed_->points_[frontier_ids[0]];
@@ -1565,6 +1597,146 @@ void ExplorationManager::refineLocalTourHGrid(const Vector3d &cur_pos, const Vec
     ed_->refined_tour_.push_back(pt);
   }
 }
+
+void ExplorationManager::refineLocalTourHGridNew(const Vector3d &cur_pos, const Vector3d &cur_vel, const Vector3d &cur_yaw,
+                                                 const Vector3d &next_pos, const vector<vector<Vector3d>> &n_points,
+                                                 const vector<vector<double>> &n_yaws, vector<Vector3d> &refined_pts,
+                                                 vector<double> &refined_yaws, const vector<Vector3d>& active_target_poses) {
+  int dim = 0;
+  for (int i = 0; i < n_points.size(); ++i) {
+    dim += n_points[i].size();
+  }
+
+  bool has_active_targets = !active_target_poses.empty();
+  if (has_active_targets) {
+    dim += 1; // 增加一个代表所有活跃目标的虚拟节点
+  }
+  dim += 2; // Add current and next position
+
+  vector<vector<double>> cost_matrix(dim, vector<double>(dim, 1000.0));
+
+  vector<Vector3d> n_points_flatten;
+  vector<double> n_yaws_flatten;
+  vector<int> n_sizes;
+
+  for (int i = 0; i < n_points.size(); ++i) {
+    n_points_flatten.insert(n_points_flatten.end(), n_points[i].begin(), n_points[i].end());
+    n_yaws_flatten.insert(n_yaws_flatten.end(), n_yaws[i].begin(), n_yaws[i].end());
+    n_sizes.push_back(n_points[i].size());
+  }
+
+  int cummulative_size = 0;
+  for (int i = 0; i < n_points.size(); ++i) {
+    if (i == 0) {
+      // Current position to first frontier's n_points
+      // isAllInf is a failsafe for the case where all costs are inf, which will cause the
+      // dijkstra to fail (no path found between two layers)
+      bool isAllInf = true;
+      for (unsigned int j = 0; j < n_points[i].size(); ++j) {
+        vector<Position> tmp_path;
+        cost_matrix[0][j + 1] = PathCostEvaluator::computeCost(
+            cur_pos, n_points[i][j], cur_yaw[0], n_yaws[i][j], cur_vel, 0.0, tmp_path);
+        if (cost_matrix[0][j + 1] < 1000.0)
+          isAllInf = false;
+        // DISBALED: Cannot go back to current position
+        // cost_matrix[j + 1][0] = cost_matrix[0][j + 1];
+      }
+      if (isAllInf) {
+        for (unsigned int j = 0; j < n_points[i].size(); ++j) {
+          cost_matrix[0][j + 1] -= 1000.0;
+        }
+      }
+    }
+
+    if (i == n_points.size() - 1) {
+      // to next pos, last column of cost mat
+      bool isAllInf = true;
+      for (unsigned int j = 0; j < n_points[i].size(); ++j) {
+        vector<Position> tmp_path;
+        cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] =
+            PathCostEvaluator::computeCostUnknown(n_points[i][j], next_pos, n_yaws[i][j], 0.0,
+                                                  Vector3d::Zero(), 0.0, tmp_path);
+        if (cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] < 1000.0)
+          isAllInf = false;
+      }
+      if (isAllInf) {
+        for (unsigned int j = 0; j < n_points[i].size(); ++j) {
+          cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] -= 1000.0;
+        }
+      }
+
+      if (has_active_targets) {
+        const double target_penalty_factor = 0.2;
+        for (unsigned int j = 0; j < n_points[i].size(); ++j) {
+          double min_dist_to_target = std::numeric_limits<double>::max();
+          for (const auto& target_pos : active_target_poses) {
+            min_dist_to_target = std::min(min_dist_to_target, (n_points[i][j] - target_pos).norm());
+          }
+          cost_matrix[dim - n_points[i].size() - 1 + j][dim - 2] = min_dist_to_target * target_penalty_factor;
+        }
+      }
+
+      break;
+    }
+
+    int current_points_size = n_points[i].size();
+    int next_points_size = n_points[i + 1].size();
+
+    // Current points to next points
+    for (int j = 0; j < current_points_size; ++j) {
+      bool isAllInf = true;
+      for (int k = 0; k < next_points_size; ++k) {
+        vector<Position> tmp_path;
+        cost_matrix[cummulative_size + j + 1][cummulative_size + current_points_size + k + 1] =
+            PathCostEvaluator::computeCostUnknown(n_points[i][j], n_points[i + 1][k], n_yaws[i][j],
+                                                  n_yaws[i + 1][k], Vector3d::Zero(), 0.0,
+                                                  tmp_path);
+        if (cost_matrix[cummulative_size + j + 1][cummulative_size + current_points_size + k + 1] <
+            1000.0)
+          isAllInf = false;
+      }
+      if (isAllInf) {
+        for (int k = 0; k < next_points_size; ++k) {
+          cost_matrix[cummulative_size + j + 1][cummulative_size + current_points_size + k + 1] -=
+              1000.0;
+        }
+      }
+    }
+
+    cummulative_size += current_points_size;
+  }
+
+  if (has_active_targets) {
+    cost_matrix[dim - 2][dim - 1] = 0.0;
+  }
+
+  vector<int> path_idx = dijkstra(cost_matrix, 0, dim - 1);
+
+  refined_pts.clear();
+  refined_yaws.clear();
+
+  for (int idx : path_idx) {
+    if (idx == 0 || idx == dim - 1 || (has_active_targets && idx == dim - 2)) {
+      continue;
+    } else {
+      refined_pts.push_back(n_points_flatten[idx - 1]);
+      refined_yaws.push_back(n_yaws_flatten[idx - 1]);
+    }
+  }
+
+  // Extract optimal local tour (for visualization)
+  ed_->refined_tour_.push_back(cur_pos);
+  // PathCostEvaluator::astar_->lambda_heu_ = 1.0;
+  // PathCostEvaluator::astar_->setResolution(0.2);
+  for (auto pt : refined_pts) {
+    vector<Vector3d> path;
+    // if (PathCostEvaluator::searchPath(ed_->refined_tour_.back(), pt, path))
+    //   ed_->refined_tour_.insert(ed_->refined_tour_.end(), path.begin(), path.end());
+    // else
+    ed_->refined_tour_.push_back(pt);
+  }
+}
+
 
 void ExplorationManager::solveTSP(const Eigen::MatrixXd &cost_matrix, const TSPConfig &config, vector<int> &result_indices, double &total_cost) {
   CHECK_EQ(cost_matrix.rows(), cost_matrix.cols()) << "TSP cost matrix must be square";

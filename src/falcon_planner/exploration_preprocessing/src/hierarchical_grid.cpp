@@ -1898,13 +1898,14 @@ double UniformGrid::getAStarCostHGridGraph(const Position &pos1, const Position 
   return dist[cell_id2];
 }
 
-// TODO
 void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, const Eigen::Vector3d &cur_vel, 
                                                        const vector<std::pair<int, int>> &last_cell_center_id, Eigen::MatrixXd &cost_matrix, 
                                                        std::map<int, std::pair<int, int>> &cost_mat_id_to_cell_center_id) {
   const double first_step_factor = 0.2;     // 对起始步骤的强烈激励
   const double consecutive_factor = 0.5;    // 对连续步骤的激励
   const double skip_one_factor = 0.7;       // 对跳过一个点的步骤的较弱激励
+  const double TARGET_INFLUENCE_RADIUS = 8.0; // 最大影响半径 (米)
+  const double MIN_TARGET_FACTOR = 0.5;        // 最小引力因子 (在目标点正上方的成本折扣)
 
   int first_cell_id = -1;
   std::set<std::pair<int, int>> consecutive_cell_pairs;
@@ -1934,6 +1935,26 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
     }
   }
   
+  // calculate target influence
+  std::unordered_map<int, double> target_incentive_factors;
+  if (!active_target_poses_.empty()) {
+    for (const auto& grid_cell : uniform_grid_) {
+      double min_dist_to_target = std::numeric_limits<double>::max();
+      for (const auto& target_pos : active_target_poses_) {
+        double dist = (grid_cell.center_ - target_pos).norm();
+        if (dist < min_dist_to_target) {
+          min_dist_to_target = dist;
+        }
+      }
+
+      if (min_dist_to_target < TARGET_INFLUENCE_RADIUS) {
+        double factor = MIN_TARGET_FACTOR + (1.0 - MIN_TARGET_FACTOR) * (min_dist_to_target / TARGET_INFLUENCE_RADIUS);
+        target_incentive_factors[grid_cell.id_] = factor;
+      }
+    }
+  }
+
+
   int dim = 1;      // current position
   int mat_idx = 1;  // skip 0 as it is reserved for current position
 
@@ -1962,6 +1983,13 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
     double cost = 0.0;
     bool apply_first_step_incentive = (grid_cell.id_ == first_cell_id);
 
+    double target_incentive = 1.0;
+    auto it = target_incentive_factors.find(grid_cell.id_);
+    if (it != target_incentive_factors.end()) {
+      target_incentive = it->second;
+      // cout << "tstssttstststststuisiuiuiuiu: " << target_incentive << std::endl;
+    }
+
     for (int i = 0; i < grid_cell.centers_free_active_idx_.size(); ++i) {
       const Position &center_free = grid_cell.centers_free_active_[i];
       if ((cur_pos - center_free).norm() > 5) { // config_.hybrid_search_radius_
@@ -1974,7 +2002,7 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
         cost *= first_step_factor;
       }
 
-      cost_matrix(0, mat_idx) = cost;
+      cost_matrix(0, mat_idx) = cost * target_incentive;
 
       CHECK_GT(cost, 1e-4) << "Zero cost from current position to cell " << grid_cell.id_ << " free center " << mat_idx - 1;
       mat_idx++;
@@ -1987,7 +2015,7 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
       if (apply_first_step_incentive) {
         cost *= first_step_factor;
       }
-      cost_matrix(0, mat_idx) = cost * config_.unknown_penalty_factor_;
+      cost_matrix(0, mat_idx) = cost * config_.unknown_penalty_factor_ * target_incentive;
       CHECK_GT(cost, 1e-4) << "Zero cost from current position to cell " << grid_cell.id_ << " free center " << mat_idx - 1;
       mat_idx++;
     }
@@ -2024,6 +2052,13 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
           }
 
           double cost = 0.0;
+
+          double target_incentive = 1.0;
+          auto it = target_incentive_factors.find(grid_cell2.id_);
+          if (it != target_incentive_factors.end()) {
+            target_incentive = it->second;
+          }
+
           int cell_center_id1 = -1, cell_center_id2 = -1;
           bool no_cg_search = false;
           if (i < (int)grid_cell1.centers_free_active_.size()) {
@@ -2136,7 +2171,7 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
           if (i >= (int)grid_cell1.centers_free_active_.size() || j >= (int)grid_cell2.centers_free_active_.size()) {
             cost *= config_.unknown_penalty_factor_;
           }
-          cost_matrix(mat_idx1, mat_idx2) = cost_matrix(mat_idx2, mat_idx1) = cost;
+          cost_matrix(mat_idx1, mat_idx2) = cost_matrix(mat_idx2, mat_idx1) = cost * target_incentive;
 
           CHECK_GT(cost, 1e-6) << "Zero cost from cell " << grid_cell1.id_ << " center " << i
                                << " pos (" << centers1[i].x() << ", " << centers1[i].y() << ", "
