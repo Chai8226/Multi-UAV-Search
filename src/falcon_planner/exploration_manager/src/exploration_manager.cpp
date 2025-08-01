@@ -481,9 +481,9 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
     t1 = ros::Time::now();
     vector<int> sop_path;
 
-    cout << "solveSOP 1111111111111111111111111" << endl;
+    // cout << "solveSOP 1111111111111111111111111" << endl;
     solveSOP(cost_matrix_sop_remove_next, sop_path);
-    cout << "solveSOP 22222222222222222222222222" << endl;
+    // cout << "solveSOP 22222222222222222222222222" << endl;
 
     double sop_time = (ros::Time::now() - t1).toSec();
     // ROS_INFO("[ExplorationManager] SOP time: %.2f ms", sop_time * 1000.0);

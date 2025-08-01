@@ -50,7 +50,7 @@ int solveSOP(const Eigen::MatrixXi &cost_matrix, vector<int> &path) {
   s.set_hash_size(10000);
   s.nearest_neighbor();
 
-  cout << "SOP 1111111111111111111111111" << std::endl;
+  // cout << "SOP 1111111111111111111111111" << std::endl;
 
   vector<Edge> fallback_path = s.best_solution_path();
   int fallback_cost = s.best_solution_cost();
@@ -64,7 +64,7 @@ int solveSOP(const Eigen::MatrixXi &cost_matrix, vector<int> &path) {
 
   s.solve_sop_parallel(1);
 
-  cout << "SOP 2222222222222222" << std::endl;
+  // cout << "SOP 2222222222222222" << std::endl;
 
   if (s.best_solution_path().empty() || s.best_solution_cost() >= fallback_cost) {
     path.clear();

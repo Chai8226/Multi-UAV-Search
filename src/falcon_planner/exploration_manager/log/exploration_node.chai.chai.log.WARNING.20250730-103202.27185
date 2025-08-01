@@ -1,5 +1,0 @@
-Log file created at: 2025/07/30 10:32:02
-Running on machine: chai
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-W0730 10:32:02.848100 27185 exploration_fsm.cpp:154] [FSM] Receive odom from topic /uav_simulator/odometry_1
-W0730 10:32:02.848277 27185 exploration_fsm.cpp:763] [FSM] ROS Time: 1753842722.848279709 Transit state from INIT to WAIT_TRIGGER by FSM
