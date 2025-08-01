@@ -39,8 +39,10 @@
     <remap from="/swarm_expl/grid_recv" to="swarm_expl/grid" />
     <remap from="/swarm_expl/pair_opt_res_send" to="/swarm_expl/pair_opt_res" />
     <remap from="/swarm_expl/pair_opt_res_recv" to="/swarm_expl/pair_opt_res" />
-    <remap from="/swarm_expl/swarm_traj_recv" to="/planning/swarm_traj" />
-    <remap from="/swarm_expl/swarm_traj_send" to="/planning/swarm_traj" />
+    <remap from="/swarm_expl/swarm_traj_recv" to="/swarm_expl/swarm_traj" />
+    <remap from="/swarm_expl/swarm_traj_send" to="/swarm_expl/swarm_traj" />
+    <remap from="/swarm_expl/targets_send" to="/swarm_expl/targets" />
+    <remap from="/swarm_expl/targets_recv" to="/swarm_expl/targets" />
     <remap from="/detected_targets" to="/uav_simulator/detected_targets_$(arg drone_id)"/>
   </node>
  

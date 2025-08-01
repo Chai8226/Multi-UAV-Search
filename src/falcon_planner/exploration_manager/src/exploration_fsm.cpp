@@ -103,6 +103,8 @@ void ExplorationFSM::init(ros::NodeHandle &nh) {
   swarm_traj_sub_ = nh.subscribe("/swarm_expl/swarm_traj_recv", 100, &ExplorationFSM::swarmTrajCallback, this);
   swarm_traj_timer_ = nh.createTimer(ros::Duration(0.1), &ExplorationFSM::swarmTrajTimerCallback, this);
   // target
+  searched_target_pub_ = nh.advertise<exploration_manager::TargetArray>("/swarm_expl/targets_send", 10);
+  searched_target_sub_ = nh.subscribe("/swarm_expl/targets_recv", 10, &ExplorationFSM::swarmTargetCallback, this);
   target_sub_ = nh.subscribe("/detected_targets", 10, &ExplorationFSM::targetMsgCallback, this);
 
 
@@ -1310,7 +1312,35 @@ int ExplorationFSM::optSolver(const Eigen::MatrixXd &cost_mat, vector<int> &new_
 void ExplorationFSM::gridTimerCallback(const ros::TimerEvent &e) {
   if (state_ == INIT || !frontier_ready_) return;
   
-  // pub
+  // pub target msg
+  if (!detected_target_poses_.empty()) {
+    exploration_manager::TargetArray target_msg;
+    target_msg.header.stamp = ros::Time::now();
+    target_msg.header.frame_id = "world";
+    target_msg.drone_id = getId();
+
+    std::vector<Vector3d> active_targets;
+    getActiveTarget(active_targets);
+    for (const auto& pos : active_targets) {
+      exploration_manager::Target target;
+      target.type = 0;
+      target.pos.x = pos.x();
+      target.pos.y = pos.y();
+      target.pos.z = pos.z();
+      target_msg.targets.push_back(target);
+    }
+    for (const auto& pos : searched_target_poses_) {
+      exploration_manager::Target target;
+      target.type = 1;
+      target.pos.x = pos.x();
+      target.pos.y = pos.y();
+      target.pos.z = pos.z();
+      target_msg.targets.push_back(target);
+    }
+    searched_target_pub_.publish(target_msg);
+  }
+ 
+  // pub grid
   vector<int> local_unknown_ids;
   if (pubGrids(local_unknown_ids) == -1) {
     ROS_WARN("[Swarm] Swarm Grids is not ready for publishing yet.");
@@ -1344,6 +1374,8 @@ int ExplorationFSM::pubGrids(vector<int>& local_unknown_ids_out){
     ROS_WARN("[Swarm] Frontier is not ready for publishing yet.");
     return -1;
   }
+
+
   vector<int> local_free_ids;
   // ros::Time ct = ros::Time::now();
   hierarchical_grid_->classifyUniformGrids(0, local_free_ids, local_unknown_ids_out);
@@ -1367,7 +1399,7 @@ int ExplorationFSM::pubGrids(vector<int>& local_unknown_ids_out){
     std::vector<std::pair<Position, Position>> free_bboxes, unknown_bboxes;
     hierarchical_grid_->uniform_grids_[0].getCellBboxWithID(id, free_bboxes, unknown_bboxes);
     for (auto &fb : free_bboxes) {
-      exploration_manager::bbox free_bbox;
+      exploration_manager::Bbox free_bbox;
       free_bbox.box_min.x = fb.first[0];
       free_bbox.box_min.y = fb.first[1];
       free_bbox.box_min.z = fb.first[2];
@@ -1377,7 +1409,7 @@ int ExplorationFSM::pubGrids(vector<int>& local_unknown_ids_out){
       ug_msg.free_bboxes.push_back(free_bbox);
     }
     for (auto &ub : unknown_bboxes) {
-      exploration_manager::bbox unknown_bbox;
+      exploration_manager::Bbox unknown_bbox;
       unknown_bbox.box_min.x = ub.first[0];
       unknown_bbox.box_min.y = ub.first[1];
       unknown_bbox.box_min.z = ub.first[2];
@@ -1434,8 +1466,8 @@ void ExplorationFSM::gridMsgCallback(const exploration_manager::UnassignedGridsC
   fd_->received_lately_order_[msg->drone_id - 1].assign(msg->local_search_seq.begin(), msg->local_search_seq.end());
   
 
-  std::map<int, std::vector<exploration_manager::bbox>> local_unknowns, local_frees;
-  std::map<int, std::vector<exploration_manager::bbox>> sender_unknowns, sender_frees;
+  std::map<int, std::vector<exploration_manager::Bbox>> local_unknowns, local_frees;
+  std::map<int, std::vector<exploration_manager::Bbox>> sender_unknowns, sender_frees;
   std::set<int> candidate_ids;
   for (const auto& grid : msg->unassigned_grids) {
     sender_unknowns[grid.unassigned_id].insert(sender_unknowns[grid.unassigned_id].end(), grid.unknown_bboxes.begin(), grid.unknown_bboxes.end());
@@ -1448,13 +1480,13 @@ void ExplorationFSM::gridMsgCallback(const exploration_manager::UnassignedGridsC
     std::vector<std::pair<Position, Position>> free_bboxes_pair, unknown_bboxes_pair;
     hierarchical_grid_->uniform_grids_[0].getCellBboxWithID(id, free_bboxes_pair, unknown_bboxes_pair);
     for (const auto& p : free_bboxes_pair) {
-      exploration_manager::bbox b;
+      exploration_manager::Bbox b;
       b.box_min.x = p.first.x(); b.box_min.y = p.first.y(); b.box_min.z = p.first.z();
       b.box_max.x = p.second.x(); b.box_max.y = p.second.y(); b.box_max.z = p.second.z();
       local_frees[id].push_back(b);
     }
     for (const auto& p : unknown_bboxes_pair) {
-      exploration_manager::bbox b;
+      exploration_manager::Bbox b;
       b.box_min.x = p.first.x(); b.box_min.y = p.first.y(); b.box_min.z = p.first.z();
       b.box_max.x = p.second.x(); b.box_max.y = p.second.y(); b.box_max.z = p.second.z();
       local_unknowns[id].push_back(b);
@@ -1463,13 +1495,13 @@ void ExplorationFSM::gridMsgCallback(const exploration_manager::UnassignedGridsC
 
   std::vector<int> pairwise_unknown_ids;
   for (int id : candidate_ids) {
-    std::vector<exploration_manager::bbox> combined_unknowns = local_unknowns.count(id) ? local_unknowns[id] : std::vector<exploration_manager::bbox>();
+    std::vector<exploration_manager::Bbox> combined_unknowns = local_unknowns.count(id) ? local_unknowns[id] : std::vector<exploration_manager::Bbox>();
     if (sender_unknowns.count(id)) {
       const auto& sender_u_boxes = sender_unknowns.at(id);
       combined_unknowns.insert(combined_unknowns.end(), sender_u_boxes.begin(), sender_u_boxes.end());
     }
 
-    std::vector<exploration_manager::bbox> combined_frees = local_frees.count(id) ? local_frees[id] : std::vector<exploration_manager::bbox>();
+    std::vector<exploration_manager::Bbox> combined_frees = local_frees.count(id) ? local_frees[id] : std::vector<exploration_manager::Bbox>();
     if (sender_frees.count(id)) {
       const auto& sender_f_boxes = sender_frees.at(id);
       combined_frees.insert(combined_frees.end(), sender_f_boxes.begin(), sender_f_boxes.end());
@@ -1640,6 +1672,37 @@ int ExplorationFSM::getId() {
 
 
 /* ================================= Target function ======================================== */
+void ExplorationFSM::swarmTargetCallback(const exploration_manager::TargetArrayConstPtr& msg) {
+  if (msg->drone_id == getId()) return;
+
+  const double distance_threshold = 0.2;
+  int new_detected = 0;
+  int updated_to_searched = 0;
+
+  for (const auto& target : msg->targets) {
+    Vector3d target_pos(target.pos.x, target.pos.y, target.pos.z);
+
+    if (target.type == 0) {
+      if (!inDetected(target_pos) && !inSearched(target_pos)) {
+        detected_target_poses_.push_back(target_pos);
+        new_detected++;
+      }
+    } 
+    else if (target.type == 1) {
+      if (!inSearched(target_pos)) {
+        searched_target_poses_.push_back(target_pos);
+        updated_to_searched++;
+      }
+    }
+  }
+
+  if (new_detected > 0 || updated_to_searched > 0) {
+    ROS_INFO("[Swarm] Received target info from drone %d: %d new detected, %d updated to searched.",
+             msg->drone_id, new_detected, updated_to_searched);
+  }
+}
+
+
 void ExplorationFSM::targetMsgCallback(const geometry_msgs::PoseArrayConstPtr& msg) {
   if (msg->poses.empty()) {
     ROS_WARN("[ExplorationFSM] No targets received.");

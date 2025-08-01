@@ -29,9 +29,11 @@ add_message_files(
   DroneState.msg
   PairOpt.msg
   PairOptResponse.msg
-  bbox.msg
+  Bbox.msg
   UnassignedGrid.msg
   UnassignedGrids.msg
+  Target.msg
+  TargetArray.msg
 )
 
 generate_messages(

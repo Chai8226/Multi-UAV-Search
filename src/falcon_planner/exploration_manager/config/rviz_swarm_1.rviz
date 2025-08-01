@@ -13,7 +13,7 @@ Panels:
         - /UAV11/Planner1/HGrid1/Namespaces1
         - /preset_target1
       Splitter Ratio: 0.46000000834465027
-    Tree Height: 1154
+    Tree Height: 439
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -405,25 +405,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 145.2100067138672
+      Distance: 127.78480529785156
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -5.170879364013672
-        Y: -18.506053924560547
+        X: -0.2542431354522705
+        Y: -18.09256362915039
         Z: -5.500058174133301
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5647963285446167
+      Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
-      Yaw: 4.705002307891846
+      Yaw: 4.695000171661377
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 24

@@ -26,7 +26,9 @@
 #include <exploration_manager/PairOptResponse.h>
 #include <exploration_manager/UnassignedGrids.h>
 #include <exploration_manager/UnassignedGrid.h>
-#include <exploration_manager/bbox.h>
+#include <exploration_manager/Bbox.h>
+#include <exploration_manager/Target.h>
+#include <exploration_manager/TargetArray.h>
 #include <trajectory/Bspline.h>
 
 using Eigen::Vector3d;
@@ -42,6 +44,7 @@ class ExplorationManager;
 class PlanningVisualization;
 struct FSMParam;
 struct FSMData;
+
 
 enum EXPL_STATE { INIT, WAIT_TRIGGER, PLAN_TRAJ, PUB_TRAJ, EXEC_TRAJ, FINISH, RTB, IDLE};
 
@@ -74,12 +77,6 @@ private:
 
   ros::Time trajectory_start_time_;
 
-  /* target */
-  ros::Subscriber target_sub_;
-  std::vector<Vector3d> preset_target_poses_;
-  std::vector<Vector3d> detected_target_poses_;
-  std::vector<Vector3d> searched_target_poses_;
-
   /* helper functions */
   int callExplorationPlanner();
   void transitState(EXPL_STATE new_state, string pos_call);
@@ -111,17 +108,24 @@ private:
   int pubGrids(vector<int>& local_unknown_ids_out);
   void gridMsgCallback(const exploration_manager::UnassignedGridsConstPtr& msg);
   void updateAssignedGrids();
-  static bool isBboxCovered(const exploration_manager::bbox& inner_bbox, const exploration_manager::bbox& outer_bbox) {
-    return inner_bbox.box_min.x >= outer_bbox.box_min.x &&
-           inner_bbox.box_min.y >= outer_bbox.box_min.y &&
-           inner_bbox.box_min.z >= outer_bbox.box_min.z &&
-           inner_bbox.box_max.x <= outer_bbox.box_max.x &&
-           inner_bbox.box_max.y <= outer_bbox.box_max.y &&
-           inner_bbox.box_max.z <= outer_bbox.box_max.z;
+  static bool isBboxCovered(const exploration_manager::Bbox& inner_Bbox, const exploration_manager::Bbox& outer_Bbox) {
+    return inner_Bbox.box_min.x >= outer_Bbox.box_min.x &&
+           inner_Bbox.box_min.y >= outer_Bbox.box_min.y &&
+           inner_Bbox.box_min.z >= outer_Bbox.box_min.z &&
+           inner_Bbox.box_max.x <= outer_Bbox.box_max.x &&
+           inner_Bbox.box_max.y <= outer_Bbox.box_max.y &&
+           inner_Bbox.box_max.z <= outer_Bbox.box_max.z;
   }
   int getId();
 
-  // target
+    /* target */
+  ros::Subscriber target_sub_;
+  std::vector<Vector3d> preset_target_poses_;
+  std::vector<Vector3d> detected_target_poses_;
+  std::vector<Vector3d> searched_target_poses_;
+  ros::Publisher searched_target_pub_;
+  ros::Subscriber searched_target_sub_;
+  void swarmTargetCallback(const exploration_manager::TargetArrayConstPtr& msg);
   void checkTargetSearched();
   void getActiveTarget(vector<Vector3d>& active_target);
   bool targetSearched(const Vector3d& target_pos);
