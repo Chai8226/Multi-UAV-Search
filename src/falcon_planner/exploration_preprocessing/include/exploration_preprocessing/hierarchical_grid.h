@@ -275,6 +275,9 @@ public:
   void setTargetPoses(const std::vector<Position> &target_poses) {
     active_target_poses_ = target_poses;
   }
+  void getTargetPoses(std::vector<Position> &target_poses) {
+    target_poses = active_target_poses_;
+  }
 
   friend class HierarchicalGrid;
 

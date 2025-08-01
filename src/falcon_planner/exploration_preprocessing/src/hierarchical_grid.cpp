@@ -1898,7 +1898,6 @@ double UniformGrid::getAStarCostHGridGraph(const Position &pos1, const Position 
   return dist[cell_id2];
 }
 
-// TODO
 void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, const Eigen::Vector3d &cur_vel, 
                                                        const vector<std::pair<int, int>> &last_cell_center_id, Eigen::MatrixXd &cost_matrix, 
                                                        std::map<int, std::pair<int, int>> &cost_mat_id_to_cell_center_id) {
