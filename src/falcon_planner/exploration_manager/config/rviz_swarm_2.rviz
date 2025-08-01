@@ -6,12 +6,13 @@ Panels:
       Expanded:
         - /UAV21
         - /UAV21/Planner1
-        - /UAV21/Planner1/frontier1
         - /UAV21/Planner1/frontier1/Namespaces1
         - /UAV21/Planner1/HGrid_gp1/Namespaces1
         - /UAV21/Planner1/HGrid Array1/Namespaces1
         - /UAV21/Voxel Mapping1/Occu Grid1/Autocompute Value Bounds1
         - /UAV21/Voxel Mapping1/Unknown Grid1/Autocompute Value Bounds1
+        - /Occu Grid1/Autocompute Value Bounds1
+        - /Occu Grid2/Autocompute Value Bounds1
       Splitter Ratio: 0.5788288116455078
     Tree Height: 439
   - Class: rviz/Selection
@@ -72,13 +73,13 @@ Visualization Manager:
         - Class: rviz/Group
           Displays:
             - Class: rviz/Marker
-              Enabled: true
+              Enabled: false
               Marker Topic: /planning_vis/trajectory_2
               Name: bspline_traj
               Namespaces:
                 {}
               Queue Size: 100
-              Value: true
+              Value: false
             - Class: rviz/Marker
               Enabled: false
               Marker Topic: /planning_vis/yaw_2
@@ -88,13 +89,13 @@ Visualization Manager:
               Queue Size: 100
               Value: false
             - Class: rviz/Marker
-              Enabled: true
+              Enabled: false
               Marker Topic: /planning/travel_traj_2
               Name: executed_traj
               Namespaces:
                 {}
               Queue Size: 100
-              Value: true
+              Value: false
             - Alpha: 1
               Autocompute Intensity Bounds: true
               Autocompute Value Bounds:
@@ -124,14 +125,14 @@ Visualization Manager:
               Use rainbow: true
               Value: false
             - Class: rviz/Marker
-              Enabled: false
+              Enabled: true
               Marker Topic: /planning/position_cmd_vis_2
               Name: position_cmd
               Namespaces:
-                {}
+                current_fov: true
               Queue Size: 10
-              Value: false
-          Enabled: false
+              Value: true
+          Enabled: true
           Name: Trajectory
         - Class: rviz/Group
           Displays:
@@ -368,6 +369,76 @@ Visualization Manager:
           Name: Sensor Data
       Enabled: true
       Name: UAV2
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /planning_vis/target_2
+      Name: preset_target
+      Namespaces:
+        detected_targets: true
+        preset_targets: true
+        searched_targets: true
+      Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: false
+      Autocompute Value Bounds:
+        Max Value: 6.349999904632568
+        Min Value: 0.15000000596046448
+        Value: false
+      Axis: Z
+      Channel Name: z
+      Class: rviz/PointCloud2
+      Color: 46; 52; 54
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 136; 138; 133
+      Max Intensity: 2
+      Min Color: 255; 255; 255
+      Min Intensity: 0
+      Name: Occu Grid
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 5
+      Size (m): 0.10000000149011612
+      Style: Boxes
+      Topic: /voxel_mapping/occupancy_grid_occupied_1
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: false
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: false
+      Autocompute Value Bounds:
+        Max Value: 6.349999904632568
+        Min Value: 0.15000000596046448
+        Value: false
+      Axis: Z
+      Channel Name: z
+      Class: rviz/PointCloud2
+      Color: 46; 52; 54
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 136; 138; 133
+      Max Intensity: 2
+      Min Color: 255; 255; 255
+      Min Intensity: 0
+      Name: Occu Grid
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 5
+      Size (m): 0.10000000149011612
+      Style: Boxes
+      Topic: /voxel_mapping/occupancy_grid_occupied_3
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: false
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -395,25 +466,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 124.54437255859375
+      Distance: 132.82852172851562
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.435059666633606
-        Y: -14.672406196594238
+        X: 0.06289362907409668
+        Y: -15.61142349243164
         Z: -5.500016212463379
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 1.5647963285446167
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
-      Yaw: 4.715000152587891
+      Yaw: 4.705000400543213
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 24

@@ -1,0 +1,24 @@
+Log file created at: 2025/08/01 14:37:16
+Running on machine: chai
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0801 14:37:16.762562  2027 exploration_node.cpp:24] Exploration task start at 1754030236.762579962
+I0801 14:37:16.801577  2027 exploration_node.cpp:29] 
+|---------------------------------- System Info ----------------------------------|
+CPU Name: 13th Gen Intel(R) Core(TM) i5-13600K
+CPU Cores: 14
+CPU Threads: 20
+CPU Frequency: 3900.003 MHz
+Memory Total: 31.1365 GB
+Memory Free: 8.00089 GB
+GPU Name: NVIDIA GeForce RTX 2070
+GPU Memory Total: 8 GB
+GPU Memory Free: 6.88184 GB
+|---------------------------------------------------------------------------------|
+I0801 14:37:18.024224  2027 exploration_fsm.cpp:125] -------------------- START OF FSM 3 CALLBACK --------------------
+I0801 14:37:18.024237  2027 exploration_fsm.cpp:131] [FSM] Current state: INIT, callback rate: 0Hz
+I0801 14:37:18.024281  2027 exploration_fsm.cpp:601] --------------------END OF CALLBACK--------------------
+I0801 14:37:18.024283  2027 exploration_fsm.cpp:602] 
+I0801 14:37:18.357786  2027 exploration_fsm.cpp:125] -------------------- START OF FSM 3 CALLBACK --------------------
+I0801 14:37:18.357798  2027 exploration_fsm.cpp:131] [FSM] Current state: INIT, callback rate: 2.99795Hz
+I0801 14:37:18.357838  2027 exploration_fsm.cpp:601] --------------------END OF CALLBACK--------------------
+I0801 14:37:18.357839  2027 exploration_fsm.cpp:602] 

@@ -128,8 +128,7 @@ double ConnectivityGraph::searchConnectivityGraphBFS(const int &id1, const int &
 
   double cost = 0.0;
   for (int i = 0; i < path.size() - 1; ++i) {
-    for (auto it = nodes_[path[i]]->neighbors_.begin(); it != nodes_[path[i]]->neighbors_.end();
-         ++it) {
+    for (auto it = nodes_[path[i]]->neighbors_.begin(); it != nodes_[path[i]]->neighbors_.end(); ++it) {
       if (it->id2_ == path[i + 1]) {
         cost += it->cost_;
         break;
@@ -139,9 +138,7 @@ double ConnectivityGraph::searchConnectivityGraphBFS(const int &id1, const int &
 
   if (cost < 1e-6) {
     ROS_ERROR("[ConnectivityGraph] Path cost is zero");
-    // print start end
     std::cout << "start: " << id1 << ", end: " << id2 << std::endl;
-    // print path
     for (int i = 0; i < path.size(); ++i) {
       std::cout << path[i] << " ";
     }

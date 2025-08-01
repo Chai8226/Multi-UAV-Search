@@ -13,6 +13,7 @@ MeshRender::~MeshRender() {
 int MeshRender::initialize(ros::NodeHandle &nh) {
   // Read render parameters
   std::string open3d_resource_path;
+  nh.param("drone_id", drone_id_, -1);
   nh.param("/mesh_render/open3d_resource_path", open3d_resource_path, std::string(""));
   nh.param("/mesh_render/enable_depth", enable_depth_, true);
   nh.param("/mesh_render/enable_color", enable_color_, false);
@@ -28,6 +29,29 @@ int MeshRender::initialize(ros::NodeHandle &nh) {
   nh.param("/uav_model/sensing_parameters/image_height", height_, 0);
   nh.param("/uav_model/sensing_parameters/min_depth", min_depth_, 0.01);
   nh.param("/uav_model/sensing_parameters/max_depth", max_depth_, 10.0);
+
+  // swarm
+  XmlRpc::XmlRpcValue poses_xml;
+  if (nh.getParam("/map_config/target_poses", poses_xml)) {
+    ROS_ASSERT(poses_xml.getType() == XmlRpc::XmlRpcValue::TypeArray);
+    for (int i = 0; i < poses_xml.size(); ++i) {
+      XmlRpc::XmlRpcValue pose_xml = poses_xml[i];
+      ROS_ASSERT(pose_xml.getType() == XmlRpc::XmlRpcValue::TypeStruct);
+      Vector3d p;
+      p[0] = static_cast<double>(pose_xml["x"]);
+      p[1] = static_cast<double>(pose_xml["y"]);
+      p[2] = static_cast<double>(pose_xml["z"]);
+
+      preset_target_poses_.push_back(p);
+    }
+    ROS_INFO("[MeshRender] Successfully loaded %zu target poses.", preset_target_poses_.size());
+    for (const auto& pos : preset_target_poses_) {
+      ROS_INFO("Target -> x: %.2f, y: %.2f, z: %.2f", pos.x(), pos.y(), pos.z());
+    }
+  } else {
+    ROS_WARN("[MeshRender] Failed to get param 'target_poses'. No predefined targets will be used.");
+  }
+
 
   if (fx_ == 0.0 || fy_ == 0.0 || cx_ == 0.0 || cy_ == 0.0) {
     ROS_ERROR("fx, fy, cx, cy is empty!");
@@ -89,9 +113,9 @@ int MeshRender::initialize(ros::NodeHandle &nh) {
   depth_image_pub_ = nh.advertise<sensor_msgs::Image>("/uav_simulator/depth_image", 1);
   color_image_pub_ = nh.advertise<sensor_msgs::Image>("/uav_simulator/color_image", 1);
   sensor_pose_pub_ = nh.advertise<geometry_msgs::TransformStamped>("/uav_simulator/sensor_pose", 1);
+  detected_targets_pub_ = nh.advertise<geometry_msgs::PoseArray>("/uav_simulator/detected_targets", 10);
 
-  render_timer =
-      nh.createTimer(ros::Duration(1.0 / render_rate_), &MeshRender::renderCallback, this);
+  render_timer = nh.createTimer(ros::Duration(1.0 / render_rate_), &MeshRender::renderCallback, this);
 
   Application &app = Application::GetInstance();
   app.Initialize(open3d_resource_path.c_str());
@@ -112,6 +136,17 @@ int MeshRender::initialize(ros::NodeHandle &nh) {
 
   scene->AddModel("model", model);
   scene->GetCamera()->SetProjection(camera_intrinsic, min_depth_, max_depth_, width_, height_);
+
+  // swarm
+  ROS_INFO("[MeshRender] Initializing raycasting scene...");
+  open3d::geometry::TriangleMesh combined_mesh;
+  for (const auto& mesh_info : model.meshes_) {
+    combined_mesh += *mesh_info.mesh;
+  }
+  auto tensor_mesh = open3d::t::geometry::TriangleMesh::FromLegacy(combined_mesh);
+  raycast_scene_ = std::make_unique<open3d::t::geometry::RaycastingScene>();
+  raycast_scene_->AddTriangles(tensor_mesh);
+  ROS_INFO("[MeshRender] Raycasting scene initialized successfully.");
 
   init_odom_ = false;
 
@@ -152,15 +187,12 @@ void MeshRender::renderCallback(const ros::TimerEvent &event) {
 
   // Get from world frame first
   camera_pos = T_w_b_.block<3, 1>(0, 3).cast<float>();
-  camera_lookat = T_w_b_.block<3, 3>(0, 0).cast<float>() * camera_lookat_b +
-                  T_w_b_.block<3, 1>(0, 3).cast<float>();
+  camera_lookat = T_w_b_.block<3, 3>(0, 0).cast<float>() * camera_lookat_b + T_w_b_.block<3, 1>(0, 3).cast<float>();
   camera_up = T_w_b_.block<3, 3>(0, 0).cast<float>() * camera_up_b;
 
   // Transform to map frame
-  camera_pos =
-      T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_pos + T_m_w_.block<3, 1>(0, 3).cast<float>();
-  camera_lookat = T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_lookat +
-                  T_m_w_.block<3, 1>(0, 3).cast<float>();
+  camera_pos = T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_pos + T_m_w_.block<3, 1>(0, 3).cast<float>();
+  camera_lookat = T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_lookat + T_m_w_.block<3, 1>(0, 3).cast<float>();
   camera_up = T_m_w_.block<3, 3>(0, 0).cast<float>() * camera_up;
 
   T_m_b_ = T_m_w_ * T_w_b_;
@@ -205,10 +237,10 @@ void MeshRender::renderCallback(const ros::TimerEvent &event) {
     ros::Time start_time_color = ros::Time::now();
     std::shared_ptr<geometry::Image> color_img =
         app.RenderToImage(*renderer, scene->GetView(), scene->GetScene(), width_, height_);
+    
     ros::Time end_time_color = ros::Time::now();
     if (verbose_)
-      ROS_INFO("[MeshRender] Color image time: %f ms",
-               (end_time_color - start_time_color).toSec() * 1000.0);
+      ROS_INFO("[MeshRender] Color image time: %f ms", (end_time_color - start_time_color).toSec() * 1000.0);
 
     // Grey image
     cv::Mat color_mat = cv::Mat::zeros(height_, width_, CV_8UC3);
@@ -226,6 +258,28 @@ void MeshRender::renderCallback(const ros::TimerEvent &event) {
     out_msg.encoding = sensor_msgs::image_encodings::BGR8;
     out_msg.image = color_mat.clone();
     color_image_pub_.publish(out_msg.toImageMsg());
+  }
+
+  // swarm
+  geometry_msgs::PoseArray detected_targets_msg;
+  detected_targets_msg.header.stamp = latest_odometry_timestamp_;
+  detected_targets_msg.header.frame_id = "world";
+  if (!preset_target_poses_.empty()) {
+    for (const auto& target_pos : preset_target_poses_) {
+      if (canSeeTarget(target_pos)) {
+        geometry_msgs::Pose pose;
+        pose.position.x = target_pos.x();
+        pose.position.y = target_pos.y();
+        pose.position.z = target_pos.z();
+        pose.orientation.w = 1.0;
+        
+        detected_targets_msg.poses.push_back(pose);
+      }
+    }
+  }
+  if (!detected_targets_msg.poses.empty()) {
+    ROS_WARN("\033[1;35m[MeshRender] ------Detected target!!!!-----\033[0m");
+    detected_targets_pub_.publish(detected_targets_msg);
   }
 
   // Publish 
@@ -271,8 +325,7 @@ void MeshRender::xmlRpcToEigen(XmlRpc::XmlRpcValue &xml_rpc, Eigen::Matrix<Scala
 }
 
 template <typename Scalar>
-bool MeshRender::getTransformationMatrixfromConfig(ros::NodeHandle &nh,
-                                                   Eigen::Matrix<Scalar, 4, 4> *T,
+bool MeshRender::getTransformationMatrixfromConfig(ros::NodeHandle &nh, Eigen::Matrix<Scalar, 4, 4> *T,
                                                    const std::string &param_name) {
   XmlRpc::XmlRpcValue T_xml;
   if (nh.getParam(param_name, T_xml)) {
@@ -285,8 +338,77 @@ bool MeshRender::getTransformationMatrixfromConfig(ros::NodeHandle &nh,
   }
 }
 
-bool MeshRender::saveImage(const std::string &filename,
-                           const std::shared_ptr<geometry::Image> &image) {
+bool MeshRender::saveImage(const std::string &filename, const std::shared_ptr<geometry::Image> &image) {
   ROS_INFO("[MeshRender] Writing image file to %s", filename.c_str());
   return io::WriteImage(filename, *image);
+}
+
+// swarm
+bool MeshRender::canSeeTarget(const Eigen::Vector3d& target_pos_world) {
+  if (!init_odom_) {
+    return false;
+  }
+
+  // ============== 步骤 1: 视场角 (FoV) 检查 ==============
+  Eigen::Matrix4d T_w_c;
+  T_w_c.setIdentity();
+
+  Eigen::Vector3d camera_pos_world = T_w_b_.block<3, 1>(0, 3);
+  T_w_c.block<3, 1>(0, 3) = camera_pos_world;
+
+  Eigen::Vector3d z_axis_cam = T_w_b_.block<3, 3>(0, 0) * Eigen::Vector3d::UnitX();
+  Eigen::Vector3d up_vec_ref = T_w_b_.block<3, 3>(0, 0) * Eigen::Vector3d::UnitZ();
+  Eigen::Vector3d x_axis_cam = z_axis_cam.cross(up_vec_ref).normalized();
+  Eigen::Vector3d y_axis_cam = z_axis_cam.cross(x_axis_cam);
+
+  T_w_c.block<3, 1>(0, 0) = x_axis_cam;
+  T_w_c.block<3, 1>(0, 1) = y_axis_cam;
+  T_w_c.block<3, 1>(0, 2) = z_axis_cam;
+
+  Eigen::Matrix4d T_c_w = T_w_c.inverse();
+
+  Eigen::Vector4d target_pos_world_h(target_pos_world.x(), target_pos_world.y(), target_pos_world.z(), 1.0);
+  Eigen::Vector4d target_pos_camera_h = T_c_w * target_pos_world_h;
+  
+  Eigen::Vector3d target_pos_camera = target_pos_camera_h.head<3>() / target_pos_camera_h.w();
+
+  // ROS_WARN("\033[1;35m[MeshRender] ------test!!!!-----\033[0m");
+  // std::cout << target_pos_camera.z() << std::endl;
+  if (target_pos_camera.z() < 0.1 || target_pos_camera.z() > 10) {
+    return false;
+  }
+
+  double u = fx_ * target_pos_camera.x() / target_pos_camera.z() + cx_;
+  double v = fy_ * target_pos_camera.y() / target_pos_camera.z() + cy_;
+
+  if (u < 0 || u >= width_ || v < 0 || v >= height_) {
+    return false;
+  }
+
+  // ============== 步骤 2: 遮挡检查 (Ray Casting) ==============
+  Eigen::Vector4d camera_pos_world_h(camera_pos_world.x(), camera_pos_world.y(), camera_pos_world.z(), 1.0);
+  Eigen::Vector3d camera_pos_map = (T_m_w_ * camera_pos_world_h).head<3>();
+  Eigen::Vector3d target_pos_map = (T_m_w_ * target_pos_world_h).head<3>();
+  
+  double target_dist_map = (target_pos_map - camera_pos_map).norm();
+  if (target_dist_map < 1e-6) {
+    return true;
+  }
+  Eigen::Vector3d ray_dir_map = (target_pos_map - camera_pos_map) / target_dist_map;
+
+  std::vector<float> ray_data = {
+    (float)camera_pos_map.x(), (float)camera_pos_map.y(), (float)camera_pos_map.z(),
+    (float)ray_dir_map.x(),    (float)ray_dir_map.y(),    (float)ray_dir_map.z()
+  };
+  open3d::core::Tensor rays(ray_data, {1, 6}, open3d::core::Float32);
+  
+  std::unordered_map<std::string, open3d::core::Tensor> ans = raycast_scene_->CastRays(rays);
+
+  float hit_dist = ans.at("t_hit").ToFlatVector<float>()[0];
+
+  if (std::isinf(hit_dist) || hit_dist > target_dist_map - 0.1) {
+    return true;
+  } else {
+    return false;
+  }
 }

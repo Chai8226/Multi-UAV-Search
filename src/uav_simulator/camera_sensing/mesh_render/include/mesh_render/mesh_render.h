@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <geometry_msgs/PoseArray.h>
 #include <Eigen/Eigen>
 #include <cv_bridge/cv_bridge.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -10,16 +10,18 @@
 #include <ros/ros.h>
 #include <ros/package.h>
 #include <sensor_msgs/Image.h>
-
+#include <XmlRpcValue.h>
 #include <opencv2/core/eigen.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/opencv.hpp>
 
 #include <open3d/Open3D.h>
+#include <open3d/t/geometry/RaycastingScene.h>
 #include <open3d/visualization/rendering/Model.h>
 #include <open3d/visualization/rendering/filament/FilamentEngine.h>
 #include <open3d/visualization/rendering/filament/FilamentRenderer.h>
 
+using Eigen::Vector3d;
 using namespace open3d;
 using namespace open3d::visualization::gui;
 using namespace open3d::visualization::rendering;
@@ -38,6 +40,9 @@ public:
 
   void odometryCallback(const nav_msgs::OdometryConstPtr &msg);
   void renderCallback(const ros::TimerEvent &event);
+
+  // swarm
+  bool canSeeTarget(const Eigen::Vector3d& target_pos_world);
 
 private:
   template <typename Scalar>
@@ -82,4 +87,10 @@ private:
 
   // Debug output
   bool verbose_;
+
+  // swarm
+  int drone_id_;
+  ros::Publisher detected_targets_pub_;
+  std::vector<Vector3d> preset_target_poses_;
+  std::unique_ptr<open3d::t::geometry::RaycastingScene> raycast_scene_;
 };

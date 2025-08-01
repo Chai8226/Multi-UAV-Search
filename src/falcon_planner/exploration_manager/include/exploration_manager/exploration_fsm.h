@@ -18,6 +18,7 @@
 #include <std_msgs/Empty.h>
 #include <std_msgs/Int32.h>
 #include <std_msgs/Float32.h>
+#include <XmlRpcValue.h>
 #include <visualization_msgs/Marker.h>
 #include "exploration_manager/exploration_manager.h"
 #include <exploration_manager/DroneState.h>
@@ -25,7 +26,9 @@
 #include <exploration_manager/PairOptResponse.h>
 #include <exploration_manager/UnassignedGrids.h>
 #include <exploration_manager/UnassignedGrid.h>
-#include <exploration_manager/bbox.h>
+#include <exploration_manager/Bbox.h>
+#include <exploration_manager/Target.h>
+#include <exploration_manager/TargetArray.h>
 #include <trajectory/Bspline.h>
 
 using Eigen::Vector3d;
@@ -41,6 +44,7 @@ class ExplorationManager;
 class PlanningVisualization;
 struct FSMParam;
 struct FSMData;
+
 
 enum EXPL_STATE { INIT, WAIT_TRIGGER, PLAN_TRAJ, PUB_TRAJ, EXEC_TRAJ, FINISH, RTB, IDLE};
 
@@ -98,22 +102,38 @@ private:
   void gridTimerCallback(const ros::TimerEvent &e);
   void optMsgCallback(const exploration_manager::PairOptConstPtr& msg);
   void optResMsgCallback(const exploration_manager::PairOptResponseConstPtr& msg);
-  int optSlover(const Eigen::MatrixXd &cost_mat, vector<int> &new_1, vector<int> &new_2,
+  int optSolver(const Eigen::MatrixXd &cost_mat, vector<int> &new_1, vector<int> &new_2,
                 const std::map<int, pair<int, int>> &cost_mat_id_to_cell_center_id,
                 const unordered_set<int>& pre_assigned_1, const unordered_set<int>& pre_assigned_2);
   int pubGrids(vector<int>& local_unknown_ids_out);
   void gridMsgCallback(const exploration_manager::UnassignedGridsConstPtr& msg);
   void updateAssignedGrids();
-  static bool isBboxCovered(const exploration_manager::bbox& inner_bbox, const exploration_manager::bbox& outer_bbox) {
-    return inner_bbox.box_min.x >= outer_bbox.box_min.x &&
-           inner_bbox.box_min.y >= outer_bbox.box_min.y &&
-           inner_bbox.box_min.z >= outer_bbox.box_min.z &&
-           inner_bbox.box_max.x <= outer_bbox.box_max.x &&
-           inner_bbox.box_max.y <= outer_bbox.box_max.y &&
-           inner_bbox.box_max.z <= outer_bbox.box_max.z;
+  static bool isBboxCovered(const exploration_manager::Bbox& inner_Bbox, const exploration_manager::Bbox& outer_Bbox) {
+    return inner_Bbox.box_min.x >= outer_Bbox.box_min.x &&
+           inner_Bbox.box_min.y >= outer_Bbox.box_min.y &&
+           inner_Bbox.box_min.z >= outer_Bbox.box_min.z &&
+           inner_Bbox.box_max.x <= outer_Bbox.box_max.x &&
+           inner_Bbox.box_max.y <= outer_Bbox.box_max.y &&
+           inner_Bbox.box_max.z <= outer_Bbox.box_max.z;
   }
   int getId();
+
+    /* target */
+  ros::Subscriber target_sub_;
+  std::vector<Vector3d> preset_target_poses_;
+  std::vector<Vector3d> detected_target_poses_;
+  std::vector<Vector3d> searched_target_poses_;
+  ros::Publisher searched_target_pub_;
+  ros::Subscriber searched_target_sub_;
+  void swarmTargetCallback(const exploration_manager::TargetArrayConstPtr& msg);
+  void checkTargetSearched();
+  void getActiveTarget(vector<Vector3d>& active_target);
+  bool targetSearched(const Vector3d& target_pos);
+  void targetMsgCallback(const geometry_msgs::PoseArrayConstPtr& msg);
+  bool inDetected(const Vector3d& target_pos);
+  bool inSearched(const Vector3d& target_pos);
   
+  std::mutex data_mutex_;
 };
 
 } // namespace fast_planner

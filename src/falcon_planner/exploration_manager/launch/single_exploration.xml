@@ -39,8 +39,11 @@
     <remap from="/swarm_expl/grid_recv" to="swarm_expl/grid" />
     <remap from="/swarm_expl/pair_opt_res_send" to="/swarm_expl/pair_opt_res" />
     <remap from="/swarm_expl/pair_opt_res_recv" to="/swarm_expl/pair_opt_res" />
-    <remap from="/swarm_expl/swarm_traj_recv" to="/planning/swarm_traj" />
-    <remap from="/swarm_expl/swarm_traj_send" to="/planning/swarm_traj" />
+    <remap from="/swarm_expl/swarm_traj_recv" to="/swarm_expl/swarm_traj" />
+    <remap from="/swarm_expl/swarm_traj_send" to="/swarm_expl/swarm_traj" />
+    <remap from="/swarm_expl/targets_send" to="/swarm_expl/targets" />
+    <remap from="/swarm_expl/targets_recv" to="/swarm_expl/targets" />
+    <remap from="/detected_targets" to="/uav_simulator/detected_targets_$(arg drone_id)"/>
   </node>
  
   <!-- Launch trajectory server -->
@@ -58,10 +61,12 @@
     <rosparam command="load" file="$(find pointcloud_render)/config/pointcloud_render.yaml"/>
     <rosparam command="load" file="$(find mesh_render)/config/mesh_render.yaml"/>
     <node pkg="map_render" name="map_render_node_$(arg drone_id)" type="map_render_node" output="screen">
+      <param name="drone_id" value="$(arg drone_id)"/>
       <remap from="/uav_simulator/odometry" to="$(arg odometry_topic_prefix)_$(arg drone_id)"/>
       <remap from="/uav_simulator/depth_image" to="$(arg depth_image_prefix)_$(arg drone_id)"/>
       <remap from="/uav_simulator/color_image" to="$(arg color_image_prefix)_$(arg drone_id)"/>
       <remap from="/uav_simulator/sensor_pose" to="$(arg sensor_pose_topic_prefix)_$(arg drone_id)"/>
+      <remap from="/uav_simulator/detected_targets" to="/uav_simulator/detected_targets_$(arg drone_id)"/>
     </node>
 
     <!-- Odometry Generator -->

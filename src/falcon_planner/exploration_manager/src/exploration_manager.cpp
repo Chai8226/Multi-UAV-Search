@@ -605,136 +605,215 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
       next_pos = cell_frontier_viewpoints[min_cost_id];
       next_yaw = cell_frontier_yaws[min_cost_id];
     } else {
-      // swarm:  No frontier in next grid, find a nearest viewpoint
+      // TODO swarm:  No frontier in next grid, find a nearest viewpoint
+      // - 1：先在swarm grid中寻找best的viewpoint
+      // - 2：若没有，则根据全局规划的第一个grid的未知中心，采用computeCostUnknown 找到代价最小的边界的视点3个，选择当前位置到这些视点代价最小的一个
+      // - 3：若还没有，则在全局规划路径所有剩余的Grid中搜索，找到距离这些区域的未知中心最近的 3个 候选视点，然后选择一个距离无人机当前位置代价最小的视点
+
       ROS_WARN("[ExplorationManager] No frontier average in next grid cell. Searching for alternative target.");
+      
+      // ------------------ Phase 1: Find the best viewpoint in the drone's own swarm grid ------------------
+      ROS_INFO("[ExplorationManager] Phase 1: Searching for the best viewpoint within the assigned swarm grid.");
+      double min_cost_phase1 = 1000;
+      int best_vp_id_phase1 = -1;
 
-      // ------------------ 步骤 1: 在swarm grid中寻找最近的viewpoint ------------------
-      double min_vp_cost = 1000;
-      int best_vp_id = -1;
-
-      ROS_INFO("[ExplorationManager] Phase 1: Finding the nearest viewpoint in own swarm grid.");
       for (int i = 0; i < ed_->points_.size(); ++i) {
-        if (!hierarchical_grid_->idInSwarmUniformGrid(hierarchical_grid_->getLayerCellId(0, ed_->points_[i]))) {
-          continue;
-        }
-        vector<Eigen::Vector3d> path;
-        double cost = PathCostEvaluator::computeCost(hierarchical_grid_->getLayerCellCenter(0, next_cell_id), ed_->points_[i], yaw[0], ed_->yaws_[i], vel, yaw[1], path);
+        // Check if the viewpoint is within the drone's operational area (swarm grid)
+        int vp_cell_id = hierarchical_grid_->getLayerCellId(0, ed_->points_[i]);
+        if (hierarchical_grid_->idInSwarmUniformGrid(vp_cell_id)) {
+          vector<Eigen::Vector3d> path;
+          // Calculate the cost from the current position to this viewpoint
+          double cost = PathCostEvaluator::computeCost(pos, ed_->points_[i], yaw[0], ed_->yaws_[i], vel, yaw[1], path);
 
-        if (cost < min_vp_cost) {
-          min_vp_cost = cost;
-          best_vp_id = i;
+          if (cost < min_cost_phase1) {
+            min_cost_phase1 = cost;
+            best_vp_id_phase1 = i;
+          }
         }
       }
 
-      if (best_vp_id != -1) {
-        next_pos = ed_->points_[best_vp_id];
-        next_yaw = ed_->yaws_[best_vp_id];
-        ROS_INFO("[ExplorationManager] Phase 1 Succeeded: Found nearest viewpoint %d in swarm grid.", best_vp_id);
+      if (best_vp_id_phase1 != -1) {
+        next_pos = ed_->points_[best_vp_id_phase1];
+        next_yaw = ed_->yaws_[best_vp_id_phase1];
+        ROS_INFO("[ExplorationManager] Phase 1 Succeeded: Found best viewpoint %d in swarm grid.", best_vp_id_phase1);
       } else {
-        // ------------------ 步骤 2: 寻找最近可达未知区域的最佳入口视点 ------------------
+        // ------------------ Phase 2: Find viewpoint closest to the next global grid center ------------------
         ROS_WARN("[ExplorationManager] Phase 1 Failed: No viewpoints found in swarm grid. Trying Phase 2: Find best entry viewpoint for nearest reachable UNKNOWN region.");
-        // 2.1.1: 获取本机负责的所有栅格单元的ID
-        vector<int> swarm_cell_ids;
-        hierarchical_grid_->getSwarmLayerCellIds(0, swarm_cell_ids);
+        ROS_INFO("[ExplorationManager] Phase 2: Finding viewpoint closest to the next global plan grid center.");
 
-        if (swarm_cell_ids.empty()) {
-          ROS_ERROR("[ExplorationManager] Phase 2.1 Failed: Swarm grid is empty. Planning failed.");
-          return NO_GRID;
-        }
-        std::unordered_set<int> assigned_cells_set(swarm_cell_ids.begin(), swarm_cell_ids.end());
+        int best_vp_id_phase2 = -1;
 
-        // 从图中筛选出所有属于本机负责区域的“未知”类型节点
+        // 定义权重: w1关注战略价值（靠近未知区），w2关注战术成本（靠近当前位置）
+        const double w1 = 1.0; 
+        const double w2 = 0.5;
+
         const auto& graph = hierarchical_grid_->uniform_grids_[0].connectivity_graph_;
         if (!graph) {
-          ROS_ERROR("[ExplorationManager] Phase 2.1 Failed: Connectivity graph is null.");
-          return NO_GRID;
-        }
-        
-        std::vector<ConnectivityNode::Ptr> candidate_unknown_nodes;
-        std::vector<int> all_node_ids;
-        std::vector<Vector3d> all_node_pos;
-        graph->getNodePositionsWithIDs(all_node_pos, all_node_ids);
-
-        for (const int& node_id : all_node_ids) {
-          ConnectivityNode::Ptr node = graph->getNode(node_id);
-          if (node && node->type_ == ConnectivityNode::TYPE::UNKNOWN) {
-            int cell_id = node->id_ / 10;
-            if (assigned_cells_set.count(cell_id)) {
-              candidate_unknown_nodes.push_back(node);
-            }
-          }
-        }
-        
-        // 在候选未知节点中，寻找路径成本最低（最近且可达）的一个
-        double min_cost_to_unknown = std::numeric_limits<double>::max();
-        ConnectivityNode::Ptr target_unknown_node = nullptr;
-
-        for (const auto& candidate_node : candidate_unknown_nodes) {
-          vector<Eigen::Vector3d> path;
-          double cost = PathCostEvaluator::computeCostUnknown(pos, candidate_node->pos_, yaw[0], 0.0, vel, 0.0, path);
-          if (cost < min_cost_to_unknown) {
-            min_cost_to_unknown = cost;
-            target_unknown_node = candidate_node;
-          }
-        }
-
-        if (!target_unknown_node) {
-          ROS_ERROR("[ExplorationManager] Phase 2.1 Failed: Could not find any reachable UNKNOWN nodes in assigned territory.");
-          return NO_GRID;
-        }
-        ROS_INFO("[ExplorationManager] Phase 2.1 Succeeded: Target UNKNOWN region identified around node %d.", target_unknown_node->id_);
-        double min_cost_to_viewpoint = 1000;
-        int best_viewpoint_id = -1;
-        
-        // 定义一个半径，用于将全局的视点与我们选定的目标未知区域关联起来
-        const double association_radius = 20.0; // 可调参数: 视点与未知节点中心的距离在此范围内才算关联
-
-        for (int i = 0; i < ed_->points_.size(); ++i) {
-          // 检查1：该视点是否与我们的目标未知区域相关联？
-          if ((ed_->points_[i] - target_unknown_node->pos_).norm() < association_radius) {
-            vector<Eigen::Vector3d> path;
-            double cost = PathCostEvaluator::computeCostUnknown(target_unknown_node->pos_, ed_->points_[i], 
-                                                                0, 0, vel, 0, path);
-
-            if (cost < min_cost_to_viewpoint) {
-              min_cost_to_viewpoint = cost;
-              best_viewpoint_id = i;
-            }
-          }
-        }
-        
-        if (best_viewpoint_id != -1) {
-          // 成功找到一个最佳的入口视点
-          next_pos = ed_->points_[best_viewpoint_id];
-          next_yaw = ed_->yaws_[best_viewpoint_id];
-          ROS_INFO("[ExplorationManager] Phase 2.2 Succeeded: Found best entry viewpoint %d for target region.", best_viewpoint_id);
+          ROS_ERROR("[ExplorationManager] Phase 2 Failed: Connectivity graph is null.");
         } else {
-          ROS_ERROR("[ExplorationManager] Phase 2.2 Failed: Found a target UNKNOWN region, but no reachable viewpoints/frontiers for it.");
-          ROS_WARN("[ExplorationManager] Activating FINAL FALLBACK: searching for the globally nearest reachable frontier (viewpoint), ignoring all region constraints.");
+          std::vector<ConnectivityNode::Ptr> target_cell_unknown_nodes;
+          std::vector<int> all_node_ids;
+          std::vector<Vector3d> all_node_pos;
+          graph->getNodePositionsWithIDs(all_node_pos, all_node_ids);
+
+          for (const int& node_id : all_node_ids) {
+            if ((node_id / 10) == next_cell_id) {
+              ConnectivityNode::Ptr node = graph->getNode(node_id);
+              if (node && node->type_ == ConnectivityNode::TYPE::UNKNOWN) {
+                target_cell_unknown_nodes.push_back(node);
+              }
+            }
+          }
+
+          if (target_cell_unknown_nodes.empty()) {
+            ROS_WARN("[ExplorationManager] Phase 2: Next grid cell %d has no unknown nodes.", next_cell_id);
+          } else {
+            double min_score_phase2 = std::numeric_limits<double>::max();
+            for (const auto& node : target_cell_unknown_nodes) {
+              for (int i = 0; i < ed_->points_.size(); ++i) {
+                vector<Eigen::Vector3d> path_to_unknown, path_from_uav;
+                
+                // 计算战略成本：从未知节点到视点的成本
+                double cost_to_unknown = PathCostEvaluator::computeCostUnknown(
+                    node->pos_, ed_->points_[i], 0.0, ed_->yaws_[i], Vector3d::Zero(), 0.0, path_to_unknown);
+                if (cost_to_unknown > 499.0) continue; // 视点无法从未知区域到达，跳过
+
+                // 计算战术成本：从当前位置到视点的成本
+                double cost_from_uav = PathCostEvaluator::computeCost(
+                    pos, ed_->points_[i], yaw[0], ed_->yaws_[i], vel, yaw[1], path_from_uav);
+                if (cost_from_uav > 499.0) continue; // 视点无法从当前位置到达，跳过
+
+                // 计算统一评分
+                double score = w1 * cost_to_unknown + w2 * cost_from_uav;
+                if (score < min_score_phase2) {
+                  min_score_phase2 = score;
+                  best_vp_id_phase2 = i;
+                }
+              }
+            }
+          }
+        }
+
+        if (best_vp_id_phase2 != -1) {
+          next_pos = ed_->points_[best_vp_id_phase2];
+          next_yaw = ed_->yaws_[best_vp_id_phase2];
+          ROS_INFO("[ExplorationManager] Phase 2 Succeeded: Selected viewpoint %d with best unified score.", best_vp_id_phase2);
+        } else {
+          // ------------------ Phase 3: 在全局路径所有剩余Grid中寻找综合评分最佳的视点 ------------------
+          ROS_WARN("[ExplorationManager] Phase 2 Failed. Trying Phase 3: Searching all remaining grids with unified scoring.");
+
+          int best_vp_id_phase3 = -1;
+          // 在最终后备阶段可以适当增加对当前成本的关注
+          const double w1_p3 = 1.0;
+          const double w2_p3 = 1.0;
+
+          if (!graph) {
+            ROS_FATAL("[ExplorationManager] Phase 3 Failed: Connectivity graph is null.");
+            return NO_GRID;
+          }
           
-          double min_fallback_cost = std::numeric_limits<double>::max();
-          int best_fallback_vp_id = -1;
+          std::set<int> future_cell_ids;
+          for (size_t i = 1; i < ed_->grid_tour2_.size(); ++i) {
+            future_cell_ids.insert(hierarchical_grid_->getLayerCellId(0, ed_->grid_tour2_[i]));
+          }
 
-          // 遍历所有已知的视点，不再有任何区域限制
-          for (int i = 0; i < ed_->points_.size(); ++i) {
-            vector<Eigen::Vector3d> path;
-            double cost = PathCostEvaluator::computeCost(pos, ed_->points_[i], yaw[0], ed_->yaws_[i], vel, yaw[1], path);
-
-            if (cost < min_fallback_cost) {
-              min_fallback_cost = cost;
-              best_fallback_vp_id = i;
+          if (future_cell_ids.empty()) {
+            ROS_FATAL("[ExplorationManager] Phase 3 Failed: No future grids in plan.");
+            return NO_GRID;
+          }
+          
+          std::vector<ConnectivityNode::Ptr> future_unknown_nodes;
+          std::vector<int> all_node_ids_p3;
+          std::vector<Vector3d> all_node_pos_p3;
+          graph->getNodePositionsWithIDs(all_node_pos_p3, all_node_ids_p3);
+          for (const int& node_id : all_node_ids_p3) {
+            if (future_cell_ids.count(node_id / 10)) {
+              ConnectivityNode::Ptr node = graph->getNode(node_id);
+              if (node && node->type_ == ConnectivityNode::TYPE::UNKNOWN) {
+                future_unknown_nodes.push_back(node);
+              }
             }
           }
           
-          if (best_fallback_vp_id != -1) {
-            // 找到了全局最近的可达视点
-            next_pos = ed_->points_[best_fallback_vp_id];
-            next_yaw = ed_->yaws_[best_fallback_vp_id];
-            ROS_INFO("[ExplorationManager] Final Fallback Succeeded: Flying to globally nearest viewpoint %d.", best_fallback_vp_id);
-          } else {
-            // 如果连这个都失败了，说明整个地图上没有任何一个可达的边界了，勘探可能已完成或陷入僵局
-            ROS_FATAL("[ExplorationManager] Final Fallback FAILED: No reachable viewpoints found anywhere on the map. Exploration might be complete or stuck.");
+          if (future_unknown_nodes.empty()) {
+            ROS_FATAL("[ExplorationManager] Phase 3 Failed: No unknown nodes in the rest of the global tour.");
             return NO_GRID;
+          }
+          
+          double min_score_phase3 = 1000;
+          for (const auto& node : future_unknown_nodes) {
+            for (int i = 0; i < ed_->points_.size(); ++i) {
+              vector<Eigen::Vector3d> path_to_unknown, path_from_uav;
+
+              double cost_to_unknown = PathCostEvaluator::computeCostUnknown(
+                  node->pos_, ed_->points_[i], 0.0, ed_->yaws_[i], Vector3d::Zero(), 0.0, path_to_unknown);
+              if (cost_to_unknown > 499.0) continue;
+
+              double cost_from_uav = PathCostEvaluator::computeCost(
+                  pos, ed_->points_[i], yaw[0], ed_->yaws_[i], vel, yaw[1], path_from_uav);
+              if (cost_from_uav > 499.0) continue;
+              
+              double score = w1_p3 * cost_to_unknown + w2_p3 * cost_from_uav;
+              if (score < min_score_phase3) {
+                min_score_phase3 = score;
+                best_vp_id_phase3 = i;
+              }
+            }
+          }
+
+          if (best_vp_id_phase3 != -1) {
+            next_pos = ed_->points_[best_vp_id_phase3];
+            next_yaw = ed_->yaws_[best_vp_id_phase3];
+            ROS_INFO("[ExplorationManager] Phase 3 Succeeded: Selected viewpoint %d from all remaining grids.", best_vp_id_phase3);
+          } else {
+            // ------------------ Phase 4: 最终后备策略，选择距离下一个Grid最近的视点 ------------------
+            ROS_WARN("[ExplorationManager] Phase 3 Failed. Trying Phase 4: Final fallback, finding viewpoint closest to the next grid.");
+            
+            double min_cost_phase4 = std::numeric_limits<double>::max();
+            int best_vp_id_phase4 = -1;
+            Eigen::Vector3d next_grid_center = hierarchical_grid_->getLayerCellCenter(0, next_cell_id);
+
+            for (int i = 0; i < ed_->points_.size(); ++i) {
+              vector<Eigen::Vector3d> path_to_vp, path_from_uav;
+              double reachability_cost = PathCostEvaluator::computeCost(pos, ed_->points_[i], yaw[0], ed_->yaws_[i], vel, yaw[1], path_from_uav);
+              if (reachability_cost > 499.0) continue;
+
+              double cost = PathCostEvaluator::computeCostUnknown(next_grid_center, ed_->points_[i], 0.0, ed_->yaws_[i], Vector3d::Zero(), 0.0, path_to_vp);
+
+              if (cost < min_cost_phase4) {
+                min_cost_phase4 = cost;
+                best_vp_id_phase4 = i;
+              }
+            }
+
+            if (best_vp_id_phase4 != -1) {
+              next_pos = ed_->points_[best_vp_id_phase4];
+              next_yaw = ed_->yaws_[best_vp_id_phase4];
+              ROS_INFO("[ExplorationManager] Phase 4 Succeeded: Selected viewpoint %d closest to the next grid cell.", best_vp_id_phase4);
+            } else {
+              // ------------------ Phase 5: 终极后备，选择与下一个Grid直线距离最近的视点 ------------------
+              ROS_WARN("[ExplorationManager] Phase 4 Failed. Trying Phase 5: Ultimate fallback, finding viewpoint with minimum euclidean distance to the next grid.");
+              
+              double min_dist_phase5 = std::numeric_limits<double>::max();
+              int best_vp_id_phase5 = -1;
+
+              if (ed_->points_.empty()) {
+                ROS_FATAL("[ExplorationManager] Phase 5 Failed: No viewpoints available at all. Exploration cannot continue.");
+                return NO_GRID;
+              }
+
+              for (int i = 0; i < ed_->points_.size(); ++i) {
+                double dist = (ed_->points_[i] - next_grid_center).norm();
+                if (dist < min_dist_phase5) {
+                    min_dist_phase5 = dist;
+                    best_vp_id_phase5 = i;
+                }
+              }
+
+              next_pos = ed_->points_[best_vp_id_phase5];
+              next_yaw = ed_->yaws_[best_vp_id_phase5];
+              ROS_INFO("[ExplorationManager] Phase 5 Succeeded: Selected viewpoint %d with closest euclidean distance to the next grid.", best_vp_id_phase5);
+            }
           }
         }
       }
@@ -1283,7 +1362,7 @@ int ExplorationManager::updateFrontierStruct(const Eigen::Vector3d &pos) {
       all_centers_unknown_active.push_back(center_unknown);
     }
   }
-  // TODO
+  
   // frontier_finder_->computeFrontiersToVisit();
   frontier_finder_->computeFrontiersToVisitNew(all_centers_unknown_active);
 

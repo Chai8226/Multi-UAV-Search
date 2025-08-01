@@ -43,6 +43,9 @@ PlanningVisualization::PlanningVisualization(ros::NodeHandle &nh, int &drone_id)
   assigned_grids_pub_ = node.advertise<visualization_msgs::Marker>("/planning_vis/assigned_grids_"+to_string(drone_id), 1000);
   pubs_.push_back(assigned_grids_pub_);
 
+  target_pub_ = node.advertise<visualization_msgs::Marker>("/planning_vis/target_"+to_string(drone_id), 1000);
+  pubs_.push_back(target_pub_);
+
   frontier_pcl_pub_ = node.advertise<sensor_msgs::PointCloud2>("/planning_vis/frontier_pcl_"+to_string(drone_id), 1000);
   dormant_frontier_pcl_pub_ = node.advertise<sensor_msgs::PointCloud2>("/planning_vis/dormant_frontier_pcl_"+to_string(drone_id), 1000);
   tiny_frontier_pcl_pub_ = node.advertise<sensor_msgs::PointCloud2>("/planning_vis/tiny_frontier_pcl_"+to_string(drone_id), 1000);

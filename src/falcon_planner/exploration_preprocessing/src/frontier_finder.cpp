@@ -1366,4 +1366,22 @@ void FrontierFinder::setCellHeights(const vector<double> &cell_heights) {
   cell_heights_ = cell_heights;
 }
 
+bool FrontierFinder::insideFOVWithoutOcclud(const Vector3d& begin, const double& yaw, const Vector3d& end) {
+  percep_utils_->setPose(begin, yaw);
+  raycaster_->input(begin, end);
+
+  if (percep_utils_->insideFOV(end)) {
+    Eigen::Vector3i idx;
+    while (raycaster_->nextId(idx)) {
+      if (map_server_->getOccupancy(idx) == voxel_mapping::OccupancyType::OCCUPIED ||
+          map_server_->getOccupancy(idx) == voxel_mapping::OccupancyType::UNKNOWN) {
+        return false;
+      }
+    }
+    return true;
+  } else {
+    return false;
+  }
+}
+
 } // namespace fast_planner

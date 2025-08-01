@@ -1,4 +1,4 @@
-PROBLEM_FILE = /home/chai/Code/SCAR/search/Multi-UAV-Search/src/src/falcon_planner/exploration_utils/resource/coverage_path_2.tsp
+PROBLEM_FILE = /home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/exploration_utils/resource/coverage_path_2.tsp
 GAIN23 = NO
-OUTPUT_TOUR_FILE =/home/chai/Code/SCAR/search/Multi-UAV-Search/src/src/falcon_planner/exploration_utils/resource/coverage_path_2.txt
+OUTPUT_TOUR_FILE =/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/exploration_utils/resource/coverage_path_2.txt
 RUNS = 1

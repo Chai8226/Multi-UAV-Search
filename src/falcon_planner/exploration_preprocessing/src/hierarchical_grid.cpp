@@ -3744,20 +3744,6 @@ void HierarchicalGrid::classifyUniformGrids(const int& level, std::vector<int>& 
   if (all_free_node_ids.empty()) {
     ROS_WARN_THROTTLE(1.0, "[HierarchicalGrid] No FREE nodes in graph, all UNKNOWN cells are considered unreachable.");
     return;
-    // // 在这种情况下，只将那些完全不包含任何UNKNOWN节点的cell归为free_ids
-    // for (const auto& pair : nodes_by_cell) {
-    //   bool has_unknown = false;
-    //   for (const auto& node : pair.second) {
-    //     if (node->type_ == ConnectivityNode::TYPE::UNKNOWN) {
-    //       has_unknown = true;
-    //       break;
-    //     }
-    //   }
-    //   if (!has_unknown) {
-    //     free_ids.push_back(pair.first);
-    //   }
-    // }
-    // return;
   }
 
   // --- 步骤 3: 遍历所有Cell，进行可达性检查和最终分类 ---
@@ -3771,33 +3757,31 @@ void HierarchicalGrid::classifyUniformGrids(const int& level, std::vector<int>& 
     for (const auto& node : nodes_in_cell) {
       if (node->type_ == ConnectivityNode::TYPE::UNKNOWN) {
         cell_has_unknown_node = true;
-        
-        // --- 可达性检查 ---
+  
         // 检查这个 UNKNOWN 节点是否能到达任何一个 FREE 节点
         for (const int& free_node_id : all_free_node_ids) {
           vector<int> path;
-          // 使用现有的图搜索功能, 成本小于一个很大的数（例如1000.0）意味着路径存在
           if (graph->searchConnectivityGraphBFS(node->id_, free_node_id, path) < 1000.0) { 
             cell_has_reachable_unknown = true;
-            break; // 只要能到达一个free节点，就证明此unknown节点可达
+            break;
           }
         }
       }
       if (cell_has_reachable_unknown) {
-        break; // 只要cell里有一个unknown节点可达，这个cell就是可达的，无需再检查此cell的其他节点
+        break;
       }
     }
 
     // --- 最终分类 ---
     if (cell_has_unknown_node) {
       if (cell_has_reachable_unknown) {
-        unknown_ids.push_back(cell_id); // 这是一个包含可达未知区域的cell
+        unknown_ids.push_back(cell_id); 
       } else {
         // 这个cell虽然有未知区域，但都是孤岛，打印日志并忽略
         ROS_INFO_THROTTLE(1.0, "[HierarchicalGrid] Cell %d contains only unreachable UNKNOWN nodes, ignoring for assignment.", cell_id);
       }
     } else {
-      free_ids.push_back(cell_id); // 这是一个纯自由空间cell
+      free_ids.push_back(cell_id);
     }
   }
 }

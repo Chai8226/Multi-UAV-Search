@@ -107,6 +107,8 @@
         "core": "cpp",
         "eigen": "cpp",
         "filesystem": "cpp",
-        "__memory": "cpp"
-    }
+        "__memory": "cpp",
+        "__functional_03": "cpp"
+    },
+    "todo-tree.tree.scanMode": "workspace only"
 }

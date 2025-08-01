@@ -119,7 +119,8 @@ public:
     DEBUG = 8,
     POSE = 9,
     POSE_ARRAY = 10,
-    ASSIGNED_GRIDS = 11
+    ASSIGNED_GRIDS = 11,
+    TARGET = 12
   };
 
   struct Color {
@@ -199,6 +200,7 @@ private:
   ros::Publisher pose_pub_;       // 9, pose
   ros::Publisher pose_array_pub_; // 10, pose array
   ros::Publisher assigned_grids_pub_;  // 11, assigned grid cells
+  ros::Publisher target_pub_;  // 11, assigned grid cells
   vector<ros::Publisher> pubs_;
 
   ros::Publisher frontier_pcl_pub_, dormant_frontier_pcl_pub_, tiny_frontier_pcl_pub_, trajectory_with_velocity_pub_;
