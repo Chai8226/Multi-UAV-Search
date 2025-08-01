@@ -5,7 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /UAV11
-        - /UAV11/Trajectory1
+        - /UAV11/Planner1
         - /UAV11/Planner1/frontier1
         - /UAV11/Planner1/frontier1/Namespaces1
         - /UAV11/Planner1/HGrid_gp1/Namespaces1
@@ -405,22 +405,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 134.1930389404297
+      Distance: 145.2100067138672
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -2.03900146484375
-        Y: -16.43514633178711
+        X: -5.170879364013672
+        Y: -18.506053924560547
         Z: -5.500058174133301
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 1.5647963285446167
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
       Yaw: 4.705002307891846
