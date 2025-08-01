@@ -1906,6 +1906,9 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
   const double consecutive_factor = 0.5;    // 对连续步骤的激励
   const double skip_one_factor = 0.7;       // 对跳过一个点的步骤的较弱激励
 
+  const double TARGET_INFLUENCE_RADIUS = 10.0;  // 最大影响半径 (米)
+  const double MIN_TARGET_FACTOR = 0.5;        // 最小引力因子 (在目标点正上方的成本折扣)
+
   int first_cell_id = -1;
   std::set<std::pair<int, int>> consecutive_cell_pairs;
   std::set<std::pair<int, int>> skip_one_cell_pairs;
@@ -1934,6 +1937,24 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
     }
   }
   
+  // calculate target factor 
+  std::vector<double> target_incentive_factors(uniform_grid_.size(), 1.0);
+  if (!active_target_poses_.empty()) {
+    for (size_t i = 0; i < uniform_grid_.size(); ++i) {
+      double min_dist_to_target = std::numeric_limits<double>::max();
+      for (const auto& target_pos : active_target_poses_) {
+        double dist = (uniform_grid_[i].center_ - target_pos).norm();
+        if (dist < min_dist_to_target) {
+          min_dist_to_target = dist;
+        }
+      }
+
+      if (min_dist_to_target < TARGET_INFLUENCE_RADIUS) {
+        target_incentive_factors[i] = MIN_TARGET_FACTOR + (1.0 - MIN_TARGET_FACTOR) * (min_dist_to_target / TARGET_INFLUENCE_RADIUS);
+      }
+    }
+  }
+
   int dim = 1;      // current position
   int mat_idx = 1;  // skip 0 as it is reserved for current position
 

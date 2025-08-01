@@ -135,8 +135,11 @@ void ExplorationFSM::FSMCallback(const ros::TimerEvent &e) {
   }
   cnt_callback++;
 
-  // check target
+  // check target and set poses
   checkTargetSearched();
+  std::vector<Vector3d> active_targets;
+  getActiveTarget(active_targets);
+  if (!active_targets.empty()) hierarchical_grid_->swarm_uniform_grids_[0].setTargetPoses(active_targets);
   
   switch (state_) {
   case INIT: {

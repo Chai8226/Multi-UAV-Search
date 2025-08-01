@@ -155,7 +155,7 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
   // cost mat computation
   PathCostEvaluator::astar_->setProfile(Astar::PROFILE::COARSE);
   if (ep_->swarm_) {
-    ROS_INFO("[Swarm] calculateCostMatrixForSwarm!");
+    // ROS_INFO("[Swarm] calculateCostMatrixForSwarm!");
     hierarchical_grid_->calculateCostMatrixForSwarm(pos, vel, yaw[0], ed_->grid_tour2_cell_centers_id_, cost_matrix2, cost_mat_id_to_cell_center_id);
   } else {
     hierarchical_grid_->calculateCostMatrix2(pos, vel, yaw[0], ed_->grid_tour2_, cost_matrix2, cost_mat_id_to_cell_center_id);
