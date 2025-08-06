@@ -63,3 +63,9 @@ The setup commands have been tested on Ubuntu 20.04 (ROS Noetic). If you are usi
     exploration_manager:
       auto_start: true
   ```
+
+## Visualization
+```
+python ./scripts/vis.py
+python animate_grid_probs.py --save --fps 20
+```

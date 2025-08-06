@@ -119,6 +119,8 @@ void ExplorationFSM::init(ros::NodeHandle &nh) {
   for (int i = 0; i < total_grid_num; ++i) {
     fd_->swarm_unassigned_ids_.push_back(i);
   }
+  
+  had_active_targets_last_cycle_ = false;
 }
 
 void ExplorationFSM::FSMCallback(const ros::TimerEvent &e) {
@@ -136,12 +138,43 @@ void ExplorationFSM::FSMCallback(const ros::TimerEvent &e) {
   cnt_callback++;
 
   // check target and set poses
+  grid_target_probs_.clear();
   checkTargetSearched();
-  std::vector<Vector3d> active_targets;
-  getActiveTarget(active_targets);
-  if (!active_targets.empty()) {
-    hierarchical_grid_->swarm_uniform_grids_[0].setTargetPoses(active_targets);
+  std::vector<TargetInfo> active_targets_info;
+  getActiveTarget(active_targets_info);
+
+  bool has_active_targets_this_cycle = !active_targets_info.empty();
+  if (has_active_targets_this_cycle) {
+    auto& grid = expl_manager_->hierarchical_grid_->uniform_grids_[0];
+    for (int cell_id : fd_->swarm_unassigned_ids_) {
+      Vector3d cell_center = grid.getCellCenter(cell_id);
+      double prob_complement_product = 1.0;
+
+      for (const auto& target_info : active_targets_info) {
+        double dist = (cell_center - target_info.pos).norm();
+        double radiation = target_info.radiation_range;
+        
+        double single_prob = 0.0;
+        if (radiation > 1e-3 && dist < radiation) {
+          single_prob = 1.0 - 0.8 * (dist / radiation);
+        }
+        
+        prob_complement_product *= (1.0 - single_prob);
+      }
+      
+      double combined_prob = 1.0 - prob_complement_product;
+      
+      if (combined_prob > 1e-6) {
+        grid_target_probs_[cell_id] = combined_prob;
+      }
+    }
+    historical_grid_target_probs_.push_back({ros::Time::now(), grid_target_probs_});
+  } else if (had_active_targets_last_cycle_) {
+    historical_grid_target_probs_.push_back({ros::Time::now(), grid_target_probs_});
   }
+  had_active_targets_last_cycle_ = has_active_targets_this_cycle;
+  hierarchical_grid_->swarm_uniform_grids_[0].setTargetProbs(grid_target_probs_);
+
   
   switch (state_) {
   case INIT: {
@@ -338,6 +371,81 @@ void ExplorationFSM::FSMCallback(const ros::TimerEvent &e) {
       }
     }
 
+    static bool data_saved = false;
+    if (!data_saved) {
+      std::map<int, double> final_empty_probs; // 创建一个空的 map
+      historical_grid_target_probs_.push_back({ros::Time::now(), final_empty_probs});
+      
+      std::string output_file = "/home/chai/Code/SCAR/search/Multi-UAV-Search/src/falcon_planner/exploration_manager/json/target_probability_with_metadata_" 
+                                  + std::to_string(getId()) + ".json";
+      std::ofstream fout(output_file);
+      if (fout.is_open()) {
+        ROS_INFO("[FSM] Saving grid metadata and probability history to %s", output_file.c_str());
+        
+        auto& grid = expl_manager_->hierarchical_grid_->uniform_grids_[0];
+        Vector3d cell_size = grid.getCellSize();
+        int total_cells = grid.getNumCells();
+
+        fout << std::fixed << std::setprecision(4);
+        fout << "{\n";
+        
+        // 1. 写入元数据 (Metadata)
+        fout << "  \"metadata\": {\n";
+        fout << "    \"cell_size\": [" << cell_size.x() << ", " << cell_size.y() << ", " << cell_size.z() << "],\n";
+        fout << "    \"cell_centers\": {\n";
+        for (int id = 0; id < total_cells; ++id) {
+          Vector3d center = grid.getCellCenter(id);
+          fout << "      \"" << id << "\": [" << center.x() << ", " << center.y() << ", " << center.z() << "]";
+          if (id < total_cells - 1) {
+            fout << ",\n";
+          } else {
+            fout << "\n";
+          }
+        }
+        fout << "    }\n";
+        fout << "  },\n"; // 元数据部分结束
+
+        // 2. 写入历史数据 (History)
+        fout << "  \"history\": [\n";
+        for (size_t i = 0; i < historical_grid_target_probs_.size(); ++i) {
+          const auto& record = historical_grid_target_probs_[i];
+          fout << "    {\n";
+          fout << "      \"timestamp\": " << record.first.toSec() << ",\n";
+          fout << "      \"probabilities\": {";
+          
+          size_t map_idx = 0;
+          if (!record.second.empty()) {
+            fout << "\n";
+            for (const auto& pair : record.second) {
+              fout << "        \"" << pair.first << "\": " << pair.second;
+              if (map_idx < record.second.size() - 1) {
+                  fout << ",\n";
+              } else {
+                  fout << "\n";
+              }
+              map_idx++;
+            }
+            fout << "      ";
+          }
+          
+          fout << "}\n";
+          fout << "    }";
+          if (i < historical_grid_target_probs_.size() - 1) {
+            fout << ",\n";
+          } else {
+            fout << "\n";
+          }
+        }
+        fout << "  ]\n"; // 历史数据部分结束
+        
+        fout << "}\n"; // JSON文件结束
+        fout.close();
+        ROS_INFO("[FSM] Data saved successfully.");
+      } else {
+        ROS_ERROR("[FSM] Failed to open file for saving data: %s", output_file.c_str());
+      }
+      data_saved = true;
+    }
 
     break;
   }
@@ -905,24 +1013,28 @@ void ExplorationFSM::visualize() {
   // Visualize target
   std::vector<Vector3d> undetected_preset_targets;
   vector<Vector3d> preset_target_poses = preset_target_poses_;
-  vector<Vector3d> searched_target_poses = searched_target_poses_;
   for (const auto& preset_pos : preset_target_poses) {
-    if (!inDetected(preset_pos)) {
+    if (!inDetected(preset_pos) && !inSearched(preset_pos)) {
       undetected_preset_targets.push_back(preset_pos);
     }
   }
-  std::vector<Vector3d> active_targets;
-  getActiveTarget(active_targets);
+  std::vector<TargetInfo> active_targets_info;
+  getActiveTarget(active_targets_info);
+
+  std::vector<Vector3d> active_target_poses;
+  for (const auto& info : active_targets_info) {
+    active_target_poses.push_back(info.pos);
+  }
+
   visualization_->drawSpheres(undetected_preset_targets, 1, PlanningVisualization::Color::Red(), 
                               "preset_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
-  
-  if (!detected_target_poses_.empty()) 
-    visualization_->drawSpheres(active_targets, 1, PlanningVisualization::Color::Yellow(), 
+  if (!active_target_poses.empty()) 
+    visualization_->drawSpheres(active_target_poses, 1, PlanningVisualization::Color::Yellow(), 
                                 "detected_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
-
   if (!searched_target_poses_.empty()) 
-    visualization_->drawSpheres(searched_target_poses, 1, PlanningVisualization::Color::Green(), 
+    visualization_->drawSpheres(searched_target_poses_, 1, PlanningVisualization::Color::Green(), 
                                 "searched_targets", 0, PlanningVisualization::PUBLISHER::TARGET);
+
 
 }
 
@@ -1317,30 +1429,30 @@ void ExplorationFSM::gridTimerCallback(const ros::TimerEvent &e) {
   if (state_ == INIT || !frontier_ready_) return;
   
   // pub target msg
-  if (!detected_target_poses_.empty()) {
-    exploration_manager::TargetArray target_msg;
-    target_msg.header.stamp = ros::Time::now();
-    target_msg.header.frame_id = "world";
-    target_msg.drone_id = getId();
-
-    std::vector<Vector3d> active_targets;
-    getActiveTarget(active_targets);
-    for (const auto& pos : active_targets) {
-      exploration_manager::Target target;
-      target.type = 0;
-      target.pos.x = pos.x();
-      target.pos.y = pos.y();
-      target.pos.z = pos.z();
-      target_msg.targets.push_back(target);
-    }
-    for (const auto& pos : searched_target_poses_) {
-      exploration_manager::Target target;
-      target.type = 1;
-      target.pos.x = pos.x();
-      target.pos.y = pos.y();
-      target.pos.z = pos.z();
-      target_msg.targets.push_back(target);
-    }
+  exploration_manager::TargetArray target_msg;
+  target_msg.header.stamp = ros::Time::now();
+  target_msg.header.frame_id = "world";
+  target_msg.drone_id = getId();
+  std::vector<TargetInfo> active_targets_info;
+  getActiveTarget(active_targets_info);
+  for (const auto& info : active_targets_info) {
+    exploration_manager::Target target;
+    target.type = 0; // 0 "Detected"
+    target.pos.x = info.pos.x();
+    target.pos.y = info.pos.y();
+    target.pos.z = info.pos.z();
+    target_msg.targets.push_back(target);
+  }
+  // 3. 将所有已知的已搜索目标加入消息列表
+  for (const auto& pos : searched_target_poses_) {
+    exploration_manager::Target target;
+    target.type = 1; // 1 "Searched"
+    target.pos.x = pos.x();
+    target.pos.y = pos.y();
+    target.pos.z = pos.z();
+    target_msg.targets.push_back(target);
+  }
+  if (!target_msg.targets.empty()) {
     searched_target_pub_.publish(target_msg);
   }
  
@@ -1679,27 +1791,31 @@ int ExplorationFSM::getId() {
 void ExplorationFSM::swarmTargetCallback(const exploration_manager::TargetArrayConstPtr& msg) {
   if (msg->drone_id == getId()) return;
 
-  const double distance_threshold = 0.2;
   int new_detected = 0;
   int updated_to_searched = 0;
 
   for (const auto& target : msg->targets) {
     Vector3d target_pos(target.pos.x, target.pos.y, target.pos.z);
 
-    if (target.type == 0) {
+    if (target.type == 0) { // type 0: detected
       if (!inDetected(target_pos) && !inSearched(target_pos)) {
-        detected_target_poses_.push_back(target_pos);
+        detected_targets_info_.push_back({target_pos, 10.0});
         new_detected++;
       }
     } 
-    else if (target.type == 1) {
+    else if (target.type == 1) { // type 1: searched
       if (!inSearched(target_pos)) {
         searched_target_poses_.push_back(target_pos);
         updated_to_searched++;
       }
-      if (!inDetected(target_pos)) {
-        detected_target_poses_.push_back(target_pos);
-      }
+      const double distance_threshold = 0.5;
+      detected_targets_info_.erase(
+        std::remove_if(detected_targets_info_.begin(), detected_targets_info_.end(), 
+          [&](const TargetInfo& info_detected){
+            return (info_detected.pos - target_pos).norm() < distance_threshold;
+          }), 
+        detected_targets_info_.end()
+      );
     }
   }
 
@@ -1712,27 +1828,28 @@ void ExplorationFSM::swarmTargetCallback(const exploration_manager::TargetArrayC
 
 void ExplorationFSM::targetMsgCallback(const geometry_msgs::PoseArrayConstPtr& msg) {
   if (msg->poses.empty()) {
-    ROS_WARN("[ExplorationFSM] No targets received.");
+    // ROS_WARN("[ExplorationFSM] No targets received.");
     return;
   }
 
-  const double distance_threshold = 0.2; 
   int new_targets_added = 0;
 
   for (const auto& pose : msg->poses) {
     Vector3d target_pos(pose.position.x, pose.position.y, pose.position.z);
-    auto it = std::find_if(detected_target_poses_.begin(), detected_target_poses_.end(),
-      [&](const Vector3d& existing_pos) {return (existing_pos - target_pos).norm() < distance_threshold;});
-      
-    if (it == detected_target_poses_.end()) {
-      detected_target_poses_.push_back(target_pos);
+    
+    // 检查目标是否已被检测
+    if (!inDetected(target_pos)) {
+      double dist = (target_pos - fd_->odom_pos_).norm();
+      double radiation_range = std::min(dist, 10.0);
+
+      detected_targets_info_.push_back({target_pos, radiation_range});
       new_targets_added++;
     }
   }
 
   if (new_targets_added > 0) {
     ROS_INFO("[ExplorationFSM] Added %d new targets. Total detected targets: %zu.", 
-              new_targets_added, detected_target_poses_.size());
+              new_targets_added, detected_targets_info_.size());
   }
 }
 
@@ -1748,19 +1865,35 @@ bool ExplorationFSM::targetSearched(const Vector3d& target_pos) {
  * @brief Check if the target is searched
 */
 void ExplorationFSM::checkTargetSearched() {
-  if (detected_target_poses_.empty()) {
+  if (detected_targets_info_.empty()) {
     return;
   }
 
   int newly_searched_count = 0;
+  std::vector<Vector3d> newly_searched_positions;
 
-  for (const auto& target : detected_target_poses_) {
-    if (targetSearched(target)) {
-      if (!inSearched(target)) {
-        searched_target_poses_.push_back(target);
+  for (const auto& target_info : detected_targets_info_) {
+    if (targetSearched(target_info.pos)) {
+      if (!inSearched(target_info.pos)) {
+        searched_target_poses_.push_back(target_info.pos);
+        newly_searched_positions.push_back(target_info.pos);
         newly_searched_count++;
       }
     }
+  }
+
+  if (!newly_searched_positions.empty()) {
+    const double distance_threshold = 0.5;
+    detected_targets_info_.erase(
+      std::remove_if(detected_targets_info_.begin(), detected_targets_info_.end(), 
+        [&](const TargetInfo& info_detected){
+          return std::any_of(newly_searched_positions.begin(), newly_searched_positions.end(), 
+            [&](const Vector3d& pos_searched){
+                return (info_detected.pos - pos_searched).norm() < distance_threshold;
+            });
+        }), 
+      detected_targets_info_.end()
+    );
   }
 
   if (newly_searched_count > 0) {
@@ -1772,13 +1905,12 @@ void ExplorationFSM::checkTargetSearched() {
 /**
  * @brief get the active target pos 
 */
-void ExplorationFSM::getActiveTarget(vector<Vector3d>& active_target) {
-  active_target.clear();
-  vector<Vector3d> detected_target_poses = detected_target_poses_;
-  std::copy_if(detected_target_poses.begin(), detected_target_poses.end(),
-    std::back_inserter(active_target),
-    [&](const Vector3d& pos) {
-      return !inSearched(pos);
+void ExplorationFSM::getActiveTarget(vector<ExplorationFSM::TargetInfo>& active_targets) {
+  active_targets.clear();
+  std::copy_if(detected_targets_info_.begin(), detected_targets_info_.end(),
+    std::back_inserter(active_targets),
+    [&](const TargetInfo& info) {
+      return !inSearched(info.pos);
     }
   );
 }
@@ -1787,10 +1919,10 @@ void ExplorationFSM::getActiveTarget(vector<Vector3d>& active_target) {
  * @brief Check if the target in detected list
 */
 bool ExplorationFSM::inDetected(const Vector3d& target_pos) {
-  const double distance_threshold = 0.2;
-  return std::any_of(detected_target_poses_.begin(), detected_target_poses_.end(),
-    [&](const Vector3d& existing_pos) {
-      return (existing_pos - target_pos).norm() < distance_threshold;
+  const double distance_threshold = 0.5;
+  return std::any_of(detected_targets_info_.begin(), detected_targets_info_.end(),
+    [&](const TargetInfo& existing_target) {
+      return (existing_target.pos - target_pos).norm() < distance_threshold;
     });
 }
 
@@ -1798,7 +1930,7 @@ bool ExplorationFSM::inDetected(const Vector3d& target_pos) {
  * @brief Check if the target in searched list
 */
 bool ExplorationFSM::inSearched(const Vector3d& target_pos) {
-  const double distance_threshold = 0.2;
+  const double distance_threshold = 0.5;
   return std::any_of(searched_target_poses_.begin(), searched_target_poses_.end(),
     [&](const Vector3d& existing_pos) {
       return (existing_pos - target_pos).norm() < distance_threshold;

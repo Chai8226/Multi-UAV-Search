@@ -1904,8 +1904,15 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
   const double first_step_factor = 0.2;     // 对起始步骤的强烈激励
   const double consecutive_factor = 0.5;    // 对连续步骤的激励
   const double skip_one_factor = 0.7;       // 对跳过一个点的步骤的较弱激励
-  const double TARGET_INFLUENCE_RADIUS = 8.0; // 最大影响半径 (米)
-  const double MIN_TARGET_FACTOR = 0.5;        // 最小引力因子 (在目标点正上方的成本折扣)
+
+  // target
+  const double W_info = 1.0;              // 信息增益权重 (w_I in the formula)
+  auto calculateEntropy = [](double p) -> double {   // 辅助函数：计算信息熵 H(p) = -p*log2(p) - (1-p)*log2(1-p)
+    if (p < 1e-9 || p > 1.0 - 1e-9) {
+      return 0.0;
+    }
+    return -p * log2(p) - (1.0 - p) * log2(1.0 - p);
+  };
 
   int first_cell_id = -1;
   std::set<std::pair<int, int>> consecutive_cell_pairs;
@@ -1934,26 +1941,6 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
       }
     }
   }
-  
-  // calculate target influence
-  std::unordered_map<int, double> target_incentive_factors;
-  if (!active_target_poses_.empty()) {
-    for (const auto& grid_cell : uniform_grid_) {
-      double min_dist_to_target = std::numeric_limits<double>::max();
-      for (const auto& target_pos : active_target_poses_) {
-        double dist = (grid_cell.center_ - target_pos).norm();
-        if (dist < min_dist_to_target) {
-          min_dist_to_target = dist;
-        }
-      }
-
-      if (min_dist_to_target < TARGET_INFLUENCE_RADIUS) {
-        double factor = MIN_TARGET_FACTOR + (1.0 - MIN_TARGET_FACTOR) * (min_dist_to_target / TARGET_INFLUENCE_RADIUS);
-        target_incentive_factors[grid_cell.id_] = factor;
-      }
-    }
-  }
-
 
   int dim = 1;      // current position
   int mat_idx = 1;  // skip 0 as it is reserved for current position
@@ -1983,12 +1970,13 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
     double cost = 0.0;
     bool apply_first_step_incentive = (grid_cell.id_ == first_cell_id);
 
-    double target_incentive = 1.0;
-    auto it = target_incentive_factors.find(grid_cell.id_);
-    if (it != target_incentive_factors.end()) {
-      target_incentive = it->second;
-      // cout << "tstssttstststststuisiuiuiuiu: " << target_incentive << std::endl;
+    // target
+    double target_prob = 0.0;
+    auto prob_it = global_grid_target_probs.find(grid_cell.id_);
+    if (prob_it != global_grid_target_probs.end()) {
+      target_prob = prob_it->second;
     }
+    double info_gain = calculateEntropy(target_prob);
 
     for (int i = 0; i < grid_cell.centers_free_active_idx_.size(); ++i) {
       const Position &center_free = grid_cell.centers_free_active_[i];
@@ -2002,7 +1990,9 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
         cost *= first_step_factor;
       }
 
-      cost_matrix(0, mat_idx) = cost * target_incentive;
+      cost = cost * exp(-W_info * info_gain);
+
+      cost_matrix(0, mat_idx) = cost;
 
       CHECK_GT(cost, 1e-4) << "Zero cost from current position to cell " << grid_cell.id_ << " free center " << mat_idx - 1;
       mat_idx++;
@@ -2015,7 +2005,13 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
       if (apply_first_step_incentive) {
         cost *= first_step_factor;
       }
-      cost_matrix(0, mat_idx) = cost * config_.unknown_penalty_factor_ * target_incentive;
+
+      cost *= config_.unknown_penalty_factor_;
+
+      //target
+      cost = cost * exp(-W_info * info_gain);
+      
+      cost_matrix(0, mat_idx) = cost;
       CHECK_GT(cost, 1e-4) << "Zero cost from current position to cell " << grid_cell.id_ << " free center " << mat_idx - 1;
       mat_idx++;
     }
@@ -2024,40 +2020,25 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
   // Between all zone centers
   int mat_idx1 = 1;
   for (const GridCell &grid_cell1 : uniform_grid_) {
-    // centers_free_active_ and centers_unknown_active_ of grid_cell1
     vector<Position> centers1;
-    // centers1 centers_free_active_
     centers1.insert(centers1.end(), grid_cell1.centers_free_active_.begin(), grid_cell1.centers_free_active_.end());
-    // centers1 centers_unknown_active_
     centers1.insert(centers1.end(), grid_cell1.centers_unknown_active_.begin(), grid_cell1.centers_unknown_active_.end());
 
     // Iterate over all centers in the grid_cell1
     for (int i = 0; i < (int)centers1.size(); i++) {
       int mat_idx2 = 1;
-      // Iterate over all centers in the grid_cell2
       for (const GridCell &grid_cell2 : uniform_grid_) {
-        // centers_free_active_ and centers_unknown_active_ of grid_cell2
         vector<Position> centers2;
-        // centers2 centers_free_active_
         centers2.insert(centers2.end(), grid_cell2.centers_free_active_.begin(), grid_cell2.centers_free_active_.end());
-        // centers2 centers_unknown_active_
         centers2.insert(centers2.end(), grid_cell2.centers_unknown_active_.begin(), grid_cell2.centers_unknown_active_.end());
 
-        // Iterate over all centers in the grid_cell2
         for (int j = 0; j < (int)centers2.size(); j++) {
-          // Skip half of the matrix
           if (mat_idx2 <= mat_idx1) {
             mat_idx2++;
             continue;
           }
 
           double cost = 0.0;
-
-          double target_incentive = 1.0;
-          auto it = target_incentive_factors.find(grid_cell2.id_);
-          if (it != target_incentive_factors.end()) {
-            target_incentive = it->second;
-          }
 
           int cell_center_id1 = -1, cell_center_id2 = -1;
           bool no_cg_search = false;
@@ -2109,37 +2090,28 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
                                      << " to cell " << grid_cell2.id_ << " center " << j;
               }
               if (cost < 1e-6) {
-                // DEBUG output and check
-                // print cell_center_id1 and cell_center_id2
                 std::cout << "cell_center_id1: " << cell_center_id1 << ", cell_center_id2: " << cell_center_id2 << std::endl;
-                // print grid_cell1.id_ and grid_cell2.id_
                 std::cout << "grid_cell1.id_: " << grid_cell1.id_ << ", center id: " << i
                           << ", grid_cell2.id_: " << grid_cell2.id_ << ", center id: " << j << std::endl;
-                // print grid_cell1.centers_free_active_.size()
                 std::cout << "grid_cell1.centers_free_active_.size(): "
                           << grid_cell1.centers_free_active_.size() << std::endl;
-                // print grid_cell1.centers_free_active_idx_
                 std::cout << "grid_cell1.centers_free_active_idx_: ";
                 for (int i = 0; i < grid_cell1.centers_free_active_idx_.size(); i++) {
                   std::cout << grid_cell1.centers_free_active_idx_[i] << " ";
                 }
                 std::cout << std::endl;
-                // print grid_cell1.centers_unknown_active_idx_
                 std::cout << "grid_cell1.centers_unknown_active_idx_: ";
                 for (int i = 0; i < grid_cell1.centers_unknown_active_idx_.size(); i++) {
                   std::cout << grid_cell1.centers_unknown_active_idx_[i] << " ";
                 }
-                std::cout << std::endl;
-                // print grid_cell2.centers_free_active_.size()
+                std::cout << std::endl;                
                 std::cout << "grid_cell2.centers_free_active_.size(): "
                           << grid_cell2.centers_free_active_.size() << std::endl;
-                // print grid_cell2.centers_free_active_idx_
                 std::cout << "grid_cell2.centers_free_active_idx_: ";
                 for (int i = 0; i < grid_cell2.centers_free_active_idx_.size(); i++) {
                   std::cout << grid_cell2.centers_free_active_idx_[i] << " ";
                 }
                 std::cout << std::endl;
-                // print grid_cell2.centers_unknown_active_idx_
                 std::cout << "grid_cell2.centers_unknown_active_idx_: ";
                 for (int i = 0; i < grid_cell2.centers_unknown_active_idx_.size(); i++) {
                   std::cout << grid_cell2.centers_unknown_active_idx_[i] << " ";
@@ -2154,11 +2126,18 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
             }
           }
 
+          // target
+          double target_prob = 0.0;
+          auto prob_it = global_grid_target_probs.find(grid_cell2.id_);
+          if (prob_it != global_grid_target_probs.end()) {
+            target_prob = prob_it->second;
+          }
+          double info_gain = calculateEntropy(target_prob);
+
           // swarm
           int id1 = grid_cell1.id_;
           int id2 = grid_cell2.id_;
 
-          // 创建正向和反向对，以处理对称的成本矩阵
           std::pair<int, int> forward_pair = {id1, id2};
           std::pair<int, int> backward_pair = {id2, id1};
 
@@ -2171,7 +2150,11 @@ void UniformGrid::calculateCostMatrixSingleThreadSwarm(const Position &cur_pos, 
           if (i >= (int)grid_cell1.centers_free_active_.size() || j >= (int)grid_cell2.centers_free_active_.size()) {
             cost *= config_.unknown_penalty_factor_;
           }
-          cost_matrix(mat_idx1, mat_idx2) = cost_matrix(mat_idx2, mat_idx1) = cost * target_incentive;
+
+          cost = cost * exp(-W_info * info_gain);
+          // cout << "tsetssssssssssss: " << info_gain << std::endl;
+
+          cost_matrix(mat_idx1, mat_idx2) = cost_matrix(mat_idx2, mat_idx1) = cost;
 
           CHECK_GT(cost, 1e-6) << "Zero cost from cell " << grid_cell1.id_ << " center " << i
                                << " pos (" << centers1[i].x() << ", " << centers1[i].y() << ", "
@@ -3890,7 +3873,7 @@ bool HierarchicalGrid::areDronesConnected(const int& level, const std::vector<in
 }
 
 void HierarchicalGrid::classifyUniformGrids2(const int& level, const std::vector<int>& total_ids,
-                                           std::vector<int>& free_ids, std::vector<int>& unknown_ids) {
+                                             std::vector<int>& free_ids, std::vector<int>& unknown_ids) {
   free_ids.clear();
   unknown_ids.clear();
 

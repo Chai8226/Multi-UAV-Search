@@ -8,6 +8,8 @@
 #include <thread>
 #include <vector>
 #include <set>
+#include <fstream>
+#include <iomanip>
 
 #include <Eigen/Eigen>
 #include <geometry_msgs/PoseStamped.h>
@@ -118,21 +120,29 @@ private:
   }
   int getId();
 
-    /* target */
+  /* target */
   ros::Subscriber target_sub_;
+  struct TargetInfo {
+    Vector3d pos;
+    double radiation_range;
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+  };
   std::vector<Vector3d> preset_target_poses_;
-  std::vector<Vector3d> detected_target_poses_;
+  std::vector<TargetInfo> detected_targets_info_;
   std::vector<Vector3d> searched_target_poses_;
   ros::Publisher searched_target_pub_;
   ros::Subscriber searched_target_sub_;
   void swarmTargetCallback(const exploration_manager::TargetArrayConstPtr& msg);
   void checkTargetSearched();
-  void getActiveTarget(vector<Vector3d>& active_target);
+  void getActiveTarget(vector<ExplorationFSM::TargetInfo>& active_targets);
   bool targetSearched(const Vector3d& target_pos);
   void targetMsgCallback(const geometry_msgs::PoseArrayConstPtr& msg);
   bool inDetected(const Vector3d& target_pos);
   bool inSearched(const Vector3d& target_pos);
   
+  std::map<int, double> grid_target_probs_;
+  std::vector<std::pair<ros::Time, std::map<int, double>>> historical_grid_target_probs_;
+  bool had_active_targets_last_cycle_ = false;
   std::mutex data_mutex_;
 };
 

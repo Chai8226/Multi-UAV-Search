@@ -110,8 +110,8 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
   clearExplorationData();
 
   // ---------- Do global and local tour planning and retrieve the next viewpoint ---------
-  vector<Vector3d> active_target_poses;
-  hierarchical_grid_->swarm_uniform_grids_[0].getTargetPoses(active_target_poses);
+  std::map<int, double> grid_target_probs_;
+  hierarchical_grid_->swarm_uniform_grids_[0].getTargetProbs(grid_target_probs_);
   Vector3d next_pos;
   double next_yaw;
 
@@ -320,25 +320,7 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
   // grid_tour2_cost, size = n - 1, cost of each segment
   // cost matrix: (n + m) * (n + m)
   // cost matrix: n * n part could reuse the previous one
-  // TODO
   if (frontier_ids.size() > 0) {
-    const double TARGET_INFLUENCE_RADIUS = 8.0;  // 目标引力的最大影响半径 (米)
-    const double MIN_TARGET_FACTOR = 0.5;        // 最小引力因子 (成本折扣)
-
-    std::unordered_map<int, double> frontier_incentive_factors; // key: frontier_id, value: factor
-    if (!active_target_poses.empty()) {
-      for (int frontier_id : frontier_ids) {
-        double min_dist_to_target = std::numeric_limits<double>::max();
-        for (const auto& target_pos : active_target_poses) {
-          min_dist_to_target = std::min(min_dist_to_target, (ed_->points_[frontier_id] - target_pos).norm());
-        }
-
-        if (min_dist_to_target < TARGET_INFLUENCE_RADIUS) {
-          double factor = MIN_TARGET_FACTOR + (1.0 - MIN_TARGET_FACTOR) * (min_dist_to_target / TARGET_INFLUENCE_RADIUS);
-          frontier_incentive_factors[frontier_id] = factor;
-        }
-      }
-    }
 
     auto checkPathUnknown = [&](const vector<Position> &path) {
       for (int i = 0; i < path.size() - 1; ++i) {
@@ -381,11 +363,9 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
           if (checkPathUnknown(path) && cost < 499.0) {
             cost *= ep_->unknown_penalty_factor_;
           }
-          double factor_i = frontier_incentive_factors.count(frontier_ids[i]) ? frontier_incentive_factors.at(frontier_ids[i]) : 1.0;
-          double factor_j = frontier_incentive_factors.count(frontier_ids[j]) ? frontier_incentive_factors.at(frontier_ids[j]) : 1.0;
-
-          cost_matrix_tmp1(i, j) = cost * factor_j; 
-          cost_matrix_tmp1(j, i) = cost * factor_i; 
+          
+          cost_matrix_tmp1(i, j) = cost; 
+          cost_matrix_tmp1(j, i) = cost; 
         }
       }
     }
@@ -432,8 +412,6 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
             CHECK_GT(cost2, 1e-4) << "Cost from CP" << j << " to frontier " << frontier_ids[i] << " is zero";
           }
         }
-        double factor_i = frontier_incentive_factors.count(frontier_ids[i]) ? frontier_incentive_factors.at(frontier_ids[i]) : 1.0;
-        cost2 *= factor_i;
 
         cost_matrix_tmp2(i, j) = cost1;
         cost_matrix_tmp3(j, i) = cost2;
@@ -484,11 +462,31 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
     cost_matrix_sop.block(0, ed_->grid_tour2_.size(), ed_->grid_tour2_.size(), frontier_ids.size()) = (cost_matrix_tmp3 * scale_factor).cast<int>();
 
     // Change element in cost_matrix_sop if > 10000 then change to 10000
-    for (int i = 0; i < cost_matrix_sop.rows(); ++i) {
-      for (int j = 0; j < cost_matrix_sop.cols(); ++j) {
-        cost_matrix_sop(i, j) = std::min(cost_matrix_sop(i, j), 10000);
+    // for (int i = 0; i < cost_matrix_sop.rows(); ++i) {
+    //   for (int j = 0; j < cost_matrix_sop.cols(); ++j) {
+    //     cost_matrix_sop(i, j) = std::min(cost_matrix_sop(i, j), 10000);
+    //   }
+    // }
+    for (int i = 0; i < ed_->grid_tour2_.size(); ++i) {
+      for (int j = 0; j < ed_->grid_tour2_.size(); ++j) {
+        if (i == j) {
+          cost_matrix_sop(i, j) = 0;
+        } else if (i > j) {
+          cost_matrix_sop(i, j) = -1; // 强制顺序
+        } else if (j == i + 1) {
+          // 相邻站点，直接使用分段成本
+          cost_matrix_sop(i, j) = (int)(grid_tour2_cost[i] * scale_factor);
+        } else {
+          // 非相邻站点，必须使用累加成本，移除std::min
+          double accumulated_cost = 0.0;
+          for (int k = i; k < j; ++k) {
+              accumulated_cost += grid_tour2_cost[k];
+          }
+          cost_matrix_sop(i, j) = (int)(accumulated_cost * scale_factor);
+        }
       }
     }
+    
 
     // Frontiers precedence constraint, all frontiers must be visited after current position
     for (int i = ed_->grid_tour2_.size(); i < cost_matrix_sop.rows(); ++i) {
@@ -505,6 +503,35 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
     cost_matrix_sop_remove_next.block(0, 1, 1, cost_matrix_sop_remove_next.rows() - 1) = cost_matrix_sop.block(0, 2, 1, cost_matrix_sop_remove_next.rows() - 1);
     cost_matrix_sop_remove_next.block(1, 0, cost_matrix_sop_remove_next.rows() - 1, 1) = cost_matrix_sop.block(2, 0, cost_matrix_sop_remove_next.rows() - 1, 1);
     cost_matrix_sop_remove_next.block(1, 1, cost_matrix_sop_remove_next.rows() - 1, cost_matrix_sop_remove_next.rows() - 1) = cost_matrix_sop.block(2, 2, cost_matrix_sop_remove_next.rows() - 1, cost_matrix_sop_remove_next.rows() - 1);
+
+    // target
+    const double W_strategic_info = 1.0;
+    auto calculateEntropy = [](double p) -> double {
+      if (p < 1e-9 || p > 1.0 - 1e-9) return 0.0; // 避免 log(0)
+      return -p * log2(p) - (1.0 - p) * log2(1.0 - p);
+    };
+    for (size_t i = 0; i < frontier_ids.size(); ++i) {
+      int frontier_id = frontier_ids[i];
+      const Position& viewpoint_pos = ed_->points_[frontier_id];
+
+      // 找到该视点所在的栅格ID
+      int cell_id = hierarchical_grid_->getLayerCellId(0, viewpoint_pos);
+
+      // 获取目标概率并计算信息增益
+      double target_prob = 0.0;
+      auto prob_it = grid_target_probs_.find(cell_id);
+      if (prob_it != grid_target_probs_.end()) {
+        target_prob = prob_it->second;
+      }
+      double info_gain = calculateEntropy(target_prob);
+      double incentive_factor = exp(-W_strategic_info * info_gain);
+      int matrix_col_idx = ed_->grid_tour2_.size() + i;
+      for (int row = 0; row < cost_matrix_sop.rows(); ++row) {
+        if (cost_matrix_sop(row, matrix_col_idx) != -1) {
+          cost_matrix_sop(row, matrix_col_idx) *= incentive_factor;
+        }
+      }
+    }
 
     t1 = ros::Time::now();
     vector<int> sop_path;
@@ -900,7 +927,7 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
       vector<double> refined_yaws;
       // refineLocalTourHGrid(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, ed_->refined_points_, refined_yaws);
       refineLocalTourHGridNew(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, 
-                            ed_->refined_points_, refined_yaws, active_target_poses);
+                              ed_->refined_points_, refined_yaws, grid_target_probs_);
       ROS_INFO("[ExplorationManager] Refined points: %d", ed_->refined_points_.size());
       if (ed_->refined_points_.empty()) {
         // No refined points, use the first viewpoint
@@ -952,7 +979,7 @@ int ExplorationManager::planExploreMotionHGrid(const Vector3d &pos, const Vector
     vector<double> refined_yaws;
     // refineLocalTourHGrid(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, ed_->refined_points_, refined_yaws);
     refineLocalTourHGridNew(pos, vel, yaw, next_grid_pos, ed_->n_points_, ed_->n_yaws_, 
-                            ed_->refined_points_, refined_yaws, active_target_poses);
+                            ed_->refined_points_, refined_yaws, grid_target_probs_);
     if (ed_->refined_points_.empty()) {
       // No refined points, use the first viewpoint
       next_pos = ed_->points_[frontier_ids[0]];
@@ -1601,113 +1628,103 @@ void ExplorationManager::refineLocalTourHGrid(const Vector3d &cur_pos, const Vec
 void ExplorationManager::refineLocalTourHGridNew(const Vector3d &cur_pos, const Vector3d &cur_vel, const Vector3d &cur_yaw,
                                                  const Vector3d &next_pos, const vector<vector<Vector3d>> &n_points,
                                                  const vector<vector<double>> &n_yaws, vector<Vector3d> &refined_pts,
-                                                 vector<double> &refined_yaws, const vector<Vector3d>& active_target_poses) {
-  int dim = 0;
-  for (int i = 0; i < n_points.size(); ++i) {
-    dim += n_points[i].size();
-  }
+                                                 vector<double> &refined_yaws, const std::map<int, double>& grid_target_probs) {
+  const double W_local_info = 1; 
 
-  bool has_active_targets = !active_target_poses.empty();
-  if (has_active_targets) {
-    dim += 1; // 增加一个代表所有活跃目标的虚拟节点
+  int dim = 0;
+  for (const auto& points : n_points) {
+    dim += points.size();
   }
-  dim += 2; // Add current and next position
+  dim += 2;
 
   vector<vector<double>> cost_matrix(dim, vector<double>(dim, 1000.0));
 
   vector<Vector3d> n_points_flatten;
   vector<double> n_yaws_flatten;
-  vector<int> n_sizes;
-
-  for (int i = 0; i < n_points.size(); ++i) {
-    n_points_flatten.insert(n_points_flatten.end(), n_points[i].begin(), n_points[i].end());
-    n_yaws_flatten.insert(n_yaws_flatten.end(), n_yaws[i].begin(), n_yaws[i].end());
-    n_sizes.push_back(n_points[i].size());
+  for (const auto& points : n_points) {
+    n_points_flatten.insert(n_points_flatten.end(), points.begin(), points.end());
+  }
+  for (const auto& yaws : n_yaws) {
+    n_yaws_flatten.insert(n_yaws_flatten.end(), yaws.begin(), yaws.end());
   }
 
-  int cummulative_size = 0;
-  for (int i = 0; i < n_points.size(); ++i) {
+  int cumulative_size = 0;
+  for (size_t i = 0; i < n_points.size(); ++i) { // i 是层的索引 (对应每个前沿点)
+
+    // 获取这一层所有视点的概率激励因子
+    double target_prob = 0.0;
+    if (!n_points[i].empty()) {
+      int cell_id = hierarchical_grid_->getLayerCellId(0, n_points[i][0]);
+      auto prob_it = grid_target_probs.find(cell_id);
+      if (prob_it != grid_target_probs.end()) {
+        target_prob = prob_it->second;
+      }
+    }
+    double incentive_factor = exp(-W_local_info * target_prob);
+
     if (i == 0) {
-      // Current position to first frontier's n_points
-      // isAllInf is a failsafe for the case where all costs are inf, which will cause the
-      // dijkstra to fail (no path found between two layers)
       bool isAllInf = true;
-      for (unsigned int j = 0; j < n_points[i].size(); ++j) {
+      for (size_t j = 0; j < n_points[i].size(); ++j) {
         vector<Position> tmp_path;
-        cost_matrix[0][j + 1] = PathCostEvaluator::computeCost(
-            cur_pos, n_points[i][j], cur_yaw[0], n_yaws[i][j], cur_vel, 0.0, tmp_path);
-        if (cost_matrix[0][j + 1] < 1000.0)
-          isAllInf = false;
-        // DISBALED: Cannot go back to current position
-        // cost_matrix[j + 1][0] = cost_matrix[0][j + 1];
+        double travel_cost = PathCostEvaluator::computeCost(cur_pos, n_points[i][j], cur_yaw[0], n_yaws[i][j], cur_vel, 0.0, tmp_path);
+
+        cost_matrix[0][j + 1] = travel_cost * incentive_factor;
+
+        if (cost_matrix[0][j + 1] < 1000.0) isAllInf = false;
       }
       if (isAllInf) {
-        for (unsigned int j = 0; j < n_points[i].size(); ++j) {
-          cost_matrix[0][j + 1] -= 1000.0;
-        }
+        for (size_t j = 0; j < n_points[i].size(); ++j) cost_matrix[0][j + 1] -= 1000.0;
       }
     }
 
     if (i == n_points.size() - 1) {
-      // to next pos, last column of cost mat
       bool isAllInf = true;
-      for (unsigned int j = 0; j < n_points[i].size(); ++j) {
+      for (size_t j = 0; j < n_points[i].size(); ++j) {
         vector<Position> tmp_path;
-        cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] =
-            PathCostEvaluator::computeCostUnknown(n_points[i][j], next_pos, n_yaws[i][j], 0.0,
-                                                  Vector3d::Zero(), 0.0, tmp_path);
-        if (cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] < 1000.0)
-          isAllInf = false;
+        double travel_cost = PathCostEvaluator::computeCostUnknown(
+            n_points[i][j], next_pos, n_yaws[i][j], 0.0, Vector3d::Zero(), 0.0, tmp_path);
+
+        cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] = travel_cost * incentive_factor;
+
+        if (cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] < 1000.0) isAllInf = false;
       }
       if (isAllInf) {
-        for (unsigned int j = 0; j < n_points[i].size(); ++j) {
-          cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] -= 1000.0;
-        }
+        for (size_t j = 0; j < n_points[i].size(); ++j) cost_matrix[dim - n_points[i].size() - 1 + j][dim - 1] -= 1000.0;
       }
-
-      if (has_active_targets) {
-        const double target_penalty_factor = 0.2;
-        for (unsigned int j = 0; j < n_points[i].size(); ++j) {
-          double min_dist_to_target = std::numeric_limits<double>::max();
-          for (const auto& target_pos : active_target_poses) {
-            min_dist_to_target = std::min(min_dist_to_target, (n_points[i][j] - target_pos).norm());
-          }
-          cost_matrix[dim - n_points[i].size() - 1 + j][dim - 2] = min_dist_to_target * target_penalty_factor;
-        }
-      }
-
       break;
     }
 
     int current_points_size = n_points[i].size();
     int next_points_size = n_points[i + 1].size();
 
-    // Current points to next points
+    double next_target_prob = 0.0;
+    if (!n_points[i+1].empty()) {
+      int next_cell_id = hierarchical_grid_->getLayerCellId(0, n_points[i+1][0]);
+      auto prob_it = grid_target_probs.find(next_cell_id);
+      if (prob_it != grid_target_probs.end()) {
+        next_target_prob = prob_it->second;
+      }
+    }
+    double next_incentive_factor = exp(-W_local_info * next_target_prob);
+
     for (int j = 0; j < current_points_size; ++j) {
       bool isAllInf = true;
       for (int k = 0; k < next_points_size; ++k) {
         vector<Position> tmp_path;
-        cost_matrix[cummulative_size + j + 1][cummulative_size + current_points_size + k + 1] =
-            PathCostEvaluator::computeCostUnknown(n_points[i][j], n_points[i + 1][k], n_yaws[i][j],
-                                                  n_yaws[i + 1][k], Vector3d::Zero(), 0.0,
-                                                  tmp_path);
-        if (cost_matrix[cummulative_size + j + 1][cummulative_size + current_points_size + k + 1] <
-            1000.0)
+        double travel_cost = PathCostEvaluator::computeCostUnknown(n_points[i][j], n_points[i + 1][k], n_yaws[i][j], n_yaws[i + 1][k], Vector3d::Zero(), 0.0, tmp_path);
+
+        cost_matrix[cumulative_size + j + 1][cumulative_size + current_points_size + k + 1] = travel_cost * next_incentive_factor;
+
+        if (cost_matrix[cumulative_size + j + 1][cumulative_size + current_points_size + k + 1] < 1000.0)
           isAllInf = false;
       }
       if (isAllInf) {
         for (int k = 0; k < next_points_size; ++k) {
-          cost_matrix[cummulative_size + j + 1][cummulative_size + current_points_size + k + 1] -=
-              1000.0;
+          cost_matrix[cumulative_size + j + 1][cumulative_size + current_points_size + k + 1] -= 1000.0;
         }
       }
     }
-
-    cummulative_size += current_points_size;
-  }
-
-  if (has_active_targets) {
-    cost_matrix[dim - 2][dim - 1] = 0.0;
+    cumulative_size += current_points_size;
   }
 
   vector<int> path_idx = dijkstra(cost_matrix, 0, dim - 1);
@@ -1716,23 +1733,15 @@ void ExplorationManager::refineLocalTourHGridNew(const Vector3d &cur_pos, const 
   refined_yaws.clear();
 
   for (int idx : path_idx) {
-    if (idx == 0 || idx == dim - 1 || (has_active_targets && idx == dim - 2)) {
-      continue;
-    } else {
+    if (idx > 0 && idx < dim - 1) {
       refined_pts.push_back(n_points_flatten[idx - 1]);
       refined_yaws.push_back(n_yaws_flatten[idx - 1]);
     }
   }
 
-  // Extract optimal local tour (for visualization)
+  // 用于可视化的数据
   ed_->refined_tour_.push_back(cur_pos);
-  // PathCostEvaluator::astar_->lambda_heu_ = 1.0;
-  // PathCostEvaluator::astar_->setResolution(0.2);
   for (auto pt : refined_pts) {
-    vector<Vector3d> path;
-    // if (PathCostEvaluator::searchPath(ed_->refined_tour_.back(), pt, path))
-    //   ed_->refined_tour_.insert(ed_->refined_tour_.end(), path.begin(), path.end());
-    // else
     ed_->refined_tour_.push_back(pt);
   }
 }

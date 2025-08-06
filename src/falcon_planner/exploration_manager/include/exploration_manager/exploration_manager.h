@@ -76,7 +76,7 @@ private:
   void refineLocalTourHGridNew(const Vector3d &cur_pos, const Vector3d &cur_vel, const Vector3d &cur_yaw,
                                const Vector3d &next_pos, const vector<vector<Vector3d>> &n_points,
                                const vector<vector<double>> &n_yaws, vector<Vector3d> &refined_pts,
-                               vector<double> &refined_yaws, const vector<Vector3d>& active_target_poses);
+                               vector<double> &refined_yaws, const std::map<int, double>& active_target_probs);
 
   void solveTSP(const Eigen::MatrixXd &cost_matrix, const TSPConfig &config, vector<int> &result_indices, double &total_cost);
 

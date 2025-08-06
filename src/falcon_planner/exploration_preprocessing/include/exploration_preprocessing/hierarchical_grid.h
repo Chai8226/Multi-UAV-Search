@@ -272,11 +272,11 @@ public:
   }
 
   // target
-  void setTargetPoses(const std::vector<Position> &target_poses) {
-    active_target_poses_ = target_poses;
+  void setTargetProbs(const std::map<int, double> &grid_target_probs) {
+    global_grid_target_probs = grid_target_probs;
   }
-  void getTargetPoses(std::vector<Position> &target_poses) {
-    target_poses = active_target_poses_;
+  void getTargetProbs(std::map<int, double> &grid_target_probs) {
+    grid_target_probs = global_grid_target_probs;
   }
 
   friend class HierarchicalGrid;
@@ -300,7 +300,7 @@ private:
   double space_decomp_time_, connectivity_graph_time_;
 
   // target
-  std::vector<Position> active_target_poses_;
+  std::map<int, double> global_grid_target_probs;
 };
 
 // Class definition for a hierarchical grid including multiple layers of uniform grids

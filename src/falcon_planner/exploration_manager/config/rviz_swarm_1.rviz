@@ -8,12 +8,13 @@ Panels:
         - /UAV11/Planner1
         - /UAV11/Planner1/frontier1
         - /UAV11/Planner1/frontier1/Namespaces1
+        - /UAV11/Planner1/HGrid_gp1
         - /UAV11/Planner1/HGrid_gp1/Namespaces1
         - /UAV11/Planner1/HGrid Array1/Namespaces1
         - /UAV11/Planner1/HGrid1/Namespaces1
         - /preset_target1
-      Splitter Ratio: 0.46000000834465027
-    Tree Height: 439
+      Splitter Ratio: 0.4076923131942749
+    Tree Height: 1154
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -187,7 +188,7 @@ Visualization Manager:
               Marker Topic: /planning_vis/hgrid_1
               Name: HGrid_gp
               Namespaces:
-                grid_tour2_cost: true
+                grid_tour2_cost: false
                 hgrid_tour_mc: true
                 hgrid_tour_mc_frt: true
               Queue Size: 10
@@ -423,7 +424,7 @@ Visualization Manager:
       Pitch: 1.5697963237762451
       Target Frame: <Fixed Frame>
       Value: ThirdPersonFollower (rviz)
-      Yaw: 4.695000171661377
+      Yaw: 4.684999942779541
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 24
